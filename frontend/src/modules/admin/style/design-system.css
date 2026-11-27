@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* Central HRMS sizing tokens. Colors and glass effects remain owned by the Monsoon Glass theme. */
+.mod-admin,
+.mod-admin[data-tpl="glass"] {
+  --ds-font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ds-base-size: 14px;
+  --ds-page-title: 24px;
+  --ds-section-title: 18px;
+  --ds-card-title: 15px;
+  --ds-table-text: 13px;
+  --ds-button-text: 14px;
+  --ds-label-text: 13px;
+  --ds-supporting-text: 12px;
+  --ds-button-height: 38px;
+  --ds-input-height: 40px;
+  --ds-card-padding: 18px;
+  --ds-radius: 11px;
+  --ds-sidebar-width: 236px;
+  --ds-sidebar-collapsed-width: 72px;
+  --ds-topbar-height: 64px;
+  --ds-content-padding: 20px;
+  --ds-section-gap: 16px;
+  --rail: var(--ds-sidebar-width);
+  --radius: var(--ds-radius);
+  --gap: var(--ds-section-gap);
+  --pad: var(--ds-card-padding);
+  --font-body: var(--ds-font-family);
+  --font-display: var(--ds-font-family);
+  --font-data: var(--ds-font-family);
+  --bs-body-font-family: var(--font-body);
+  --bs-body-font-size: var(--ds-base-size);
+  --bs-body-color: var(--ink);
+  --bs-body-bg: var(--bg);
+  --bs-border-radius: var(--ds-radius);
+  --bs-border-radius-sm: 8px;
+  --bs-border-radius-lg: 12px;
+  --bs-link-color: var(--accent);
+  --bs-link-hover-color: var(--accent);
+}
+
+.mod-admin,
+.mod-admin button,
+.mod-admin input,
+.mod-admin select,
+.mod-admin textarea,
+.mod-admin .admin-main-content {
+  font-family: var(--font-body);
+  font-size: var(--ds-base-size);
+}
+
+.mod-admin .admin-main-content {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.mod-admin .admin-main-content h1 {
+  font-family: var(--font-body);
+  font-size: var(--ds-page-title);
+  line-height: 1.2;
+}
+
+.mod-admin .admin-main-content :is(h2, h3, h4) { font-family: var(--font-body); }
+
+.mod-admin .admin-main-content :is(.module-card-heading h2, .ann-list-heading h2, .ann-section-heading h2) { font-size: var(--ds-card-title); }
+
+.mod-admin .admin-main-content :is(.module-card-heading p, .module-page-header p, .ann-page-header p, .ann-help, .ann-muted) { font-size: var(--ds-supporting-text); }
+
+.mod-admin .admin-main-content :is(label, .module-form-field > span, .ann-field, .hr-field-grid label) { font-size: var(--ds-label-text); }
+
+.mod-admin .admin-main-content :is(button, .module-button, .ann-button) { min-height: var(--ds-button-height); font-size: var(--ds-button-text); }
+.mod-admin .admin-main-content .topnav-switcher-wrap button { min-height: 36px; font-size: 12px; }
+
+.mod-admin .admin-main-content :is(input, select, textarea, .module-input, .module-select, .module-textarea) { min-height: var(--ds-input-height); font-size: var(--ds-base-size); }
+
+.mod-admin .admin-main-content :is(.module-card, .ann-panel, .payroll-panel, .settings-card) { border-radius: var(--ds-radius); }
+
+.mod-admin .admin-main-content :is(table, .module-table, .ann-table, .payroll-table) { font-size: var(--ds-table-text); }
+
+.mod-admin .admin-main-content :is(.module-table-wrap, .ann-table-wrap, .table-responsive) { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.mod-admin .admin-main-content img,
+.mod-admin .admin-main-content svg,
+.mod-admin .admin-main-content canvas { max-width: 100%; }
+
+@media (min-width: 1200px) { .mod-admin .admin-main-content { padding-inline: var(--ds-content-padding); } }
+@media (max-width: 900px) { .mod-admin .admin-main-content { padding-inline: 10px; } }
+@media (max-width: 576px) {
+  .mod-admin .admin-main-content :is(.module-page-header, .ann-page-header, .ann-list-heading) { align-items: flex-start; flex-direction: column; }
+  .mod-admin .admin-main-content :is(.module-header-actions, .ann-header-actions, .ann-form-actions) { width: 100%; flex-wrap: wrap; }
+}

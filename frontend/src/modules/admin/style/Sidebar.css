@@ -1,0 +1,322 @@
+.mod-admin .admin-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  min-width: 0;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  padding: 10px 0 16px;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background: rgba(3, 20, 27, 0.88);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+.mod-admin .sidebar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 8px 20px;
+  /* Let the logo sit directly on the sidebar's Monsoon Glass surface. */
+  border: 0 !important;
+  outline: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  margin-bottom: 20px;
+}
+
+
+.mod-admin .sidebar-logo {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 1025 / 210;
+  flex: 0 1 auto;
+  border: 0;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: 0;
+  object-fit: contain;
+}
+
+.mod-admin .sidebar-brand h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.mod-admin .sidebar-brand p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mod-admin .sidebar-admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  margin: 0 0 4px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.mod-admin .sidebar-admin-avatar {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--surface2);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.mod-admin .sidebar-admin-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mod-admin .sidebar-admin-profile-info {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mod-admin .sidebar-admin-profile-info strong,
+.mod-admin .sidebar-admin-profile-info span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mod-admin .sidebar-admin-profile-info strong {
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.mod-admin .sidebar-admin-profile-info span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .sidebar-section-title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0 14px;
+  margin: 15px 0 7px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.mod-admin .sidebar-section-title svg { transition: transform 160ms ease; }
+.mod-admin .sidebar-navigation-group:not(.is-open) .sidebar-section-title svg { transform: rotate(-90deg); }
+.mod-admin .sidebar-navigation-group:not(.is-open) .sidebar-menu { display: none; }
+
+.mod-admin .sidebar-navigation {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface2) transparent;
+}
+
+.mod-admin .sidebar-navigation-group:first-child .sidebar-section-title {
+  margin-top: 0;
+}
+
+.mod-admin .sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mod-admin .sidebar-menu a,
+.mod-admin .sidebar-footer a,
+.mod-admin .sidebar-logout {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.mod-admin .sidebar-menu a svg,
+.mod-admin .sidebar-footer a svg,
+.mod-admin .sidebar-logout svg {
+  flex: 0 0 16px;
+}
+
+.mod-admin .sidebar-menu a:hover,
+.mod-admin .sidebar-footer a:hover,
+.mod-admin .sidebar-logout:hover {
+  background: var(--surface2);
+  color: var(--ink);
+}
+
+.mod-admin .sidebar-menu a.active,
+.mod-admin .sidebar-footer a.active {
+  border-color: var(--line);
+  background: var(--surface2);
+  color: var(--ink);
+}
+
+.mod-admin .sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+  flex: 0 0 auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.mod-admin .sidebar-footer .sidebar-admin-profile {
+  margin-bottom: 3px;
+  padding: 7px 8px;
+  border-color: transparent;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.mod-admin .sidebar-footer .sidebar-admin-profile:hover {
+  border-color: var(--line);
+  background: var(--surface);
+}
+
+.mod-admin .sidebar-logout {
+  width: 100%;
+  cursor: pointer;
+}
+
+.mod-admin .sidebar-menu a:focus-visible,
+.mod-admin .sidebar-section-title:focus-visible,
+.mod-admin .sidebar-footer a:focus-visible,
+.mod-admin .sidebar-logout:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mod-admin .admin-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.mod-admin .admin-sidebar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--surface2);
+}
+
+@media (max-width: 900px) {
+  .mod-admin .admin-sidebar {
+    z-index: 10;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+    background: var(--bg);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+  }
+
+  .mod-admin .sidebar-brand {
+    flex: 0 0 auto;
+    padding: 0 10px 0 0;
+    border: 0;
+    margin: 0;
+  }
+
+
+  .mod-admin .sidebar-navigation {
+    display: flex;
+    flex: 0 0 auto;
+    overflow: visible;
+  }
+
+  .mod-admin .sidebar-navigation-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .mod-admin .sidebar-navigation-group .sidebar-section-title {
+    display: none;
+  }
+
+  .mod-admin .sidebar-navigation-group:not(.is-open) .sidebar-menu { display: flex; }
+
+  .mod-admin .sidebar-admin-profile {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 6px 9px;
+  }
+
+  .mod-admin .sidebar-menu {
+    flex-direction: row;
+    flex: 0 0 auto;
+  }
+
+  .mod-admin .sidebar-menu a,
+.mod-admin .sidebar-footer a,
+.mod-admin .sidebar-logout {
+    min-height: 38px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .mod-admin .sidebar-section-title {
+    display: none;
+  }
+
+  .mod-admin .sidebar-footer {
+    flex-direction: row;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mod-admin .sidebar-menu a,
+.mod-admin .sidebar-footer a,
+.mod-admin .sidebar-logout {
+    transition: none;
+  }
+}

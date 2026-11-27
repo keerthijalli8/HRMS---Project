@@ -1,0 +1,1055 @@
+
+/* =========================================
+   HRMS INDIA - MONSOON GLASS
+   LEAVE MANAGEMENT
+========================================= */
+
+.mod-admin .leaves-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 55px;
+  box-sizing: border-box;
+  color: #eaf5f3;
+  font-family: "Manrope", sans-serif;
+}
+
+/* HEADER */
+
+.mod-admin .leaves-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.mod-admin .leaves-eyebrow {
+  color: #71d7c1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.mod-admin .leaves-header h1 {
+  margin: 12px 0 7px;
+  color: #f0f8f7;
+  font-family: "Syne", sans-serif;
+  font-size: 30px;
+}
+
+.mod-admin .leaves-header p {
+  margin: 0;
+  color: #91aaa9;
+  font-size: 13px;
+}
+
+.mod-admin .leaves-date {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 16px;
+  color: #b9d6d1;
+  background: #102529;
+  border: 1px solid #234448;
+  border-radius: 12px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* SUMMARY CARDS */
+
+.mod-admin .leaves-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.mod-admin .leaves-stat-card {
+  min-width: 0;
+  padding: 22px;
+  background: linear-gradient(145deg, #19383d, #102a30);
+  border: 1px solid #294b50;
+  border-radius: 17px;
+  transition: 0.25s ease;
+}
+
+.mod-admin .leaves-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: #56bda9;
+}
+
+.mod-admin .leaves-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+}
+
+.mod-admin .leaves-stat-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.mod-admin .leaves-stat-icon.mint {
+  color: #6ee1c1;
+  background: #214d4b;
+}
+
+.mod-admin .leaves-stat-icon.orange {
+  color: #ffb675;
+  background: #493f36;
+}
+
+.mod-admin .leaves-stat-icon.blue {
+  color: #80bfff;
+  background: #24485b;
+}
+
+.mod-admin .leaves-stat-icon.purple {
+  color: #c5a4ff;
+  background: #3b3659;
+}
+
+.mod-admin .leaves-stat-card p {
+  margin: 16px 0 7px;
+  color: #94aeac;
+  font-size: 12px;
+}
+.mod-admin .leaves-header-actions { display: flex; align-items: center; gap: 10px; }
+.mod-admin .leaves-back-button { display: flex; align-items: center; gap: 7px; border: 1px solid rgba(114, 230, 193, 0.28); border-radius: 9px; background: rgba(114, 230, 193, 0.08); color: #b9f8e5; padding: 9px 11px; font-size: 12px; font-weight: 700; cursor: pointer; }
+.mod-admin .leaves-back-button:hover { background: rgba(114, 230, 193, 0.17); }
+
+.mod-admin .leaves-stat-card h2 {
+  margin: 0;
+  color: #f0f8f7;
+  font-family: "Syne", sans-serif;
+  font-size: 30px;
+}
+
+.mod-admin .leaves-stat-card > span {
+  display: block;
+  margin-top: 8px;
+  color: #789795;
+  font-size: 11px;
+}
+
+/* TABLE PANEL */
+
+.mod-admin .leaves-table-panel {
+  padding: 25px;
+  background: linear-gradient(145deg, #15363a, #102a2e);
+  border: 1px solid #29494c;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.mod-admin .leaves-table-heading {
+  margin-bottom: 22px;
+}
+
+.mod-admin .leaves-table-heading h2 {
+  margin: 0;
+  color: #eaf5f3;
+  font-family: "Syne", sans-serif;
+  font-size: 18px;
+}
+
+.mod-admin .leaves-table-heading p {
+  margin: 7px 0 0;
+  color: #91aaa9;
+  font-size: 12px;
+}
+
+/* TOOLBAR */
+
+.mod-admin .leaves-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.mod-admin .leaves-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 350px;
+  height: 44px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  background: #0b2226;
+  border: 1px solid #29494c;
+  border-radius: 10px;
+}
+
+.mod-admin .leaves-search:focus-within {
+  border-color: #65d6bd;
+}
+
+.mod-admin .leaves-search svg {
+  flex-shrink: 0;
+  color: #83aaa5;
+}
+
+.mod-admin .leaves-search input {
+  width: 100%;
+  height: 100%;
+  color: #eaf5f3;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.mod-admin .leaves-search input::placeholder {
+  color: #789592;
+}
+
+.mod-admin .leaves-toolbar select {
+  width: 155px;
+  height: 44px;
+  padding: 0 12px;
+  color: #d5e9e5;
+  background: #0d292d;
+  border: 1px solid #29494c;
+  border-radius: 10px;
+  outline: none;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.mod-admin .leaves-toolbar select option {
+  background: #102a2e;
+  color: #eaf5f3;
+}
+
+/* TABLE */
+
+.mod-admin .leaves-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #294548;
+  border-radius: 12px;
+}
+
+.mod-admin .leaves-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.mod-admin .leaves-table thead {
+  background: #0d292d;
+}
+
+.mod-admin .leaves-table th {
+  padding: 16px 13px;
+  color: #8db8ae;
+  border-bottom: 1px solid #294548;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mod-admin .leaves-table td {
+  padding: 14px 13px;
+  color: #bfd4cf;
+  border-bottom: 1px solid rgba(143, 190, 180, 0.1);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.mod-admin .leaves-table tbody tr:hover {
+  background: rgba(91, 195, 170, 0.07);
+  cursor: pointer;
+}
+
+.mod-admin .leaves-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* EMPLOYEE */
+
+.mod-admin .leaves-employee {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mod-admin .leaves-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  color: #75e2c3;
+  background: #214c49;
+  border: 1px solid #32665c;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mod-admin .leaves-employee strong {
+  color: #e6f4ef;
+  font-size: 11px;
+}
+
+/* DATES */
+
+.mod-admin .leaves-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mod-admin .leaves-dates span:last-child {
+  color: #789795;
+  font-size: 10px;
+}
+
+/* STATUS */
+
+.mod-admin .leaves-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mod-admin .leaves-status.pending {
+  color: #ffc17e;
+  background: rgba(255, 177, 93, 0.13);
+}
+
+.mod-admin .leaves-status.approved {
+  color: #75e4bd;
+  background: rgba(67, 210, 158, 0.13);
+}
+
+.mod-admin .leaves-status.rejected {
+  color: #ff9999;
+  background: rgba(255, 105, 105, 0.13);
+}
+
+.mod-admin .leave-approval-history {
+  min-width: 190px;
+  white-space: normal !important;
+}
+
+.mod-admin .leave-approval-history strong,
+.mod-admin .leave-approval-history span {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.mod-admin .leave-approval-history strong {
+  color: #ffc17e;
+}
+
+.mod-admin .leave-approval-history span {
+  color: #91aaa9;
+  font-size: 10px;
+}
+
+/* ACTION BUTTONS */
+
+.mod-admin .leaves-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mod-admin .leaves-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-admin .leave-approve-btn {
+  color: #70e2b7;
+  background: rgba(67, 210, 158, 0.12);
+  border: 1px solid rgba(67, 210, 158, 0.25);
+}
+
+.mod-admin .leave-approve-btn:hover {
+  background: rgba(67, 210, 158, 0.25);
+}
+
+.mod-admin .leave-reject-btn {
+  color: #ff9999;
+  background: rgba(255, 105, 105, 0.12);
+  border: 1px solid rgba(255, 105, 105, 0.25);
+}
+
+.mod-admin .leave-reject-btn:hover {
+  background: rgba(255, 105, 105, 0.25);
+}
+
+.mod-admin .leaves-action-done {
+  color: #789795;
+  font-size: 10px;
+}
+
+/* EMPTY STATE AND FOOTER */
+
+.mod-admin .leaves-empty {
+  padding: 35px !important;
+  color: #91aaa9 !important;
+  text-align: center;
+}
+
+.mod-admin .leaves-table-footer {
+  margin-top: 16px;
+  padding-top: 15px;
+  color: #789795;
+  border-top: 1px solid #294548;
+  font-size: 11px;
+}
+
+.mod-admin .leave-details-overlay {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.58);
+}
+
+.mod-admin .leave-details-modal {
+  width: min(640px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 22px;
+  border: 1px solid #294548;
+  border-radius: 16px;
+  background: #082326;
+}
+
+.mod-admin .leave-details-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mod-admin .leave-details-heading h2 {
+  margin: 5px 0 0;
+  color: #e6f4ef;
+}
+
+.mod-admin .leave-details-heading > button {
+  border: 0;
+  background: transparent;
+  color: #91aaa9;
+  cursor: pointer;
+}
+
+.mod-admin .leave-details-grid {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 11px;
+  margin: 0;
+}
+
+.mod-admin .leave-details-grid dt {
+  color: #8db8ae;
+  font-size: 12px;
+}
+
+.mod-admin .leave-details-grid dd {
+  margin: 0;
+  color: #e6f4ef;
+  font-size: 12px;
+}
+
+.mod-admin .leave-details-close {
+  display: block;
+  margin: 22px 0 0 auto;
+  padding: 8px 14px;
+  border: 1px solid #32665c;
+  border-radius: 8px;
+  background: #214c49;
+  color: #e6f4ef;
+  cursor: pointer;
+}
+
+.mod-admin .leave-reviewer-history {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  white-space: normal;
+}
+
+.mod-admin .leave-reviewer-history span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mod-admin .leave-reviewer-history strong {
+  color: #75e2c3;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.mod-admin .leave-reviewer-history small,
+.mod-admin .leave-reviewer-pending {
+  color: #bfd4cf;
+  font-size: 10px;
+}
+
+@media (max-width: 600px) {
+  .mod-admin .leave-details-grid { grid-template-columns: 1fr; gap: 5px; }
+  .mod-admin .leave-details-grid dd { margin-bottom: 8px; }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .mod-admin .leaves-page {
+    padding: 35px;
+  }
+
+  .mod-admin .leaves-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .mod-admin .leaves-page {
+    padding: 22px;
+  }
+
+  .mod-admin .leaves-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .mod-admin .leaves-header-actions { width: 100%; justify-content: space-between; }
+
+  .mod-admin .leaves-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .mod-admin .leaves-search,
+.mod-admin .leaves-toolbar select {
+    width: 100%;
+  }
+
+  .mod-admin .leaves-table-panel {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mod-admin .leaves-page {
+    padding: 14px;
+  }
+
+  .mod-admin .leaves-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .leaves-stat-card {
+    padding: 18px;
+  }
+}
+/* ================================
+   LEAVE CALENDAR
+================================ */
+
+.mod-admin .leaves-calendar-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 24px;
+  color: inherit;
+}
+
+.mod-admin .leaves-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.mod-admin .leaves-calendar-header h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.mod-admin .leaves-calendar-header p {
+  margin: 0;
+  opacity: 0.65;
+  font-size: 13px;
+}
+
+.mod-admin .leaves-calendar-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mod-admin .leaves-calendar-controls strong {
+  min-width: 125px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.mod-admin .leaves-calendar-nav,
+.mod-admin .leaves-today-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 34px;
+}
+
+.mod-admin .leaves-calendar-nav {
+  width: 34px;
+}
+
+.mod-admin .leaves-today-btn {
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.mod-admin .leaves-calendar-nav:hover,
+.mod-admin .leaves-today-btn:hover {
+  background: rgba(90, 220, 180, 0.15);
+}
+
+.mod-admin .leaves-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.mod-admin .leaves-calendar-weekday {
+  text-align: center;
+  padding: 10px 2px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.65;
+}
+
+.mod-admin .leaves-calendar-empty {
+  min-height: 85px;
+}
+
+.mod-admin .leaves-calendar-day {
+  min-width: 0;
+  min-height: 85px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.2s ease;
+}
+
+.mod-admin .leaves-calendar-day:hover {
+  border-color: rgba(80, 220, 180, 0.55);
+  background: rgba(80, 220, 180, 0.07);
+}
+
+.mod-admin .leaves-calendar-date-number {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mod-admin .leaves-day-today {
+  border-color: #42d6b0;
+}
+
+.mod-admin .leaves-day-selected {
+  background: rgba(66, 214, 176, 0.13);
+  border: 1px solid #42d6b0;
+}
+
+.mod-admin .leaves-calendar-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 7px;
+}
+
+.mod-admin .leave-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.mod-admin .pending-dot {
+  background: #f5a742;
+}
+
+.mod-admin .approved-dot {
+  background: #35c99a;
+}
+
+.mod-admin .rejected-dot {
+  background: #ef6475;
+}
+
+.mod-admin .leaves-calendar-count {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.mod-admin .leaves-calendar-legend {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.mod-admin .leaves-calendar-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Selected date details */
+
+.mod-admin .leaves-calendar-details {
+  margin-top: 20px;
+}
+
+.mod-admin .leaves-calendar-details-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.mod-admin .leaves-calendar-details-heading h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+}
+
+.mod-admin .leaves-calendar-details-heading p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.mod-admin .leaves-calendar-total {
+  font-size: 12px;
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: rgba(66, 214, 176, 0.12);
+  color: #42d6b0;
+}
+
+.mod-admin .leaves-calendar-employee-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mod-admin .leaves-calendar-employee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 10px;
+}
+
+.mod-admin .leaves-calendar-employee-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.mod-admin .leaves-calendar-employee-info > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.mod-admin .leaves-calendar-employee-info strong {
+  font-size: 13px;
+}
+
+.mod-admin .leaves-calendar-employee-info span {
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+.mod-admin .leaves-calendar-no-data {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+.mod-admin .leaves-calendar-no-data p {
+  margin: 0;
+}
+
+/* Responsive calendar */
+
+@media (max-width: 700px) {
+  .mod-admin .leaves-calendar-panel {
+    padding: 14px;
+  }
+
+  .mod-admin .leaves-calendar-grid {
+    gap: 4px;
+  }
+
+  .mod-admin .leaves-calendar-day {
+    min-height: 68px;
+    padding: 7px 5px;
+    gap: 6px;
+  }
+
+  .mod-admin .leaves-calendar-empty {
+    min-height: 68px;
+  }
+
+  .mod-admin .leaves-calendar-count {
+    font-size: 9px;
+  }
+
+  .mod-admin .leaves-calendar-employee-list {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .leaves-calendar-header {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .mod-admin .leaves-calendar-controls {
+    gap: 6px;
+  }
+
+  .mod-admin .leaves-calendar-controls strong {
+    min-width: 105px;
+    font-size: 12px;
+  }
+
+  .mod-admin .leaves-calendar-weekday {
+    font-size: 10px;
+  }
+
+  .mod-admin .leaves-calendar-day {
+    min-height: 58px;
+    padding: 5px 3px;
+  }
+
+  .mod-admin .leaves-calendar-empty {
+    min-height: 58px;
+  }
+
+  .mod-admin .leaves-calendar-count {
+    display: none;
+  }
+
+  .mod-admin .leaves-calendar-legend {
+    gap: 12px;
+  }
+}
+/* ==================================
+   CLICKABLE LEAVE SUMMARY CARDS
+================================== */
+
+.mod-admin .leaves-stat-clickable {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mod-admin .leaves-stat-clickable:hover {
+  transform: translateY(-3px);
+  border-color: rgba(66, 214, 176, 0.5);
+}
+
+.mod-admin .leaves-stat-active {
+  border: 1px solid #42d6b0 !important;
+  background: rgba(66, 214, 176, 0.09) !important;
+}
+
+/* ==================================
+   SUMMARY DETAILS PANEL
+================================== */
+
+.mod-admin .leaves-summary-details {
+  margin-bottom: 24px;
+  padding: 22px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: inherit;
+}
+
+.mod-admin .leaves-summary-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.mod-admin .leaves-summary-eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  opacity: 0.6;
+}
+
+.mod-admin .leaves-summary-details-header h2 {
+  margin: 7px 0;
+  font-size: 20px;
+}
+
+.mod-admin .leaves-summary-details-header p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.mod-admin .leaves-summary-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mod-admin .leaves-summary-count {
+  padding: 8px 13px;
+  border-radius: 20px;
+  color: #42d6b0;
+  background: rgba(66, 214, 176, 0.12);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.mod-admin .leaves-summary-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  cursor: pointer;
+}
+
+.mod-admin .leaves-summary-close:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Summary details table */
+
+.mod-admin .leaves-summary-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.mod-admin .leaves-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.mod-admin .leaves-summary-table th {
+  padding: 13px 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0.7;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mod-admin .leaves-summary-table td {
+  padding: 14px 12px;
+  font-size: 12px;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mod-admin .leaves-summary-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-admin .leaves-summary-table td strong {
+  color: #42d6b0;
+}
+
+@media (max-width: 700px) {
+  .mod-admin .leaves-summary-details {
+    padding: 15px;
+  }
+
+  .mod-admin .leaves-summary-details-header {
+    align-items: flex-start;
+  }
+
+  .mod-admin .leaves-summary-details-header h2 {
+    font-size: 17px;
+  }
+
+  .mod-admin .leaves-summary-header-actions {
+    gap: 6px;
+  }
+}

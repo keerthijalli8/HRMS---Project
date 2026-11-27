@@ -1,0 +1,36 @@
+{
+  "name": "hrms-single-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Unified HRMS Single-Entry Frontend Application",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:vite": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.2",
+    "@vis.gl/react-google-maps": "^1.10.2",
+    "@vladmandic/face-api": "^1.7.15",
+    "axios": "^1.21.1",
+    "bootstrap": "^5.3.9",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.70.0",
+    "pdfmake": "^0.3.15",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "^7.18.5",
+    "recharts": "^3.11.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.5"
+  }
+}

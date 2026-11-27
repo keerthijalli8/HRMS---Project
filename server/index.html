@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-tpl="glass" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Immediate theme initialization to prevent theme flashing on reload
+      (function() {
+        try {
+          var saved = localStorage.getItem('hrms_theme');
+          var theme = saved === 'light' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+          if (theme === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          } else {
+            document.documentElement.classList.remove('light');
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+
+      // Auto-redirect plain HTTP LAN IPs (e.g. 192.168.x.x) to localhost so camera directly opens without security blocks
+      (function() {
+        try {
+          var isHttp = window.location.protocol === 'http:';
+          var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+          if (isHttp && !isLocal && !window.isSecureContext) {
+            var target = 'http://localhost:' + (window.location.port || '5174') + window.location.pathname + window.location.search + window.location.hash;
+            window.location.replace(target);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="/technomold-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Technomold Face Attendance · HRMS Portal</title>
+    <!-- Google Fonts: Syne & Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="font-body text-ink antialiased selection:bg-accent/20 selection:text-accent">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

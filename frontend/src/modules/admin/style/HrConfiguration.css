@@ -1,0 +1,69 @@
+.mod-admin .hr-config-page { width: 100%; color: var(--ink); }
+.mod-admin .hr-config-access { border: 1px solid var(--line); border-radius: 999px; padding: 8px 11px; font-size: 11px; font-weight: 700; }
+.mod-admin .hr-config-access.allowed { color: var(--accent); border-color: rgba(110,231,208,.35); background: rgba(110,231,208,.08); }
+.mod-admin .hr-config-access.restricted { color: var(--muted); }
+.mod-admin .hr-config-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.mod-admin .hr-submodule-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.mod-admin .hr-submodule-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; width: 100%; border: 1px solid var(--line); border-radius: 12px; background: var(--surface2); color: var(--ink); padding: 14px; text-align: left; cursor: pointer; }
+.mod-admin .hr-submodule-card:hover { border-color: rgba(110,231,208,.45); background: rgba(110,231,208,.06); }
+.mod-admin .hr-submodule-icon { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; color: var(--accent); background: rgba(110,231,208,.1); }
+.mod-admin .hr-submodule-card strong,
+.mod-admin .hr-submodule-card small { display: block; }
+.mod-admin .hr-submodule-card small { margin-top: 4px; color: var(--muted); font-size: 11px; }
+.mod-admin .hr-submodule-link { color: var(--accent); font-size: 11px; font-weight: 700; white-space: nowrap; }
+.mod-admin .hr-config-meta { display: flex; gap: 24px; margin: 14px 0 18px; color: var(--muted); font-size: 12px; }
+.mod-admin .hr-config-meta strong { color: var(--ink); }
+.mod-admin .hr-config-tabs { display: flex; gap: 6px; overflow-x: auto; border-bottom: 1px solid var(--line); margin: 18px 0; }
+.mod-admin .hr-config-tabs button { border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); cursor: pointer; padding: 12px 14px; white-space: nowrap; font-weight: 700; }
+.mod-admin .hr-config-tabs button.active { color: var(--accent); border-bottom-color: var(--accent); }
+.mod-admin .hr-config-readonly { margin-bottom: 16px; border: 1px solid rgba(251,191,36,.3); border-radius: 10px; background: rgba(251,191,36,.08); color: #fcd34d; padding: 11px 13px; font-size: 12px; }
+.mod-admin .hr-config-subsection { border-top: 1px solid var(--line); padding: 18px 0 4px; }
+.mod-admin .hr-config-subsection:first-child { border-top: 0; padding-top: 0; }
+.mod-admin .hr-config-subsection h3 { margin: 0 0 12px; font-size: 14px; }
+.mod-admin .hr-field-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.mod-admin .hr-field-grid label,
+.mod-admin .hr-calendar-toolbar label { display: flex; flex-direction: column; gap: 5px; color: var(--muted); font-size: 11px; font-weight: 700; }
+.mod-admin .hr-field-grid input,
+.mod-admin .hr-field-grid select,
+.mod-admin .hr-toolbar input,
+.mod-admin .hr-calendar-toolbar input { width: 100%; box-sizing: border-box; min-height: 38px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface2); color: var(--ink); padding: 8px 10px; }
+.mod-admin .hr-form-actions,
+.mod-admin .hr-toolbar,
+.mod-admin .hr-editor-heading,
+.mod-admin .hr-calendar-toolbar { display: flex; align-items: center; gap: 9px; }
+.mod-admin .hr-form-actions { justify-content: flex-end; }
+.mod-admin .hr-toolbar input { width: 220px; }
+.mod-admin .hr-editor-card { border: 1px solid rgba(110,231,208,.25); border-radius: 13px; background: rgba(110,231,208,.045); padding: 16px; margin-bottom: 18px; }
+.mod-admin .hr-editor-heading { justify-content: space-between; margin-bottom: 14px; }
+.mod-admin .hr-editor-heading h3 { margin: 0; font-size: 15px; }
+.mod-admin .hr-editor-heading button { border: 0; background: transparent; color: var(--muted); cursor: pointer; }
+.mod-admin .hr-table-wrap { overflow-x: auto; }
+.mod-admin .hr-table-wrap .module-table { min-width: 760px; }
+.mod-admin .hr-table-wrap small,
+.mod-admin .hr-history-row span { display: block; color: var(--muted); font-size: 11px; margin-top: 4px; }
+.mod-admin .hr-calendar-toolbar { justify-content: space-between; margin: 14px 0; }
+.mod-admin .hr-calendar-toolbar input { width: 110px; }
+.mod-admin .hr-check-field { flex-direction: row !important; align-items: center; padding-top: 25px; }
+.mod-admin .hr-check-field input,
+.mod-admin .hr-permission-grid input { width: auto; min-height: auto; accent-color: var(--accent); }
+.mod-admin .hr-config-history { margin-top: 18px; }
+.mod-admin .hr-history-list { display: grid; gap: 10px; }
+.mod-admin .hr-history-row { display: grid; grid-template-columns: 24px 1fr auto; align-items: center; gap: 8px; border-bottom: 1px solid var(--line); padding: 9px 0; }
+.mod-admin .hr-history-row:last-child { border-bottom: 0; }
+.mod-admin .hr-history-row > svg { color: var(--accent); }
+.mod-admin .hr-history-row small { color: var(--muted); }
+.mod-admin .hr-permission-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.mod-admin .hr-permission-grid label { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 9px; padding: 11px; color: var(--muted); font-size: 12px; }
+.mod-admin .hr-config-records-page { width: 100%; color: var(--ink); }
+.mod-admin .hr-records-back { margin-bottom: 18px; }
+.mod-admin .hr-record-detail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.mod-admin .hr-record-detail-grid > div { border: 1px solid var(--line); border-radius: 10px; background: var(--surface2); padding: 12px; }
+.mod-admin .hr-record-detail-grid span { display: block; color: var(--muted); font-size: 11px; margin-bottom: 6px; text-transform: capitalize; }
+.mod-admin .hr-record-detail-grid strong { font-size: 13px; white-space: pre-wrap; }
+@media (max-width: 900px) { .mod-admin .hr-config-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }.mod-admin .hr-field-grid,
+.mod-admin .hr-permission-grid,
+.mod-admin .hr-record-detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .mod-admin .hr-config-meta { flex-direction: column; gap: 5px; }.mod-admin .hr-field-grid,
+.mod-admin .hr-permission-grid,
+.mod-admin .hr-record-detail-grid,
+.mod-admin .hr-submodule-grid { grid-template-columns: 1fr; }.mod-admin .hr-config-summary { grid-template-columns: 1fr 1fr; }.mod-admin .hr-history-row { grid-template-columns: 24px 1fr; }.mod-admin .hr-history-row small { grid-column: 2; }.mod-admin .hr-toolbar { flex-direction: column; align-items: stretch; }.mod-admin .hr-toolbar input { width: 100%; } }

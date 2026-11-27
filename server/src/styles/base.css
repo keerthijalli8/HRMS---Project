@@ -1,0 +1,126 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background:
+      radial-gradient(900px 600px at 8% -10%, #0f4a52 0, transparent 60%),
+      radial-gradient(800px 700px at 100% 10%, #3a2a7a 0, transparent 55%),
+      #06141c;
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  [data-theme="light"] body,
+  html.light body {
+    background:
+      radial-gradient(900px 600px at 8% -10%, #ccfbf1 0, transparent 65%),
+      radial-gradient(800px 700px at 100% 10%, #e0e7ff 0, transparent 60%),
+      #f8fafc;
+    color: var(--ink);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Custom scrollbar for dark monsoon glass */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--surface2);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--line);
+  }
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Standard 2-Column Module Grid matching existing HRMS Dashboards */
+.module-grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1100px) {
+  .module-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .module-grid > .col-span-full {
+    grid-column: span 2;
+  }
+  .module-grid > .col-span-half {
+    grid-column: span 1;
+  }
+}
+
+/* Glass Card Specification */
+.glass-card {
+  background: var(--surface);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  padding: var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.kpi-tile {
+  background: var(--surface);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  padding: calc(var(--pad) - 4px) var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.scanner-laser {
+  animation: scanline 2.5s infinite linear;
+}

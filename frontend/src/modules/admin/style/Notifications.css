@@ -1,0 +1,205 @@
+.mod-admin .notifications-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 12px 18px 24px;
+  color: var(--ink);
+}
+
+.mod-admin .notifications-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 8px 0 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+}
+
+.mod-admin .notifications-eyebrow {
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.mod-admin .notifications-page-header h1 {
+  margin: 7px 0 4px;
+  font-family: var(--font-display);
+  font-size: clamp(25px, 3vw, 33px);
+}
+
+.mod-admin .notifications-page-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.mod-admin .notifications-back,
+.mod-admin .notifications-mark-all {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.mod-admin .notifications-panel {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--blur);
+}
+
+.mod-admin .notifications-panel-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+.mod-admin .notifications-panel-heading h2 svg {
+  color: var(--accent);
+}
+
+.mod-admin .notifications-panel-heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .notifications-mark-all {
+  border-color: rgba(110, 231, 208, 0.24);
+  background: rgba(110, 231, 208, 0.08);
+  color: var(--accent);
+}
+
+.mod-admin .notifications-mark-all:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.mod-admin .notifications-page .topnav-notification-item {
+  padding: 14px 5px;
+}
+
+.mod-admin .notifications-page .topnav-notification-copy strong {
+  font-size: 12px;
+}
+
+.mod-admin .notifications-page .topnav-notification-copy > span {
+  font-size: 11px;
+}
+
+.mod-admin .notifications-page .topnav-notification-copy small {
+  font-size: 9px;
+}
+
+.mod-admin .notifications-page .topnav-notification-actions {
+  padding-left: 39px;
+}
+
+.mod-admin .notifications-page .topnav-notification-actions button {
+  font-size: 9px;
+}
+
+.mod-admin .notifications-page .topnav-notification-empty {
+  padding: 50px 10px;
+}
+
+.mod-admin .notifications-error {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--bad);
+  font-size: 11px;
+}
+
+@media (max-width: 760px) {
+  .mod-admin .overview-topnav {
+    display: flex;
+    min-height: 60px;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .mod-admin .topnav-heading {
+    flex: 1;
+  }
+
+  .mod-admin .topnav-heading span {
+    font-size: 8px;
+  }
+
+  .mod-admin .topnav-heading strong {
+    font-size: 14px;
+  }
+
+  .mod-admin .topnav-search {
+    display: none;
+  }
+
+  .mod-admin .topnav-search.is-mobile-open {
+    position: absolute;
+    z-index: 42;
+    top: calc(100% + 7px);
+    right: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    background: rgba(8, 25, 33, 0.98);
+  }
+
+  .mod-admin .topnav-mobile-search-button {
+    display: grid;
+  }
+
+  .mod-admin .topnav-actions {
+    gap: 3px;
+  }
+
+  .mod-admin .topnav-profile-button {
+    gap: 5px;
+    padding-inline: 3px;
+  }
+
+  .mod-admin .topnav-profile-copy {
+    display: none;
+  }
+
+  .mod-admin .topnav-icon-button {
+    width: 36px;
+    height: 38px;
+  }
+
+  .mod-admin .notifications-page {
+    padding: 6px 10px 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .mod-admin .notifications-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mod-admin .notifications-panel {
+    padding: 13px;
+  }
+
+  .mod-admin .notifications-panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

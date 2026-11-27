@@ -1,0 +1,401 @@
+.mod-admin .reports-page {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  color: var(--ink);
+}
+
+.mod-admin .reports-header,
+.mod-admin .reports-section-heading,
+.mod-admin .reports-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.mod-admin .reports-header {
+  align-items: flex-end;
+  margin-bottom: 4px;
+}
+
+.mod-admin .reports-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.mod-admin .reports-header h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+.mod-admin .reports-header p,
+.mod-admin .reports-section-heading p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mod-admin .reports-actions {
+  flex: 0 0 auto;
+}
+
+.mod-admin .reports-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  width: fit-content;
+}
+
+.mod-admin .reports-tabs button {
+  padding: 8px 13px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mod-admin .reports-tabs button.active {
+  background: rgba(110, 231, 208, 0.12);
+  color: var(--accent);
+}
+
+.mod-admin .reports-button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid rgba(110, 231, 208, 0.28);
+  border-radius: 12px;
+  background: rgba(110, 231, 208, 0.12);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mod-admin .reports-button.secondary {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.mod-admin .reports-card {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+}
+
+.mod-admin .reports-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.mod-admin .reports-filters label {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mod-admin .reports-filters select,
+.mod-admin .reports-filters input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.055);
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.mod-admin .reports-filters select option {
+  background: #10232c;
+  color: var(--ink);
+}
+
+.mod-admin .reports-filters input {
+  color-scheme: dark;
+}
+
+.mod-admin .reports-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mod-admin .reports-metrics .reports-card {
+  padding: 15px;
+}
+
+.mod-admin .reports-metric-button {
+  width: 100%;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.mod-admin .reports-metric-button:hover,
+.mod-admin .reports-metric-button.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.mod-admin .reports-metrics span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.mod-admin .reports-metrics strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+
+.mod-admin .reports-section-heading {
+  margin-bottom: 14px;
+}
+
+.mod-admin .reports-section-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 17px;
+}
+
+.mod-admin .reports-section-heading > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.mod-admin .reports-table-wrap {
+  width: 100%;
+  overflow: auto;
+}
+
+.mod-admin .reports-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.mod-admin .reports-table th,
+.mod-admin .reports-table td {
+  padding: 11px;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+}
+
+.mod-admin .reports-table th {
+  color: var(--muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.mod-admin .reports-table td {
+  color: var(--ink);
+}
+
+.mod-admin .reports-empty,
+.mod-admin .reports-audit-empty {
+  padding: 24px !important;
+  color: var(--muted) !important;
+  text-align: center;
+}
+
+.mod-admin .reports-audit-list {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mod-admin .reports-audit-list li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+}
+
+.mod-admin .reports-audit-list li > div,
+.mod-admin .reports-audit-list time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mod-admin .reports-audit-list strong {
+  font-size: 12px;
+}
+
+.mod-admin .reports-audit-list span,
+.mod-admin .reports-audit-list time,
+.mod-admin .reports-audit-list small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .reports-audit-list time {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.mod-admin .reports-audit-list small {
+  font-size: 10px;
+}
+
+@media (max-width: 760px) {
+  .mod-admin .reports-header,
+.mod-admin .reports-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mod-admin .reports-actions {
+    width: 100%;
+  }
+
+  .mod-admin .reports-button {
+    flex: 1;
+  }
+
+  .mod-admin .reports-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media print {
+  .mod-admin .reports-page {
+    color: #111;
+    gap: 8px;
+  }
+
+  .mod-admin .reports-header p,
+.mod-admin .reports-section-heading p,
+.mod-admin .reports-filters,
+.mod-admin .reports-actions,
+.mod-admin .reports-audit-card {
+    display: none !important;
+  }
+
+  .mod-admin .reports-card {
+    padding: 8px;
+    border: 1px solid #bbb;
+    background: white;
+    box-shadow: none;
+    color: #111;
+  }
+
+  .mod-admin .reports-table th,
+.mod-admin .reports-table td,
+.mod-admin .reports-header h1,
+.mod-admin .reports-section-heading h2,
+.mod-admin .reports-metrics strong,
+.mod-admin .reports-metrics span {
+    color: #111;
+  }
+}
+.mod-admin .productivity-reports .reports-tabs { margin-bottom: 18px; }
+.mod-admin .productivity-metric-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.mod-admin .productivity-metric-grid .reports-metric-button { min-height: 92px; }
+.mod-admin .productivity-metric-grid .reports-metric-button strong { display: block; margin-top: 10px; color: #f3f7f7; font-size: 24px; }
+.mod-admin .productivity-clickable { width: 100%; color: inherit; font: inherit; text-align: left; cursor: pointer; transition: transform 160ms ease, border-color 160ms ease, background 160ms ease; }
+.mod-admin .productivity-clickable:hover,
+.mod-admin .productivity-clickable:focus-visible { transform: translateY(-2px); border-color: rgba(114,230,193,.45); background: rgba(114,230,193,.09); outline: none; }
+.mod-admin .productivity-chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.mod-admin .productivity-chart { min-height: 230px; }
+.mod-admin .productivity-bars { display: flex; flex-direction: column; gap: 10px; }
+.mod-admin .productivity-bar-row { display: grid; grid-template-columns: minmax(90px, 1fr) minmax(100px, 2fr) 38px; align-items: center; gap: 9px; color: rgba(255,255,255,.7); font-size: 10px; }
+.mod-admin .productivity-bar-row span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mod-admin .productivity-bar-row div { height: 8px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.08); }
+.mod-admin .productivity-bar-row i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #72e6c1, #9d8cff); }
+.mod-admin .productivity-bar-row strong { color: #f3f7f7; text-align: right; }
+.mod-admin .reports-data-note { display: flex; align-items: center; gap: 9px; margin-bottom: 16px; padding: 12px 14px; color: rgba(255,255,255,.72); background: rgba(114,230,193,.08); border: 1px solid rgba(114,230,193,.22); border-radius: 12px; font-size: 12px; }
+.mod-admin .employee-report-profile { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.mod-admin .employee-report-profile h2 { margin: 0 0 5px; font-size: 18px; }
+.mod-admin .employee-report-profile p,
+.mod-admin .employee-report-profile span { margin: 0; color: rgba(255,255,255,.62); font-size: 12px; }
+.mod-admin .employee-report-profile span { display: block; margin-top: 7px; font-size: 11px; }
+.mod-admin .employee-avatar { display: grid; width: 54px; height: 54px; place-items: center; border-radius: 50%; background: rgba(114,230,193,.14); color: #72e6c1; }
+.mod-admin .daily-timeline { display: grid; gap: 9px; margin-top: 14px; padding: 13px; border-left: 2px solid rgba(114,230,193,.4); background: rgba(255,255,255,.025); }
+.mod-admin .daily-timeline > strong { color: #f3f7f7; font-size: 13px; }
+.mod-admin .reports-table td small { display: block; margin-top: 4px; color: rgba(255,255,255,.48); font-size: 10px; }
+.mod-admin .audit-page { gap: 18px; }
+.mod-admin .audit-scope-note { display: flex; align-items: center; gap: 9px; padding: 12px 14px; border: 1px solid rgba(110,231,208,.22); border-radius: 12px; background: rgba(110,231,208,.07); color: var(--muted); font-size: 12px; }
+.mod-admin .audit-page .audit-scope-note { display: none; }
+.mod-admin .audit-page .reports-data-note { display: none; }
+.mod-admin .audit-kpis { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.mod-admin .audit-kpis .reports-metric-button { min-height: 126px; }
+.mod-admin .audit-kpis .reports-metric-button > svg { color: var(--accent); }
+.mod-admin .audit-kpis .reports-metric-button small { display: block; margin-top: 8px; color: var(--muted); font-size: 10px; }
+.mod-admin .audit-filters { grid-template-columns: minmax(210px, 1.5fr) repeat(4, minmax(120px, 1fr)) repeat(2, minmax(125px, 1fr)) auto; align-items: end; }
+.mod-admin .audit-filters label > span { color: var(--muted); font-size: 11px; font-weight: 700; }
+.mod-admin .audit-search > div { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 10px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.055); }
+.mod-admin .audit-search input { min-height: 30px !important; padding: 5px 0 !important; border: 0 !important; background: transparent !important; }
+.mod-admin .audit-search input:focus { box-shadow: none; }
+.mod-admin .audit-clear { min-height: 40px; white-space: nowrap; }
+.mod-admin .audit-table { min-width: 1120px; }
+.mod-admin .audit-table td { vertical-align: top; }
+.mod-admin .audit-table time { white-space: nowrap; }
+.mod-admin .audit-status { display: inline-flex; padding: 4px 8px; border-radius: 999px; font-size: 10px; font-weight: 800; }
+.mod-admin .audit-status.success { color: #8df0c6; background: rgba(74,222,159,.12); }
+.mod-admin .audit-status.failed { color: #ff9ca9; background: rgba(251,113,133,.12); }
+.mod-admin .audit-view-button { display: inline-flex; align-items: center; gap: 5px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--accent); font-size: 10px; font-weight: 700; white-space: nowrap; }
+.mod-admin .audit-view-button:hover { border-color: var(--accent); background: rgba(110,231,208,.08); }
+.mod-admin .reports-empty { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+.mod-admin .reports-empty small { color: var(--muted); font-size: 10px; }
+.mod-admin .audit-pagination { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; color: var(--muted); font-size: 11px; }
+.mod-admin .audit-pagination div { display: flex; gap: 6px; }
+.mod-admin .audit-pagination button { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--ink); }
+.mod-admin .audit-pagination button:disabled { cursor: not-allowed; opacity: .35; }
+.mod-admin .audit-modal-backdrop { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(1,9,13,.72); }
+.mod-admin .audit-modal { width: min(680px, 100%); max-height: 90vh; overflow: auto; padding: 22px; border: 1px solid rgba(196,230,231,.18); border-radius: 20px; background: #11262f; box-shadow: 0 24px 70px rgba(0,0,0,.45); }
+.mod-admin .audit-modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.mod-admin .audit-modal-header h2 { margin: 0; font-size: 22px; }
+.mod-admin .audit-modal-header button { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid var(--line); border-radius: 9px; background: transparent; color: var(--ink); }
+.mod-admin .audit-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; margin: 20px 0; }
+.mod-admin .audit-detail-grid div { min-width: 0; }
+.mod-admin .audit-detail-grid dt { margin-bottom: 5px; color: var(--muted); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+.mod-admin .audit-detail-grid dd { margin: 0; color: var(--ink); font-size: 12px; overflow-wrap: anywhere; }
+.mod-admin .audit-modal-footer { display: flex; align-items: center; gap: 7px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.mod-admin .configuration-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.mod-admin .configuration-item { min-height: 112px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.025); }
+.mod-admin .configuration-item span,
+.mod-admin .configuration-item small { display: block; color: var(--muted); font-size: 11px; }
+.mod-admin .configuration-item strong { display: block; margin: 8px 0; color: var(--accent); font-size: 22px; }
+.mod-admin .configuration-item small { line-height: 1.5; }
+@media (max-width: 1180px) { .mod-admin .audit-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } .mod-admin .audit-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); } .mod-admin .audit-search { grid-column: span 3; } }
+@media (max-width: 720px) { .mod-admin .audit-kpis,
+.mod-admin .audit-filters,
+.mod-admin .configuration-grid { grid-template-columns: 1fr 1fr; } .mod-admin .audit-search { grid-column: span 2; } .mod-admin .audit-clear { width: 100%; } .mod-admin .audit-detail-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) { .mod-admin .productivity-metric-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .mod-admin .productivity-metric-grid,
+.mod-admin .productivity-chart-grid { grid-template-columns: 1fr; } .mod-admin .productivity-tabs { flex-wrap: wrap; } }

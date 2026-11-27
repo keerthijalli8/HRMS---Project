@@ -1,0 +1,1382 @@
+
+/* =========================================
+   MONSOON GLASS THEME
+========================================= */
+
+.mod-superadmin {
+  color-scheme: dark;
+
+  --bg: #06141c;
+  --surface: rgba(255, 255, 255, 0.07);
+  --surface2: rgba(255, 255, 255, 0.10);
+  --ink: #ecfbf8;
+  --muted: #9db9bb;
+  --line: rgba(255, 255, 255, 0.15);
+
+  --accent: #6ee7d0;
+  --on-accent: #032a24;
+  --accent2: #9b8cff;
+
+  --good: #5eead4;
+  --warn: #fcd34d;
+  --bad: #fda4af;
+  --info: #93c5fd;
+
+  --font-display: "Syne", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-data: "Manrope", sans-serif;
+
+  --radius: 22px;
+  --pad: 20px;
+  --gap: 14px;
+
+  --rail: 180px;
+  --rail-collapsed: 64px;
+
+  --card-border: 1px solid var(--line);
+  --card-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.7);
+  --blur: blur(18px) saturate(140%);
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+:where(.mod-superadmin *) {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.mod-superadmin {
+  min-width: 320px;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+.mod-superadmin {
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.45;
+
+  background:
+    radial-gradient(
+      ellipse 900px 850px at 0% 0%,
+      rgba(15, 74, 82, 0.72) 0%,
+      rgba(15, 74, 82, 0.25) 45%,
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 850px 750px at 100% 0%,
+      rgba(58, 42, 122, 0.65) 0%,
+      rgba(58, 42, 122, 0.22) 48%,
+      transparent 78%
+    ),
+    #06141c;
+
+  background-attachment: fixed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+.mod-superadmin button,
+.mod-superadmin input,
+.mod-superadmin select,
+.mod-superadmin textarea {
+  font: inherit;
+}
+
+.mod-superadmin button {
+  cursor: pointer;
+}
+
+.mod-superadmin button:focus-visible,
+.mod-superadmin a:focus-visible,
+.mod-superadmin input:focus-visible,
+.mod-superadmin select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mod-superadmin a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mod-superadmin {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.mod-superadmin [hidden] {
+  display: none !important;
+}
+
+/* =========================================
+   APP SHELL - FIXED GRID
+========================================= */
+
+.mod-superadmin .app-shell {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+
+  display: grid;
+  align-items: start;
+
+  /* Fixed sidebar track and flexible dashboard track */
+  grid-template-columns: minmax(0, var(--rail)) minmax(0, 1fr);
+
+  column-gap: 18px;
+
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+
+  transition: grid-template-columns 0.22s ease;
+}
+
+/* Collapsed sidebar grid */
+
+.mod-superadmin .app-shell:has(.sidebar.sidebar-collapsed) {
+  grid-template-columns: minmax(0, var(--rail-collapsed)) minmax(0, 1fr);
+}
+
+/* =========================================
+   SIDEBAR GRID ITEM
+========================================= */
+
+.mod-superadmin .sidebar-wrapper {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  position: sticky;
+  top: 0;
+  align-self: start;
+
+  overflow: visible;
+}
+
+.mod-superadmin .sidebar {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 100vh;
+  min-height: 100vh;
+
+  position: relative;
+  z-index: 30;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 6px 0 20px;
+
+  overflow-y: auto;
+  overflow-x: visible;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  background: transparent;
+  border: none;
+}
+
+.mod-superadmin .sidebar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* =========================================
+   SIDEBAR BRAND
+========================================= */
+
+.mod-superadmin .sidebar-brand {
+  width: 100%;
+  min-height: 92px;
+  height: 92px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 4px;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.mod-superadmin .brand-logo {
+  width: 224px;
+  max-width: calc(100% - 8px);
+  height: auto;
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* =========================================
+   SIDEBAR DIVIDER
+========================================= */
+
+.mod-superadmin .sidebar-divider {
+  width: calc(100% - 16px);
+  height: 1px;
+  flex-shrink: 0;
+
+  margin: 12px 8px 16px;
+
+  background: var(--line);
+}
+
+/* =========================================
+   SIDEBAR SECTION
+========================================= */
+
+.mod-superadmin .sidebar-section-label {
+  width: 100%;
+  min-height: 36px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8px 8px 12px;
+
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.mod-superadmin .sidebar-toggle {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  color: var(--muted);
+  background: var(--surface);
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.mod-superadmin .sidebar-toggle:hover {
+  color: var(--accent);
+  background: var(--surface2);
+  border-color: var(--accent);
+}
+
+/* =========================================
+   SIDEBAR NAVIGATION
+========================================= */
+
+.mod-superadmin .sidebar-navigation {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mod-superadmin .sidebar-link {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 14px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.mod-superadmin .sidebar-link svg {
+  flex-shrink: 0;
+  stroke-width: 1.8;
+}
+
+.mod-superadmin .sidebar-link:hover {
+  color: var(--ink);
+  background: var(--surface2);
+}
+
+.mod-superadmin .sidebar-link.active {
+  color: var(--ink);
+  background: var(--surface2);
+  border-color: var(--line);
+}
+
+.mod-superadmin .sidebar-link.active svg {
+  color: var(--accent);
+}
+
+/* =========================================
+   COLLAPSED SIDEBAR
+========================================= */
+
+.mod-superadmin .sidebar-collapsed {
+  width: 100%;
+  min-width: 0;
+}
+
+.mod-superadmin .sidebar-collapsed .sidebar-brand {
+  justify-content: center;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.mod-superadmin .sidebar-collapsed .brand-logo {
+  width: 56px;
+  max-width: 56px;
+  height: auto;
+}
+
+.mod-superadmin .sidebar-collapsed .sidebar-section-label > span {
+  display: none;
+}
+
+.mod-superadmin .sidebar-collapsed .sidebar-section-label {
+  justify-content: center;
+  padding: 0 0 8px;
+}
+
+.mod-superadmin .sidebar-collapsed .sidebar-link {
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.mod-superadmin .sidebar-collapsed .sidebar-link span {
+  display: none;
+}
+
+/* =========================================
+   MAIN AREA
+========================================= */
+
+.mod-superadmin .main-area {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  overflow-x: clip;
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.mod-superadmin .topbar {
+  width: 100%;
+  min-width: 0;
+  min-height: 66px;
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 10px 0;
+
+  background: rgba(6, 20, 28, 0.45);
+  border-bottom: 1px solid var(--line);
+
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+}
+
+.mod-superadmin .topbar-left,
+.mod-superadmin .topbar-right {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.mod-superadmin .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mod-superadmin .breadcrumb strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.mod-superadmin .breadcrumb-separator {
+  color: var(--muted);
+}
+
+.mod-superadmin .topbar-right {
+  position: relative;
+  gap: 12px;
+}
+
+/* =========================================
+   TOPBAR SEARCH
+========================================= */
+
+.mod-superadmin .topbar-search-wrap,
+.mod-superadmin .topbar-action-wrap {
+  position: relative;
+}
+
+.mod-superadmin .topbar-search {
+  width: 220px;
+  max-width: 100%;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  color: var(--muted);
+  background: var(--surface);
+}
+
+.mod-superadmin .topbar-search input {
+  width: 100%;
+  min-width: 0;
+
+  outline: none;
+  border: none;
+
+  color: var(--ink);
+  background: transparent;
+
+  font-size: 11px;
+}
+
+.mod-superadmin .topbar-search input::placeholder {
+  color: var(--muted);
+}
+
+.mod-superadmin .topbar-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--surface);
+  font-family: var(--font-data);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.mod-superadmin .topbar-date svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.mod-superadmin .topbar-search-wrap { order: 2; }
+.mod-superadmin .topbar-theme-wrap { order: 1; }
+.mod-superadmin .topbar-date { order: 3; }
+.mod-superadmin .topbar-notification-wrap { order: 4; }
+.mod-superadmin .topbar-switcher-wrap { order: 5; flex-shrink: 0; }
+.mod-superadmin .topbar-divider { order: 6; }
+.mod-superadmin .profile-menu { order: 7; }
+
+/* =========================================
+   TOPBAR ICONS
+========================================= */
+
+.mod-superadmin .topbar-icon-button {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid transparent;
+  border-radius: 50%;
+
+  color: var(--muted);
+  background: transparent;
+}
+
+.mod-superadmin .topbar-icon-button:hover {
+  color: var(--accent);
+  background: var(--surface2);
+}
+
+.mod-superadmin .notification-dot {
+  width: 7px;
+  height: 7px;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  border-radius: 50%;
+  background: var(--warn);
+}
+
+.mod-superadmin .notification-count {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg);
+  border-radius: 999px;
+  color: var(--bg);
+  background: var(--warn);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mod-superadmin .topbar-divider {
+  width: 1px;
+  height: 30px;
+  flex-shrink: 0;
+  background: var(--line);
+}
+
+/* =========================================
+   PROFILE MENU
+========================================= */
+
+.mod-superadmin .profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+
+  border: none;
+
+  color: var(--ink);
+  background: transparent;
+
+  text-align: left;
+}
+
+.mod-superadmin .profile-avatar {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: hsl(173 52% 40%);
+
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mod-superadmin .profile-text strong,
+.mod-superadmin .profile-text span {
+  display: block;
+}
+
+.mod-superadmin .profile-text strong {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mod-superadmin .profile-text span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-superadmin .profile-menu > svg {
+  color: var(--muted);
+}
+
+.mod-superadmin .topbar-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 60;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  background: #10232c;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.4);
+}
+
+.mod-superadmin .topbar-search-results {
+  top: calc(100% + 8px);
+  width: min(320px, calc(100vw - 32px));
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.mod-superadmin .topbar-search-popover {
+  width: min(340px, calc(100vw - 24px));
+  padding: 8px;
+}
+
+.mod-superadmin .topbar-search-popover .topbar-search {
+  width: 100%;
+}
+
+.mod-superadmin .topbar-search-popover .topbar-search-results {
+  width: 100%;
+  max-height: 300px;
+  margin-top: 8px;
+  overflow-y: auto;
+}
+
+.mod-superadmin .topbar-search-results button,
+.mod-superadmin .topbar-menu button {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  text-align: left;
+  font-size: 11px;
+}
+
+.mod-superadmin .topbar-search-results button:hover,
+.mod-superadmin .topbar-menu button:hover,
+.mod-superadmin .topbar-notifications > button:hover {
+  background: var(--surface2);
+}
+
+.mod-superadmin .topbar-search-results button small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+  .mod-superadmin .topbar-search-match {
+    padding: 0;
+    color: var(--accent);
+    background: transparent;
+    font-weight: 700;
+  }
+
+.mod-superadmin .topbar-empty {
+  padding: 14px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.mod-superadmin .topbar-menu {
+  width: 190px;
+  padding: 6px;
+}
+
+.mod-superadmin .topbar-menu-heading {
+  display: block;
+  padding: 8px 10px 5px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mod-superadmin .topbar-profile-menu {
+  top: calc(100% + 9px);
+  width: 200px;
+}
+
+.mod-superadmin .topbar-profile-menu button {
+  justify-content: flex-start;
+}
+
+.mod-superadmin .topbar-profile-menu button svg {
+  color: var(--muted);
+}
+
+.mod-superadmin .topbar-notifications {
+  width: min(360px, calc(100vw - 24px));
+  max-height: min(440px, calc(100vh - 90px));
+  overflow-y: auto;
+}
+
+.mod-superadmin .topbar-notifications-heading {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mod-superadmin .topbar-notifications-heading strong {
+  font-size: 12px;
+}
+
+.mod-superadmin .topbar-notifications-heading button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border: 0;
+  color: var(--accent);
+  background: transparent;
+  font-size: 10px;
+}
+
+.mod-superadmin .topbar-notifications-heading button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.mod-superadmin .topbar-notifications > .topbar-notification {
+  width: 100%;
+  display: grid;
+  gap: 4px;
+  padding: 11px 13px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  background: transparent;
+  text-align: left;
+  font-size: 10px;
+}
+
+.mod-superadmin .topbar-notification-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mod-superadmin .topbar-notification-title i {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.mod-superadmin .topbar-notification.is-read .topbar-notification-title {
+  color: var(--muted);
+}
+
+.mod-superadmin .topbar-notification small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.mod-superadmin[data-theme="light"] {
+  color-scheme: light;
+  --bg: #edf4f3;
+  --surface: rgba(15, 50, 55, 0.07);
+  --surface2: rgba(15, 50, 55, 0.11);
+  --ink: #102c32;
+  --muted: #557276;
+  --line: rgba(15, 50, 55, 0.18);
+  --accent: #138b79;
+  --on-accent: #ffffff;
+  --accent2: #6b5bc4;
+}
+
+.mod-superadmin[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #020b12;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface2: rgba(255, 255, 255, 0.1);
+  --ink: #ecfbf8;
+  --muted: #91afb2;
+  --line: rgba(255, 255, 255, 0.14);
+  --accent: #6ee7d0;
+  --on-accent: #032a24;
+  --accent2: #9b8cff;
+  --good: #5eead4;
+  --warn: #fcd34d;
+  --bad: #fda4af;
+  --info: #93c5fd;
+}
+
+.mod-superadmin[data-theme="dark"] {
+  background:
+    radial-gradient(ellipse 900px 850px at 0% 0%, rgba(15, 74, 82, 0.5), transparent 75%),
+    radial-gradient(ellipse 850px 750px at 100% 0%, rgba(58, 42, 122, 0.48), transparent 78%),
+    var(--bg);
+}
+
+.mod-superadmin[data-theme="dark"] .topbar {
+  background: rgba(2, 11, 18, 0.78);
+}
+
+.mod-superadmin[data-theme="light"] {
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 900px 850px at 0% 0%, rgba(15, 74, 82, 0.12), transparent 75%),
+    radial-gradient(ellipse 850px 750px at 100% 0%, rgba(58, 42, 122, 0.1), transparent 78%),
+    #edf4f3;
+}
+
+.mod-superadmin[data-theme="light"] .topbar {
+  background: rgba(237, 244, 243, 0.76);
+}
+
+.mod-superadmin[data-theme="light"] .topbar-popover {
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(16, 44, 50, 0.16);
+}
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mod-superadmin .mobile-menu-button {
+  display: none;
+
+  width: 34px;
+  height: 34px;
+
+  place-items: center;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  color: var(--ink);
+  background: var(--surface);
+}
+
+/* =========================================
+   PAGE CONTENT
+========================================= */
+
+.mod-superadmin .page-content {
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100vh - 66px);
+
+  padding: 28px 0 24px;
+}
+
+.mod-superadmin .global-back-button {
+  display: inline-grid;
+  place-items: center;
+  margin-bottom: 18px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+/* Shared main KPI geometry. Page-specific classes retain their tone/icon colors. */
+.mod-superadmin .page-content .sa-main-kpi-grid,
+.mod-superadmin .page-content .dash-kpi-grid,
+.mod-superadmin .page-content .tenant-stats-grid,
+.mod-superadmin .page-content .org-kpi-grid,
+.mod-superadmin .page-content .subscription-stats-grid,
+.mod-superadmin .page-content .plan-v3-kpi-grid,
+.mod-superadmin .page-content .bill-overview-stats,
+.mod-superadmin .page-content .bill-stats,
+.mod-superadmin .page-content .mm-overview-stats,
+.mod-superadmin .page-content .mm-stats,
+.mod-superadmin .page-content .pu-stats,
+.mod-superadmin .page-content .ua-stats,
+.mod-superadmin .page-content .mon-stats,
+.mod-superadmin .page-content .sal-stats,
+.mod-superadmin .page-content .sup-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.mod-superadmin .page-content .sa-main-kpi-card,
+.mod-superadmin .page-content .dash-kpi-grid > .dash-kpi-card,
+.mod-superadmin .page-content .tenant-stats-grid > .tenant-stat-card,
+.mod-superadmin .page-content .org-kpi-grid > .org-kpi,
+.mod-superadmin .page-content .subscription-stats-grid > .subscription-stat-card,
+.mod-superadmin .page-content .plan-v3-kpi-grid > .plan-v3-kpi,
+.mod-superadmin .page-content .bill-overview-stats > .bill-stat-card,
+.mod-superadmin .page-content .bill-stats > .bill-stat-card,
+.mod-superadmin .page-content .mm-overview-stats > .mm-overview-stat,
+.mod-superadmin .page-content .mm-stats > .mm-stat-card,
+.mod-superadmin .page-content .pu-stats > .pu-stat-card,
+.mod-superadmin .page-content .ua-stats > .ua-stat-card,
+.mod-superadmin .page-content .mon-stats > .mon-metric,
+.mod-superadmin .page-content .sal-stats > .sal-stat,
+.mod-superadmin .page-content .sup-stats > .sup-stat-card {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 132px;
+  height: 100%;
+  padding: 18px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.mod-superadmin .page-content .sa-main-kpi-card > strong,
+.mod-superadmin .page-content .sa-main-kpi-card > h2,
+.mod-superadmin .page-content .dash-kpi-grid > .dash-kpi-card > strong,
+.mod-superadmin .page-content .tenant-stats-grid > .tenant-stat-card > h2,
+.mod-superadmin .page-content .org-kpi-grid > .org-kpi > strong,
+.mod-superadmin .page-content .subscription-stats-grid > .subscription-stat-card > h2,
+.mod-superadmin .page-content .plan-v3-kpi-grid > .plan-v3-kpi strong,
+.mod-superadmin .page-content .bill-overview-stats > .bill-stat-card > strong,
+.mod-superadmin .page-content .bill-stats > .bill-stat-card > strong,
+.mod-superadmin .page-content .mm-overview-stats > .mm-overview-stat > strong,
+.mod-superadmin .page-content .mm-stats > .mm-stat-card > strong,
+.mod-superadmin .page-content .pu-stats > .pu-stat-card > strong,
+.mod-superadmin .page-content .ua-stats > .ua-stat-card > strong,
+.mod-superadmin .page-content .mon-stats > .mon-metric > strong,
+.mod-superadmin .page-content .sal-stats > .sal-stat > strong,
+.mod-superadmin .page-content .sup-stats > .sup-stat-card > strong {
+  line-height: 1.1;
+}
+
+.mod-superadmin .page-content .sa-main-kpi-card > small,
+.mod-superadmin .page-content .dash-kpi-grid > .dash-kpi-card > small,
+.mod-superadmin .page-content .tenant-stats-grid > .tenant-stat-card > small,
+.mod-superadmin .page-content .org-kpi-grid > .org-kpi > small,
+.mod-superadmin .page-content .subscription-stats-grid > .subscription-stat-card > small,
+.mod-superadmin .page-content .plan-v3-kpi-grid > .plan-v3-kpi small,
+.mod-superadmin .page-content .bill-overview-stats > .bill-stat-card > small,
+.mod-superadmin .page-content .bill-stats > .bill-stat-card > small,
+.mod-superadmin .page-content .mm-overview-stats > .mm-overview-stat > small,
+.mod-superadmin .page-content .mm-stats > .mm-stat-card > small,
+.mod-superadmin .page-content .pu-stats > .pu-stat-card > small,
+.mod-superadmin .page-content .ua-stats > .ua-stat-card > small,
+.mod-superadmin .page-content .mon-stats > .mon-metric > small,
+.mod-superadmin .page-content .sal-stats > .sal-stat > small,
+.mod-superadmin .page-content .sup-stats > .sup-stat-card > small {
+  line-height: 1.35;
+}
+
+.mod-superadmin .page-content .sa-main-kpi-card:focus-visible,
+.mod-superadmin .page-content .dash-kpi-grid > .dash-kpi-card:focus-visible,
+.mod-superadmin .page-content .tenant-stats-grid > .tenant-stat-card:focus-visible,
+.mod-superadmin .page-content .org-kpi-grid > .org-kpi:focus-visible,
+.mod-superadmin .page-content .subscription-stats-grid > .subscription-stat-card:focus-visible,
+.mod-superadmin .page-content .plan-v3-kpi-grid > .plan-v3-kpi:focus-visible,
+.mod-superadmin .page-content .bill-overview-stats > .bill-stat-card:focus-visible,
+.mod-superadmin .page-content .bill-stats > .bill-stat-card:focus-visible,
+.mod-superadmin .page-content .mm-overview-stats > .mm-overview-stat:focus-visible,
+.mod-superadmin .page-content .mm-stats > .mm-stat-card:focus-visible,
+.mod-superadmin .page-content .pu-stats > .pu-stat-card:focus-visible,
+.mod-superadmin .page-content .ua-stats > .ua-stat-card:focus-visible,
+.mod-superadmin .page-content .mon-stats > .mon-metric:focus-visible,
+.mod-superadmin .page-content .sal-stats > .sal-stat:focus-visible,
+.mod-superadmin .page-content .sup-stats > .sup-stat-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1100px) {
+  .mod-superadmin .page-content .sa-main-kpi-grid,
+.mod-superadmin .page-content .dash-kpi-grid,
+.mod-superadmin .page-content .tenant-stats-grid,
+.mod-superadmin .page-content .org-kpi-grid,
+.mod-superadmin .page-content .subscription-stats-grid,
+.mod-superadmin .page-content .plan-v3-kpi-grid,
+.mod-superadmin .page-content .bill-overview-stats,
+.mod-superadmin .page-content .bill-stats,
+.mod-superadmin .page-content .mm-overview-stats,
+.mod-superadmin .page-content .mm-stats,
+.mod-superadmin .page-content .pu-stats,
+.mod-superadmin .page-content .ua-stats,
+.mod-superadmin .page-content .mon-stats,
+.mod-superadmin .page-content .sal-stats,
+.mod-superadmin .page-content .sup-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+  .mod-superadmin .page-content .sa-main-kpi-grid,
+.mod-superadmin .page-content .dash-kpi-grid,
+.mod-superadmin .page-content .tenant-stats-grid,
+.mod-superadmin .page-content .org-kpi-grid,
+.mod-superadmin .page-content .subscription-stats-grid,
+.mod-superadmin .page-content .plan-v3-kpi-grid,
+.mod-superadmin .page-content .bill-overview-stats,
+.mod-superadmin .page-content .bill-stats,
+.mod-superadmin .page-content .mm-overview-stats,
+.mod-superadmin .page-content .mm-stats,
+.mod-superadmin .page-content .pu-stats,
+.mod-superadmin .page-content .ua-stats,
+.mod-superadmin .page-content .mon-stats,
+.mod-superadmin .page-content .sal-stats,
+.mod-superadmin .page-content .sup-stats { grid-template-columns: 1fr; gap: 12px; }
+}
+
+.mod-superadmin .global-back-button:hover {
+  border-color: var(--accent);
+  background: var(--surface2);
+}
+
+/* Modal dismiss controls are provided by the shared top-right X. Keep only
+   productive actions such as Save, Update, Submit and Delete in modal footers. */
+.mod-superadmin .page-content .plan-v3-modal-actions .plan-v3-secondary,
+.mod-superadmin .page-content .mm-modal .mm-actions .mm-secondary,
+.mod-superadmin .page-content .pu-modal .pu-actions .pu-secondary,
+.mod-superadmin .page-content .sup-modal .sup-actions .sup-secondary,
+.mod-superadmin .page-content .st-modal .st-modal-footer .st-secondary,
+.mod-superadmin .page-content .tenant-modal .tenant-modal-footer .tenant-cancel-btn,
+.mod-superadmin .page-content .org-edit-modal .org-modal-footer .org-cancel-btn,
+.mod-superadmin .page-content .subscription-modal .subscription-modal-actions .subscription-btn.secondary,
+.mod-superadmin .page-content .bill-modal .bill-form-grid ~ .bill-modal-actions .bill-secondary {
+  display: none;
+}
+
+/* Shared Dashboard pill KPI hover language */
+.mod-superadmin .sa-pill-kpi {
+  transition: all 0.22s ease !important;
+}
+
+.mod-superadmin .sa-pill-kpi:not(.active):not(.is-active):hover {
+  color: #ecfbf8;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.mod-superadmin .sa-pill-kpi:not(.active):not(.is-active):hover svg {
+  color: #6ee7d0;
+}
+
+.mod-superadmin .sa-pill-kpi:focus-visible {
+  outline: 2px solid #6ee7d0;
+  outline-offset: 2px;
+}
+
+/* =========================================
+   PLACEHOLDER PAGE
+========================================= */
+
+.mod-superadmin .page-placeholder {
+  min-height: 360px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mod-superadmin .placeholder-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  color: var(--accent);
+  background: var(--surface);
+}
+
+.mod-superadmin .page-placeholder h1 {
+  margin-top: 16px;
+
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.mod-superadmin .page-placeholder p {
+  max-width: 440px;
+  margin-top: 8px;
+
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================================
+   MOBILE SIDEBAR OVERLAY
+========================================= */
+
+.mod-superadmin .mobile-sidebar-overlay {
+  display: none;
+}
+
+/* =========================================
+   TABLET AND MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+  .mod-superadmin .app-shell,
+.mod-superadmin .app-shell:has(.sidebar-collapsed) {
+    display: block;
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+
+  .mod-superadmin .sidebar-wrapper {
+    width: 260px;
+    max-width: 85vw;
+    height: 100vh;
+    min-height: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+
+    padding: 12px;
+
+    background: transparent;
+    border-right: none;
+
+    transform: translateX(-110%);
+    transition: transform 0.25s ease;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .mod-superadmin .sidebar-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mod-superadmin .sidebar-wrapper.mobile-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .mod-superadmin .sidebar {
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 24px);
+
+    position: relative;
+    padding: 8px 0;
+    overflow: visible;
+  }
+
+  .mod-superadmin .sidebar-brand {
+    min-height: 92px;
+    height: 92px;
+  }
+
+  .mod-superadmin .brand-logo {
+    height: auto;
+  }
+
+  .mod-superadmin .sidebar-collapsed .sidebar-brand {
+    justify-content: center;
+  }
+
+  .mod-superadmin .sidebar-collapsed .brand-logo {
+    width: 56px;
+    max-width: 56px;
+    height: auto;
+  }
+
+  .mod-superadmin .sidebar-collapsed .sidebar-section-label {
+    justify-content: flex-end;
+  }
+
+  .mod-superadmin .sidebar-collapsed .sidebar-section-label > span {
+    display: block;
+  }
+
+  .mod-superadmin .sidebar-collapsed .sidebar-link {
+    justify-content: flex-start;
+    padding: 10px 12px;
+  }
+
+  .mod-superadmin .sidebar-collapsed .sidebar-link span {
+    display: inline;
+  }
+
+  .mod-superadmin .sidebar-navigation {
+    padding: 6px 0 10px;
+  }
+
+  .mod-superadmin .mobile-sidebar-overlay.show {
+    display: block;
+
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    background: rgba(0, 0, 0, 0.58);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .mod-superadmin .main-area {
+    width: 100%;
+  }
+
+  .mod-superadmin .mobile-menu-button {
+    display: grid;
+    margin-right: 10px;
+  }
+
+  .mod-superadmin .topbar {
+    min-height: 58px;
+  }
+
+  .mod-superadmin .page-content {
+    min-height: calc(100vh - 58px);
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .mod-superadmin .topbar {
+    gap: 8px;
+  }
+
+  .mod-superadmin .breadcrumb {
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .mod-superadmin .topbar-search {
+    display: none;
+  }
+
+  .mod-superadmin .topbar-date {
+    display: none;
+  }
+
+  .mod-superadmin .topbar-right {
+    gap: 5px;
+  }
+
+  .mod-superadmin .profile-text,
+.mod-superadmin .profile-menu > svg,
+.mod-superadmin .topbar-divider {
+    display: none;
+  }
+
+  .mod-superadmin .page-content {
+    padding-top: 20px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .mod-superadmin *,
+.mod-superadmin *::before,
+.mod-superadmin *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Remove the vertical separator between sidebar and dashboard */
+@media (min-width: 901px) {
+  .mod-superadmin .sidebar-wrapper,
+.mod-superadmin .sidebar,
+.mod-superadmin .main-area {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .mod-superadmin .sidebar-wrapper {
+    background: transparent !important;
+  }
+
+  .mod-superadmin .sidebar {
+    background: transparent !important;
+  }
+
+  .mod-superadmin .main-area {
+    background: transparent !important;
+  }
+}
+.mod-superadmin .global-save-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  max-width: min(360px, calc(100vw - 32px));
+  padding: 12px 16px;
+  border: 1px solid rgba(110, 231, 208, 0.42);
+  border-radius: 12px;
+  color: #d9fff6;
+  background: rgba(18, 61, 61, 0.96);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
+  font-size: 12px;
+}
+

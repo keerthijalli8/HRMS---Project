@@ -1,0 +1,245 @@
+.mod-admin .admin-layout {
+  position: relative;
+}
+
+.mod-admin .admin-sidebar {
+  color: var(--sidebar-text, var(--ink));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--sidebar-bg, #0a3035) 72%, transparent), var(--sidebar-bg, #03131a) 44%),
+    var(--sidebar-bg, #03141b);
+}
+
+.mod-admin .sidebar-logo {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.mod-admin .sidebar-menu a,
+.mod-admin .sidebar-footer a,
+.mod-admin .sidebar-logout {
+  border-radius: 999px;
+}
+
+.mod-admin .sidebar-menu a.active {
+  border-color: rgba(110, 231, 208, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--ink);
+}
+
+.mod-admin .sidebar-menu a.active svg {
+  color: var(--accent);
+}
+
+.mod-admin .admin-main-content {
+  padding: 18px 0 28px;
+}
+
+.mod-admin .admin-main-content :is( .dashboard-page, .attendance-page, .employees-page, .departments-page, .documents-page, .leaves-page, .payroll-page, .settings-page, .module-page ) {
+  width: 100%;
+  min-height: 0;
+  padding: 8px 18px 24px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+.mod-admin .admin-main-content :is( .dashboard-header, .attendance-page-header, .employees-header, .departments-header, .documents-header, .leaves-header, .payroll-header, .settings-header, .module-page-header ) {
+  min-height: 66px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+}
+
+.mod-admin .admin-main-content h1 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.mod-admin .admin-main-content :is(h2, h3, h4) {
+  color: var(--ink);
+  font-family: var(--font-display);
+}
+
+.mod-admin .admin-main-content :is( .dashboard-header p, .attendance-page-header p, .employees-header p, .departments-header p, .documents-header p, .leaves-header p, .payroll-header p, .settings-header p ) {
+  color: var(--muted);
+}
+
+.mod-admin .admin-main-content [class*="card"],
+.mod-admin .admin-main-content [class*="panel"],
+.mod-admin .admin-main-content [class*="summary-box"],
+.mod-admin .admin-main-content [class*="punch-details"],
+.mod-admin .admin-main-content [class*="punch-counts"] > div,
+.mod-admin .admin-main-content [class*="history-item"],
+.mod-admin .admin-main-content [class*="role-card"] {
+  border-color: rgba(196, 230, 231, 0.12);
+  border-radius: 20px;
+  background-color: rgba(17, 38, 47, 0.72);
+  box-shadow: 0 16px 38px -27px rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+}
+
+.mod-admin .admin-main-content [class*="card"]:hover {
+  border-color: rgba(110, 231, 208, 0.28);
+}
+
+.mod-admin .admin-main-content :is( .overview-attendance, .dashboard-calendar-card, .dashboard-activity-card, .attendance-calendar-card, .attendance-records-card, .employee-table-card, .employee-detail-card, .department-table-card, .documents-panel, .leaves-calendar-card, .payroll-table-card, .settings-card, .module-card, .module-metric-card ) {
+  border-color: rgba(196, 230, 231, 0.12);
+  background: var(--card-bg, rgba(17, 38, 47, 0.76));
+  box-shadow: 0 16px 38px -27px rgba(0, 0, 0, 0.88);
+}
+
+.mod-admin .admin-main-content :is( .dashboard-date, .employees-total-badge, .attendance-live-time, .module-notice ) {
+  border-color: rgba(110, 231, 208, 0.22);
+  background: rgba(110, 231, 208, 0.08);
+  color: var(--accent);
+}
+
+.mod-admin .admin-main-content :is(button, input, select, textarea) {
+  font-family: var(--font-body);
+}
+
+.mod-admin .admin-main-content :is(input, select, textarea) {
+  border-color: rgba(196, 230, 231, 0.16);
+  border-radius: 12px;
+  background-color: rgba(6, 20, 28, 0.72);
+  color: var(--ink);
+}
+
+.mod-admin .admin-main-content :is(input, select, textarea)::placeholder {
+  color: rgba(157, 185, 187, 0.72);
+}
+
+.mod-admin .admin-main-content :is( .department-add-btn, .attendance-action-btn, .documents-upload-btn, .employee-add-button, .payroll-action-btn, .module-button ) {
+  border-radius: 999px;
+}
+
+.mod-admin .admin-main-content :is(.checkin-btn, .checkout-btn) {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.mod-admin .admin-main-content :is(.dashboard-page, .employees-page, .attendance-page) {
+  color: var(--ink);
+}
+
+.mod-admin .admin-main-content table {
+  border-color: rgba(196, 230, 231, 0.1);
+}
+
+.mod-admin .admin-main-content th {
+  color: var(--muted);
+}
+
+.mod-admin .admin-main-content td {
+  border-color: rgba(196, 230, 231, 0.08);
+}
+
+.mod-admin .admin-main-content tr:hover td {
+  background: rgba(110, 231, 208, 0.035);
+}
+
+.mod-admin .admin-main-content :is( .dashboard-calendar-header, .dashboard-activity-header, .attendance-calendar-header, .attendance-records-header, .documents-panel-header, .department-detail-header, .module-card-heading ) {
+  border-color: rgba(196, 230, 231, 0.15);
+}
+
+@media (max-width: 900px) {
+  .mod-admin .admin-main-content {
+    padding: 10px 0 24px;
+  }
+
+  .mod-admin .admin-main-content :is( .dashboard-page, .attendance-page, .employees-page, .departments-page, .documents-page, .leaves-page, .payroll-page, .settings-page, .module-page ) {
+    padding: 4px 10px 20px;
+  }
+}
+
+/* Consistent medium KPI sizing across HRMS modules. */
+.mod-admin .admin-main-content :is( .dashboard-stats, .attendance-summary-cards, .department-stats, .leaves-stats, .documents-stats, .payroll-stats, .ann-kpi-grid, .module-metrics, .support-metrics, .automation-payroll-primary .automation-payroll-kpis .kpis, .payroll-kpi-grid, .module-kpi-grid ) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mod-admin .admin-main-content .module-kpi-grid { display: grid; margin-bottom: 16px; }
+.mod-admin .admin-main-content .payroll-kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+
+.mod-admin .admin-main-content :is( .dashboard-stat-card, .attendance-summary-card, .department-stat-card, .leaves-stat-card, .document-stat-card, .payroll-stat-card, .payroll-metric-card, .ann-kpi-card, .module-metric-card, .automation-payroll-primary .automation-payroll-kpis .kpi-card ) {
+  min-height: 108px;
+  padding: 15px;
+  border-radius: 14px;
+}
+
+.mod-admin .admin-main-content :is( .dashboard-stat-icon, .attendance-summary-icon, .department-stat-icon, .leaves-stat-icon, .payroll-stat-icon, .ann-kpi-icon, .module-metric-icon ) {
+  width: 38px;
+  height: 38px;
+}
+
+.mod-admin .admin-main-content :is( .dashboard-stat-info h2, .attendance-summary-card h2, .department-stat-card h2, .leaves-stat-card h2, .document-stat-card h2, .payroll-stat-card h2, .ann-kpi-card strong, .module-metric-card > strong, .automation-payroll-primary .automation-payroll-kpis .kpi-card > strong ) {
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.mod-admin .admin-main-content :is( .dashboard-stat-info p, .attendance-summary-card p, .leaves-stat-card p, .document-stat-card p, .payroll-stat-card p, .ann-kpi-label, .module-metric-heading, .automation-payroll-primary .automation-payroll-kpis .kpi-card > span ) {
+  font-size: 11px;
+}
+
+.mod-admin .admin-main-content .employee-summary-card {
+  min-height: 96px;
+  padding: 15px;
+}
+
+.mod-admin .admin-main-content .employee-summary-card h2 { font-size: 22px; }
+
+.mod-admin .admin-main-content .automation-payroll-primary .automation-payroll-kpis {
+  overflow-x: visible;
+}
+
+@media (max-width: 1180px) {
+  .mod-admin .admin-main-content :is( .dashboard-stats, .attendance-summary-cards, .department-stats, .leaves-stats, .documents-stats, .payroll-stats, .ann-kpi-grid, .module-metrics, .support-metrics, .automation-payroll-primary .automation-payroll-kpis .kpis, .payroll-kpi-grid, .module-kpi-grid ) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mod-admin .admin-main-content .payroll-kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 760px) {
+  .mod-admin .admin-main-content :is( .dashboard-stats, .attendance-summary-cards, .department-stats, .leaves-stats, .documents-stats, .payroll-stats, .ann-kpi-grid, .module-metrics, .support-metrics, .automation-payroll-primary .automation-payroll-kpis .kpis, .payroll-kpi-grid, .module-kpi-grid ) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mod-admin .admin-main-content .payroll-kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 460px) {
+  .mod-admin .admin-main-content :is( .dashboard-stats, .attendance-summary-cards, .department-stats, .leaves-stats, .documents-stats, .payroll-stats, .ann-kpi-grid, .module-metrics, .support-metrics, .automation-payroll-primary .automation-payroll-kpis .kpis, .payroll-kpi-grid, .module-kpi-grid ) { grid-template-columns: 1fr; }
+  .mod-admin .admin-main-content .payroll-kpi-grid { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 560px) {
+  .mod-admin .admin-main-content :is( .dashboard-header, .attendance-page-header, .employees-header, .departments-header, .documents-header, .leaves-header, .payroll-header, .settings-header, .module-page-header ) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mod-admin .admin-main-content [class*="card"],
+.mod-admin .admin-main-content [class*="panel"] {
+    border-radius: 16px;
+  }
+}
+
+@media print {
+  .mod-admin .admin-sidebar {
+    display: none;
+  }
+
+  .mod-admin .admin-layout {
+    display: block;
+    width: 100%;
+  }
+
+  .mod-admin .admin-main-content {
+    padding: 0;
+  }
+
+  .mod-admin .admin-main-content :is( .dashboard-page, .attendance-page, .employees-page, .departments-page, .documents-page, .leaves-page, .payroll-page, .settings-page, .module-page ) {
+    padding: 0;
+    color: #17252a;
+  }
+}

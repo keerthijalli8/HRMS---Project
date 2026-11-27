@@ -1,0 +1,1050 @@
+/* ============================================================
+   TEAM LEAD TYPOGRAPHY TOKENS & MONSOON GLASS THEME
+   Strictly scoped inside .team-lead-module / .team-lead-module-portal
+============================================================ */
+
+.team-lead-module,
+.team-lead-module-portal {
+  --hrms-font: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --hrms-display: 'Syne', 'Inter', sans-serif;
+  --hrms-data: 'Space Mono', 'Consolas', monospace;
+  --hrms-calibri: Calibri, "Carlito", "Segoe UI", Arial, sans-serif;
+
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  --font-caption: 12px;
+  --font-small: 13px;
+  --font-body-size: 14px;
+  --font-navigation: 15px;
+  --font-card-heading: 17px;
+  --font-section-heading: 21px;
+  --font-page-heading: 32px;
+  --font-welcome-heading: 40px;
+
+  --bg: #06141c;
+
+  --surface: rgba(255, 255, 255, 0.07);
+  --surface2: rgba(255, 255, 255, 0.10);
+
+  --ink: #ecfbf8;
+  --muted: #9db9bb;
+  --line: rgba(255, 255, 255, 0.15);
+
+  --accent: #6ee7d0;
+  --on-accent: #032a24;
+  --accent2: #9b8cff;
+
+  --good: #5eead4;
+  --warn: #fcd34d;
+  --bad: #fda4af;
+  --info: #93c5fd;
+
+  --radius: 16px;
+  --pad: 18px;
+  --gap: 14px;
+  --rail: 280px;
+
+  --h-weight: 600;
+
+  --card-border: 1px solid rgba(255, 255, 255, 0.09);
+
+  --card-shadow:
+    0 8px 24px -14px rgba(0, 0, 0, 0.45);
+
+  --blur: blur(18px) saturate(140%);
+
+  color: var(--ink);
+  font-family: var(--hrms-calibri);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0;
+  color-scheme: dark;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scoped Tailwind font-size & typography tokens from TL Dashboard tailwind.config.js */
+:is(.team-lead-module, .team-lead-module-portal) .text-xs {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  letter-spacing: 0;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-sm {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  letter-spacing: 0;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-base {
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-lg {
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.015em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: -0.02em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-3xl {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.025em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  letter-spacing: -0.025em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-5xl {
+  font-size: 2.75rem;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-page-title {
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-welcome {
+  font-size: 2.75rem;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-section-title {
+  font-size: 1.3125rem;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-card-title {
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-kpi {
+  font-size: 2.125rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-navigation {
+  font-size: 0.9375rem;
+  line-height: 1.375rem;
+  letter-spacing: 0;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .text-timer {
+  font-size: 1.1875rem;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   EXISTING MONSOON GLASS BACKGROUND
+============================================================ */
+
+.team-lead-module {
+  min-height: 100vh;
+  width: 100%;
+
+  background:
+    radial-gradient(
+      900px 600px at 8% -10%,
+      #0f4a52 0,
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 700px at 100% 10%,
+      #3a2a7a 0,
+      transparent 55%
+    ),
+    #06141c;
+
+  background-attachment: fixed;
+}
+
+/* ============================================================
+   COMPACT DENSITY
+============================================================ */
+
+.team-lead-module[data-teamlead-density="compact"],
+.team-lead-module-portal[data-teamlead-density="compact"] {
+  --pad: 12px;
+  --gap: 10px;
+  --radius: 12px;
+}
+
+/* ============================================================
+   FONT RENDERING
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal) *,
+:is(.team-lead-module, .team-lead-module-portal) *::before,
+:is(.team-lead-module, .team-lead-module-portal) *::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   BODY FONT - INTER
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(.font-sans, .font-body) {
+  font-family: var(--hrms-font) !important;
+}
+
+/* ============================================================
+   DISPLAY FONT - SYNE
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(.font-display, .display-font, .display-heading) {
+  font-family: var(--hrms-display) !important;
+  letter-spacing: -0.025em;
+}
+
+/* ============================================================
+   DATA FONT - SPACE MONO
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(.font-data, .font-mono, .data-font) {
+  font-family: var(--hrms-data) !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   FONT WEIGHTS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+.font-light {
+  font-weight: 300;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+.font-normal {
+  font-weight: 400;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+.font-medium {
+  font-weight: 500;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+.font-semibold {
+  font-weight: 600;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+.font-bold {
+  font-weight: 700;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+.font-extrabold {
+  font-weight: 800;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(strong, b) {
+  font-weight: 600;
+}
+
+/* ============================================================
+   GENERAL HEADINGS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(h1, h2, h3, h4, h5, h6) {
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(h1, h2) {
+  font-family: var(--hrms-display);
+  font-weight: 700;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(h3, h4, h5, h6) {
+  font-family: var(--hrms-font);
+  font-weight: 500;
+}
+
+/* ============================================================
+   PAGE TITLE
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+header h1 {
+  font-family: var(--hrms-display) !important;
+  font-size: var(--font-page-heading) !important;
+  font-weight: 700 !important;
+
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+/* ============================================================
+   WELCOME HEADING
+   REDUCED WEIGHT AND SIZE
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(.welcome-heading, .hero-heading) {
+  font-family: var(--hrms-display) !important;
+
+  font-size: clamp(
+    30px,
+    2.7vw,
+    var(--font-welcome-heading)
+  ) !important;
+
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.025em !important;
+
+  overflow-wrap: anywhere;
+}
+
+/* Welcome text inherits the correct typography */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(.welcome-heading, .hero-heading) span {
+  font-family: inherit !important;
+  font-size: inherit;
+  font-weight: inherit !important;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+/* ============================================================
+   SECTION HEADINGS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+.section-heading {
+  font-family: var(--hrms-display) !important;
+  font-size: var(--font-section-heading);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   CARD HEADINGS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+.card-heading {
+  font-family: var(--hrms-font) !important;
+  font-size: var(--font-card-heading);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   SIDEBAR TYPOGRAPHY
+============================================================ */
+
+.team-lead-module aside {
+  font-family: var(--hrms-font) !important;
+  scrollbar-width: thin;
+}
+
+/* Normal sidebar navigation */
+
+.team-lead-module aside nav a,
+.team-lead-module aside nav button {
+  font-family: var(--hrms-font) !important;
+
+  font-size: 15px !important;
+  font-weight: 400 !important;
+
+  line-height: 22px !important;
+  letter-spacing: 0 !important;
+
+  min-height: 44px;
+
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+/* Sidebar menu text */
+
+.team-lead-module aside nav a span,
+.team-lead-module aside nav button span {
+  font-family: var(--hrms-font) !important;
+
+  font-size: 15px !important;
+  font-weight: 400 !important;
+
+  line-height: 22px !important;
+  letter-spacing: 0 !important;
+}
+
+/* Selected menu typography */
+
+.team-lead-module aside nav a[aria-current="page"],
+.team-lead-module aside nav a[aria-current="page"] span {
+  font-weight: 500 !important;
+}
+
+/* Sidebar icons */
+
+.team-lead-module aside nav a > svg,
+.team-lead-module aside nav button > svg {
+  width: 20px !important;
+  height: 20px !important;
+
+  flex-shrink: 0;
+  stroke-width: 1.7;
+}
+
+/* Employee and Team Lead role selector */
+
+.team-lead-module aside [aria-label="Portal role"] button {
+  font-family: var(--hrms-font) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  letter-spacing: 0 !important;
+}
+
+.team-lead-module aside
+[aria-label="Portal role"]
+button[aria-pressed="true"] {
+  font-weight: 500 !important;
+}
+
+/* Sidebar profile name */
+
+.team-lead-module aside .profile-name {
+  font-family: var(--hrms-display) !important;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Sidebar keyboard navigation */
+
+.team-lead-module aside nav a:focus-visible,
+.team-lead-module aside nav button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   HEADER TYPOGRAPHY
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+header {
+  font-family: var(--hrms-font);
+  box-shadow: none;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+header button {
+  font-family: var(--hrms-font);
+  font-weight: 500;
+}
+
+/* ============================================================
+   ATTENDANCE TIMER
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+header .tabular-nums {
+  font-family: var(--hrms-data) !important;
+  font-weight: 700 !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Date and time labels */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(.dashboard-date, .dashboard-time, .attendance-timer) {
+  font-family: var(--hrms-data) !important;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+.dashboard-date {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   KPI NUMBERS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(.kpi-value, .stat-value, .metric-value) {
+  font-family: var(--hrms-data) !important;
+
+  font-size: 34px !important;
+  font-weight: 700 !important;
+
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* KPI labels */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(.kpi-label, .stat-label, .metric-label) {
+  font-family: var(--hrms-font) !important;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+}
+
+/* KPI descriptions */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(.kpi-description, .stat-description) {
+  font-family: var(--hrms-font) !important;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* ============================================================
+   BUTTON TYPOGRAPHY
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+button {
+  font-family: var(--hrms-font);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+button:disabled {
+  cursor: not-allowed;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+button.font-display {
+  font-family: var(--hrms-display) !important;
+  font-weight: 700;
+}
+
+/* ============================================================
+   FORM TYPOGRAPHY
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(input, select, textarea) {
+  font-family: var(--hrms-font);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+label {
+  font-family: var(--hrms-font);
+  font-weight: 500;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+input::placeholder,
+:is(.team-lead-module, .team-lead-module-portal)
+textarea::placeholder {
+  font-family: var(--hrms-font);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   TABLE TYPOGRAPHY
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+table {
+  font-family: var(--hrms-font);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+th {
+  font-family: var(--hrms-font);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+td {
+  font-family: var(--hrms-font);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   NUMERIC TYPOGRAPHY
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   BORDER OPACITY CORRECTIONS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+.border-line {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-line/20"] {
+  border-color: rgba(255, 255, 255, 0.03);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-line/30"] {
+  border-color: rgba(255, 255, 255, 0.045);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-line/40"] {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-line/50"] {
+  border-color: rgba(255, 255, 255, 0.075);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-line/60"] {
+  border-color: rgba(255, 255, 255, 0.09);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-line/70"] {
+  border-color: rgba(255, 255, 255, 0.105);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-line/80"] {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================================
+   ACCENT BORDERS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-accent/20"] {
+  border-color: rgba(110, 231, 208, 0.20);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-accent/25"] {
+  border-color: rgba(110, 231, 208, 0.25);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-accent/30"] {
+  border-color: rgba(110, 231, 208, 0.30);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-accent/40"] {
+  border-color: rgba(110, 231, 208, 0.40);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-accent/50"] {
+  border-color: rgba(110, 231, 208, 0.50);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-accent/60"] {
+  border-color: rgba(110, 231, 208, 0.60);
+}
+
+/* ============================================================
+   STATUS BORDERS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-good/30"] {
+  border-color: rgba(94, 234, 212, 0.30);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-warn/30"] {
+  border-color: rgba(252, 211, 77, 0.30);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-warn/40"] {
+  border-color: rgba(252, 211, 77, 0.40);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-bad/30"] {
+  border-color: rgba(253, 164, 175, 0.30);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="border-info/30"] {
+  border-color: rgba(147, 197, 253, 0.30);
+}
+
+/* ============================================================
+   BACKGROUND OPACITY CORRECTIONS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-accent/10"] {
+  background-color: rgba(110, 231, 208, 0.10);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-accent/15"] {
+  background-color: rgba(110, 231, 208, 0.15);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-accent/20"] {
+  background-color: rgba(110, 231, 208, 0.20);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-good/10"] {
+  background-color: rgba(94, 234, 212, 0.10);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-warn/10"] {
+  background-color: rgba(252, 211, 77, 0.10);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-bad/10"] {
+  background-color: rgba(253, 164, 175, 0.10);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-bad/15"] {
+  background-color: rgba(253, 164, 175, 0.15);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-info/10"] {
+  background-color: rgba(147, 197, 253, 0.10);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-line/60"] {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-surface2/40"] {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-surface2/50"] {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+[class~="bg-surface2/70"] {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+/* ============================================================
+   EXISTING GLASS CARDS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+.glass-card {
+  background: var(--surface);
+
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+
+  padding: var(--pad);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+  min-width: 0;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+.glass-card-hover:hover {
+  border-color: rgba(110, 231, 208, 0.25);
+
+  box-shadow:
+    0 12px 30px -18px rgba(110, 231, 208, 0.15);
+}
+
+/* ============================================================
+   EXISTING GLASS PILLS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+.glass-pill {
+  background: var(--surface2);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+.glass-pill:hover {
+  border-color: rgba(110, 231, 208, 0.25);
+}
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+[hidden] {
+  display: none !important;
+}
+
+/* ============================================================
+   TEXT SELECTION
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+::selection {
+  background: rgba(110, 231, 208, 0.25);
+  color: var(--ink);
+}
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+::-webkit-scrollbar-track {
+  background: rgba(6, 20, 28, 0.35);
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(110, 231, 208, 0.65);
+}
+
+/* ============================================================
+   KEYBOARD FOCUS
+============================================================ */
+
+:is(.team-lead-module, .team-lead-module-portal)
+:is(button, input, select, textarea, a):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   PAGE ANIMATION
+============================================================ */
+
+@keyframes teamLeadFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:is(.team-lead-module, .team-lead-module-portal)
+.animate-fade-in {
+  animation:
+    teamLeadFadeIn
+    0.25s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+============================================================ */
+
+@media (max-width: 1023px) {
+
+  .team-lead-module,
+  .team-lead-module-portal {
+    --pad: 16px;
+    --gap: 12px;
+  }
+
+  :is(.team-lead-module, .team-lead-module-portal)
+  header h1 {
+    font-size: 28px !important;
+  }
+
+  :is(.team-lead-module, .team-lead-module-portal)
+  :is(.welcome-heading, .hero-heading) {
+    font-size: 34px !important;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .team-lead-module,
+  .team-lead-module-portal {
+    --pad: 14px;
+    --gap: 12px;
+    --radius: 14px;
+  }
+
+  :is(.team-lead-module, .team-lead-module-portal)
+  header h1 {
+    font-size: 24px !important;
+  }
+
+  :is(.team-lead-module, .team-lead-module-portal)
+  :is(.welcome-heading, .hero-heading) {
+    font-size: 30px !important;
+  }
+
+  :is(.team-lead-module, .team-lead-module-portal)
+  :is(.kpi-value, .stat-value, .metric-value) {
+    font-size: 28px !important;
+  }
+
+  .team-lead-module aside nav a,
+  .team-lead-module aside nav button {
+    min-height: 44px;
+  }
+
+  .team-lead-module {
+    background-attachment: scroll;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION ACCESSIBILITY
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  :is(.team-lead-module, .team-lead-module-portal)
+  .animate-fade-in {
+    animation: none;
+  }
+
+  :is(.team-lead-module, .team-lead-module-portal)
+  :is(.glass-card, .glass-pill) {
+    transition: none;
+  }
+
+  :is(.team-lead-module, .team-lead-module-portal)
+  .animate-pulse {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   SCOPED CALIBRI FONT FAMILY & NUMERIC RULES
+   ========================================== */
+
+:is(.team-lead-module, .team-lead-module-portal) *:not(svg):not(svg *) {
+  font-family: Calibri, "Carlito", "Segoe UI", Arial, sans-serif !important;
+}
+
+:is(.team-lead-module, .team-lead-module-portal) .font-data,
+:is(.team-lead-module, .team-lead-module-portal) .font-mono,
+:is(.team-lead-module, .team-lead-module-portal) .tabular-nums,
+:is(.team-lead-module, .team-lead-module-portal) .kpi-card,
+:is(.team-lead-module, .team-lead-module-portal) .kpi-card *:not(svg):not(svg *),
+:is(.team-lead-module, .team-lead-module-portal) td,
+:is(.team-lead-module, .team-lead-module-portal) input[type="number"],
+:is(.team-lead-module, .team-lead-module-portal) input[type="time"],
+:is(.team-lead-module, .team-lead-module-portal) input[type="date"],
+:is(.team-lead-module, .team-lead-module-portal) svg text,
+:is(.team-lead-module, .team-lead-module-portal) svg tspan,
+:is(.team-lead-module, .team-lead-module-portal) svg textPath,
+:is(.team-lead-module, .team-lead-module-portal) .recharts-text,
+:is(.team-lead-module, .team-lead-module-portal) .recharts-cartesian-axis-tick-value {
+  font-family: Calibri, "Carlito", "Segoe UI", Arial, sans-serif !important;
+  font-variant-numeric: lining-nums tabular-nums !important;
+}

@@ -1,0 +1,288 @@
+
+/* ==========================================
+   GENERAL SETTINGS - MONSOON GLASS THEME
+========================================== */
+
+.mod-superadmin .gs-page {
+  width: 100%;
+  color: #e8f4f5;
+  box-sizing: border-box;
+}
+
+.mod-superadmin .gs-page * {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.mod-superadmin .gs-heading {
+  margin-bottom: 22px;
+}
+
+.mod-superadmin .gs-heading h2 {
+  margin: 0 0 7px;
+  color: #f0fafa;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.mod-superadmin .gs-heading p {
+  margin: 0;
+  color: #9fb8c0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* MAIN PANEL */
+
+.mod-superadmin .gs-panel {
+  width: 100%;
+  padding: 26px;
+  border: 1px solid #31515b;
+  border-radius: 17px;
+  background: #142c37;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* FORM GRID */
+
+.mod-superadmin .gs-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 25px;
+}
+
+.mod-superadmin .gs-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.mod-superadmin .gs-field span {
+  color: #c7dce0;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.mod-superadmin .gs-field input,
+.mod-superadmin .gs-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 14px;
+  border: 1px solid #385863;
+  border-radius: 10px;
+  outline: none;
+  background: #102832;
+  color: #e8f5f5;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mod-superadmin .gs-timezone-field {
+  position: relative;
+}
+
+.mod-superadmin .gs-timezone-picker {
+  position: relative;
+}
+
+.mod-superadmin .gs-timezone-picker > input {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 14px;
+  border: 1px solid #385863;
+  border-radius: 10px;
+  outline: none;
+  background: #102832;
+  color: #e8f5f5;
+  font-size: 13px;
+}
+
+.mod-superadmin .gs-timezone-picker > input:focus {
+  border-color: #5bdac6;
+  box-shadow: 0 0 0 3px rgba(91, 218, 198, 0.1);
+}
+
+.mod-superadmin .gs-timezone-options {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  max-height: 270px;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid #3b6971;
+  border-radius: 12px;
+  background: #102832;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.42);
+}
+
+.mod-superadmin .gs-timezone-options button {
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #e8f5f5;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mod-superadmin .gs-timezone-options button:hover,
+.mod-superadmin .gs-timezone-options button[aria-selected="true"] {
+  background: #1d4549;
+  color: #70e5cc;
+}
+
+.mod-superadmin .gs-timezone-empty,
+.mod-superadmin .gs-field-hint {
+  color: #8faab1;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.mod-superadmin .gs-timezone-empty {
+  padding: 10px;
+}
+
+.mod-superadmin .gs-field input:focus,
+.mod-superadmin .gs-field select:focus {
+  border-color: #5bdac6;
+  box-shadow: 0 0 0 3px rgba(91, 218, 198, 0.1);
+}
+
+.mod-superadmin .gs-field input::placeholder {
+  color: #829da5;
+}
+
+.mod-superadmin .gs-field select {
+  cursor: pointer;
+}
+
+.mod-superadmin .gs-field select option {
+  background: #142c37;
+  color: #e8f5f5;
+}
+
+/* TOGGLE ROWS */
+
+.mod-superadmin .gs-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid #2c4c56;
+}
+
+.mod-superadmin .gs-toggle strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #e8f4f5;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mod-superadmin .gs-toggle p {
+  margin: 0;
+  color: #9eb8bf;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.mod-superadmin .gs-toggle input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  accent-color: #5bdac6;
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+.mod-superadmin .gs-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 22px;
+  margin-top: 5px;
+  border-top: 1px solid #2c4c56;
+}
+
+.mod-superadmin .gs-footer span {
+  color: #70e5cc;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mod-superadmin .gs-save {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 43px;
+  padding: 11px 22px;
+  border: 1px solid #5bdac6;
+  border-radius: 10px;
+  background: #5bdac6;
+  color: #102d32;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.mod-superadmin .gs-save:hover {
+  background: #7ae9d6;
+  transform: translateY(-1px);
+}
+
+.mod-superadmin .gs-save:active {
+  transform: translateY(0);
+}
+
+.mod-superadmin .gs-save:focus-visible {
+  outline: 2px solid #b8fff1;
+  outline-offset: 3px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .mod-superadmin .gs-panel {
+    padding: 18px;
+  }
+
+  .mod-superadmin .gs-field-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .mod-superadmin .gs-heading h2 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mod-superadmin .gs-panel {
+    padding: 15px;
+  }
+
+  .mod-superadmin .gs-toggle {
+    align-items: flex-start;
+  }
+
+  .mod-superadmin .gs-save {
+    width: 100%;
+  }
+
+  .mod-superadmin .gs-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

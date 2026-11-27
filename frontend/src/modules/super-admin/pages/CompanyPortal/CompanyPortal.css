@@ -1,0 +1,1245 @@
+.mod-superadmin .company-public-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  color: #ecfbf8;
+  background:
+    radial-gradient(ellipse at 10% 5%, rgba(15, 74, 82, .68), transparent 55%),
+    radial-gradient(ellipse at 90% 10%, rgba(58, 42, 122, .58), transparent 55%),
+    #06141c;
+  font-family: "Manrope", sans-serif;
+}
+
+.mod-superadmin .company-public-card {
+  width: min(100%, 500px);
+  padding: 36px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 24px;
+  background: rgba(255,255,255,.065);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 24px 70px rgba(0,0,0,.32);
+}
+
+.mod-superadmin .company-public-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  color: #061b1c;
+  background: #6ee7d0;
+}
+
+.mod-superadmin .company-public-eyebrow,
+.mod-superadmin .company-section-eyebrow {
+  color: #6ee7d0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.mod-superadmin .company-public-card h1 {
+  margin: 10px 0;
+  font-family: "Syne", sans-serif;
+  font-size: clamp(25px, 5vw, 34px);
+}
+
+.mod-superadmin .company-public-card > p {
+  color: #9db9bb;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.mod-superadmin .company-activation-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.mod-superadmin .company-activation-form label {
+  color: #c4d8d7;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mod-superadmin .company-activation-form input,
+.mod-superadmin .company-field input:not([type="file"]),
+.mod-superadmin .company-field select,
+.mod-superadmin .company-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 10px;
+  outline: 0;
+  color: #ecfbf8;
+  background: rgba(2,14,20,.62);
+  font: inherit;
+}
+
+.mod-superadmin .company-activation-form input {
+  font-family: ui-monospace, Consolas, monospace;
+  letter-spacing: .08em;
+}
+
+.mod-superadmin .company-activation-form button,
+.mod-superadmin .company-secondary-button,
+.mod-superadmin .company-save-button {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #06201c;
+  background: var(--company-button, #6ee7d0);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mod-superadmin .company-secondary-button {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.mod-superadmin .company-form-message {
+  margin: 14px 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.mod-superadmin .company-form-message.error {
+  color: #ff9ca6;
+}
+
+.mod-superadmin .company-form-message.success,
+.mod-superadmin .company-activation-success {
+  color: #6ee7d0;
+}
+
+.mod-superadmin .company-activation-success {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid rgba(110,231,208,.25);
+  border-radius: 10px;
+  background: rgba(110,231,208,.08);
+  font-size: 12px;
+}
+
+.mod-superadmin .company-public-back {
+  display: inline-block;
+  margin-top: 18px;
+  color: #a4c0bf;
+  font-size: 11px;
+}
+
+.mod-superadmin .company-demo-note {
+  margin-top: 22px !important;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  font-size: 10px !important;
+}
+
+.mod-superadmin .company-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(180px, var(--company-sidebar-width, 236px)) minmax(0, 1fr);
+  color: var(--company-text, #ecfbf8);
+  background:
+    radial-gradient(ellipse at 0 0, color-mix(in srgb, var(--company-primary, #6ee7d0) 10%, transparent), transparent 55%),
+    var(--company-background, #071820);
+  font-family: var(--company-font, "Manrope"), sans-serif;
+  font-size: var(--company-font-size, 14px);
+}
+
+.mod-superadmin .company-sidebar {
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 14px;
+  border-right: 1px solid color-mix(in srgb, var(--company-menu-text, #c5d8d6) 13%, transparent);
+  background: var(--company-sidebar);
+}
+
+.mod-superadmin .company-brand {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px;
+  color: var(--company-text);
+}
+
+.mod-superadmin .company-brand img {
+  max-width: 100%;
+  max-height: 44px;
+  object-fit: contain;
+}
+
+.mod-superadmin .company-brand strong {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+}
+
+.mod-superadmin .company-brand-initial {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: var(--company-background);
+  background: var(--company-primary);
+  font-weight: 800;
+}
+
+.mod-superadmin .company-nav {
+  display: grid;
+  gap: 5px;
+  padding: 7px;
+  border-radius: 12px;
+  background: var(--company-menu-background, transparent);
+}
+
+.mod-superadmin .company-nav a,
+.mod-superadmin .company-signout {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: var(--company-menu-text, #c5d8d6);
+  background: transparent;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.mod-superadmin .company-nav a:hover,
+.mod-superadmin .company-nav a.active {
+  color: var(--company-menu-active, var(--company-primary));
+  border-color: color-mix(in srgb, var(--company-menu-active, var(--company-primary)) 28%, transparent);
+  background: color-mix(in srgb, var(--company-menu-active, var(--company-primary)) 10%, transparent);
+}
+
+.mod-superadmin .company-nav a span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mod-superadmin .company-shell.icons-compact .company-nav a > svg {
+  width: 14px;
+  height: 14px;
+}
+
+.mod-superadmin .company-shell.icons-hidden .company-nav a > svg {
+  display: none;
+}
+
+.mod-superadmin .company-signout {
+  margin-top: auto;
+  border: 1px solid rgba(255,255,255,.08);
+  cursor: pointer;
+}
+
+.mod-superadmin .company-collapse-toggle {
+  min-height: 34px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  color: var(--company-menu-text);
+  background: transparent;
+  font-size: 10px;
+}
+
+.mod-superadmin .company-main {
+  min-width: 0;
+}
+
+.mod-superadmin .company-topbar {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 26px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  background: var(--company-header, var(--company-sidebar));
+}
+
+.mod-superadmin .company-topbar > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.mod-superadmin .company-topbar > div:first-child span {
+  color: color-mix(in srgb, var(--company-text) 60%, transparent);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.mod-superadmin .company-topbar > div:first-child strong {
+  font-size: 14px;
+}
+
+.mod-superadmin .company-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.mod-superadmin .company-topbar-actions > a,
+.mod-superadmin .company-page-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--company-primary);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.mod-superadmin .company-topbar-actions > img {
+  width: 58px;
+  max-height: 36px;
+  object-fit: contain;
+}
+
+.mod-superadmin .company-license-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--company-primary);
+  font-size: 10px;
+}
+
+.mod-superadmin .company-content {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.mod-superadmin .company-shell.content-centered .company-content {
+  max-width: 1120px;
+}
+
+.mod-superadmin .company-shell.content-wide .company-content {
+  width: 100%;
+  max-width: none;
+}
+
+.mod-superadmin .company-shell.header-compact .company-topbar {
+  min-height: 54px;
+}
+
+.mod-superadmin .company-shell.header-centered .company-topbar {
+  justify-content: center;
+}
+
+.mod-superadmin .company-shell.header-centered .company-topbar > div:first-child {
+  text-align: center;
+}
+
+.mod-superadmin .company-shell.header-centered .company-topbar-actions {
+  position: absolute;
+  right: 24px;
+}
+
+.mod-superadmin .company-shell.spacing-compact .company-widget-grid {
+  gap: 8px;
+}
+
+.mod-superadmin .company-shell.spacing-spacious .company-content {
+  padding: 38px;
+}
+
+.mod-superadmin .company-shell.cards-list .company-widget-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.mod-superadmin .company-shell.cards-compact-grid .company-widget-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+}
+
+.mod-superadmin .company-shell.cards-compact-grid .company-widget {
+  min-height: 68px;
+  padding: 10px;
+}
+
+.mod-superadmin .density-compact .company-content {
+  padding: 18px;
+}
+
+.mod-superadmin .company-page-heading,
+.mod-superadmin .company-builder-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 23px;
+}
+
+.mod-superadmin .company-page-heading h1,
+.mod-superadmin .company-module-view h1,
+.mod-superadmin .company-builder-heading h1 {
+  margin: 7px 0;
+  font-family: "Syne", sans-serif;
+  font-size: clamp(23px, 3vw, 32px);
+}
+
+.mod-superadmin .company-page-heading p,
+.mod-superadmin .company-builder-heading p,
+.mod-superadmin .company-module-view p {
+  color: color-mix(in srgb, var(--company-text) 66%, transparent);
+  font-size: 12px;
+}
+
+.mod-superadmin .company-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.mod-superadmin .company-summary-grid article,
+.mod-superadmin .company-widget,
+.mod-superadmin .company-enabled-list,
+.mod-superadmin .company-demo-panel {
+  border: 1px solid color-mix(in srgb, var(--company-text) 13%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--company-text) 5%, transparent);
+}
+
+.mod-superadmin .company-summary-grid article {
+  min-height: 96px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+.mod-superadmin .company-summary-grid article span,
+.mod-superadmin .company-widget span,
+.mod-superadmin .company-enabled-list > strong {
+  color: color-mix(in srgb, var(--company-text) 62%, transparent);
+  font-size: 10px;
+}
+
+.mod-superadmin .company-summary-grid article strong {
+  font-size: 19px;
+}
+
+.mod-superadmin .company-widget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 13px;
+}
+
+.mod-superadmin .company-widget {
+  min-width: 0;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+}
+
+.mod-superadmin .company-widget-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: var(--company-accent);
+  background: color-mix(in srgb, var(--company-accent) 12%, transparent);
+}
+
+.mod-superadmin .company-widget > div {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+  flex: 1;
+}
+
+.mod-superadmin .company-widget > div strong {
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.mod-superadmin .company-widget > a {
+  display: grid;
+  place-items: center;
+  color: var(--company-primary);
+}
+
+.mod-superadmin .company-empty-widget {
+  grid-column: 1 / -1;
+  padding: 24px;
+  color: color-mix(in srgb, var(--company-text) 60%, transparent);
+  text-align: center;
+}
+
+.mod-superadmin .company-enabled-list {
+  margin-top: 16px;
+  padding: 15px;
+}
+
+.mod-superadmin .company-enabled-list > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.mod-superadmin .company-enabled-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--company-primary) 23%, transparent);
+  border-radius: 8px;
+  color: var(--company-primary);
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.mod-superadmin .company-restricted,
+.mod-superadmin .company-module-view {
+  max-width: 700px;
+  margin: 5vh auto;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  background: rgba(255,255,255,.045);
+}
+
+.mod-superadmin .company-restricted > svg {
+  color: #ff9ca6;
+}
+
+.mod-superadmin .company-restricted h1 {
+  margin: 13px 0;
+}
+
+.mod-superadmin .company-restricted p {
+  margin-bottom: 18px;
+  color: #a6c0bf;
+  font-size: 12px;
+}
+
+.mod-superadmin .company-restricted a {
+  color: var(--company-primary);
+  font-size: 12px;
+}
+
+.mod-superadmin .company-demo-panel {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 20px;
+  padding: 18px;
+}
+
+.mod-superadmin .company-demo-panel svg {
+  color: var(--company-primary);
+}
+
+.mod-superadmin .company-demo-panel div {
+  display: grid;
+  gap: 5px;
+}
+
+.mod-superadmin .company-demo-panel span {
+  color: #a6c0bf;
+  font-size: 11px;
+}
+
+.mod-superadmin .company-shell.is-collapsed {
+  grid-template-columns: 74px minmax(0, 1fr);
+}
+
+.mod-superadmin .company-shell.is-collapsed .company-brand strong,
+.mod-superadmin .company-shell.is-collapsed .company-nav a span,
+.mod-superadmin .company-shell.is-collapsed .company-signout span {
+  display: none;
+}
+
+.mod-superadmin .company-shell.is-collapsed .company-sidebar {
+  padding-inline: 8px;
+}
+
+.mod-superadmin .company-shell.menu-icon-only-sidebar {
+  grid-template-columns: 74px minmax(0, 1fr);
+}
+
+.mod-superadmin .company-shell.menu-icon-only-sidebar .company-brand strong,
+.mod-superadmin .company-shell.menu-icon-only-sidebar .company-nav a span,
+.mod-superadmin .company-shell.menu-icon-only-sidebar .company-signout span {
+  display: none;
+}
+
+.mod-superadmin .company-shell.sidebar-right {
+  grid-template-columns: minmax(0, 1fr) minmax(180px, var(--company-sidebar-width, 236px));
+}
+
+.mod-superadmin .company-shell.sidebar-right .company-sidebar {
+  grid-column: 2;
+  grid-row: 1;
+  border-right: 0;
+  border-left: 1px solid color-mix(in srgb, var(--company-menu-text, #c5d8d6) 13%, transparent);
+}
+
+.mod-superadmin .company-shell.sidebar-right .company-main {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.mod-superadmin .company-shell.menu-horizontal-navigation {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.mod-superadmin .company-shell.menu-horizontal-navigation .company-sidebar {
+  min-height: auto;
+  flex-direction: row;
+  align-items: center;
+  border-right: 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.mod-superadmin .company-shell.menu-horizontal-navigation .company-nav {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.mod-superadmin .company-shell.menu-horizontal-navigation .company-nav a {
+  width: auto;
+}
+
+.mod-superadmin .company-shell.menu-horizontal-navigation .company-signout {
+  margin: 0;
+}
+
+.mod-superadmin .company-shell.menu-horizontal-navigation .company-main {
+  grid-row: 2;
+}
+
+.mod-superadmin .company-shell.sidebar-right.menu-horizontal-navigation {
+  grid-template-columns: 1fr;
+}
+
+.mod-superadmin .company-builder {
+  color: var(--company-text);
+}
+
+.mod-superadmin .company-builder-heading {
+  align-items: center;
+}
+
+.mod-superadmin .company-builder-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.mod-superadmin .company-reset-button,
+.mod-superadmin .company-reset-inline,
+.mod-superadmin .company-upload-row > button,
+.mod-superadmin .company-domain-actions > button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 9px;
+  color: #c5d8d6;
+  background: rgba(255,255,255,.045);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mod-superadmin .company-builder-tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 15px;
+  padding: 5px;
+  overflow-x: auto;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  background: rgba(255,255,255,.035);
+  scrollbar-width: thin;
+}
+
+.mod-superadmin .company-builder-tabs button {
+  min-height: 36px;
+  flex: 0 0 auto;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #a9c2c0;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mod-superadmin .company-builder-tabs button.active {
+  color: var(--company-primary);
+  border-color: color-mix(in srgb, var(--company-primary) 35%, transparent);
+  background: color-mix(in srgb, var(--company-primary) 10%, transparent);
+}
+
+.mod-superadmin .company-builder-message {
+  margin-bottom: 13px;
+  padding: 11px 13px;
+  border: 1px solid color-mix(in srgb, var(--company-primary) 30%, transparent);
+  border-radius: 9px;
+  color: var(--company-primary);
+  background: color-mix(in srgb, var(--company-primary) 7%, transparent);
+  font-size: 11px;
+}
+
+.mod-superadmin .company-builder-message.error {
+  color: #ff9ca6;
+  border-color: rgba(255,156,166,.25);
+  background: rgba(255,156,166,.06);
+}
+
+.mod-superadmin .company-builder-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
+  align-items: start;
+  gap: 15px;
+}
+
+.mod-superadmin .company-builder-panel,
+.mod-superadmin .company-theme-preview {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 15px;
+  background: rgba(255,255,255,.04);
+}
+
+.mod-superadmin .company-builder-fields {
+  display: grid;
+  gap: 14px;
+}
+
+.mod-superadmin .company-builder-fields h2 {
+  font-size: 16px;
+}
+
+.mod-superadmin .company-builder-fields > p,
+.mod-superadmin .company-builder-hint {
+  color: #9db9bb;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.mod-superadmin .company-field {
+  display: grid;
+  gap: 7px;
+  color: #c5d8d6;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.mod-superadmin .company-field input[type="range"] {
+  accent-color: var(--company-primary);
+}
+
+.mod-superadmin .company-field input[type="file"] {
+  min-width: 0;
+  color: #a9c2c0;
+  font-size: 10px;
+}
+
+.mod-superadmin .company-field textarea {
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.mod-superadmin .company-color-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mod-superadmin .company-color-field {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr 36px 94px;
+  align-items: center;
+  gap: 8px;
+  padding: 9px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 9px;
+  color: #c5d8d6;
+  font-size: 10px;
+}
+
+.mod-superadmin .company-color-field input[type="color"] {
+  width: 34px;
+  height: 31px;
+  padding: 2px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 6px;
+  background: transparent;
+}
+
+.mod-superadmin .company-color-field input[type="text"] {
+  min-width: 0;
+  width: 100%;
+  height: 31px;
+  padding: 0 6px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 6px;
+  color: #ecfbf8;
+  background: rgba(0,0,0,.2);
+  font-size: 10px;
+}
+
+.mod-superadmin .company-reset-inline {
+  min-height: 32px;
+  justify-self: start;
+}
+
+.mod-superadmin .company-font-sample {
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+}
+
+.mod-superadmin .company-upload-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 180px) auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.mod-superadmin .company-upload-row > label {
+  display: grid;
+  gap: 7px;
+  color: #c5d8d6;
+  font-size: 11px;
+}
+
+.mod-superadmin .company-upload-preview {
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  padding: 7px;
+  overflow: hidden;
+  border: 1px dashed rgba(255,255,255,.15);
+  border-radius: 9px;
+  color: #8ea9a8;
+  font-size: 9px;
+}
+
+.mod-superadmin .company-upload-preview img {
+  max-width: 100%;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.mod-superadmin .company-widget-options {
+  display: grid;
+  gap: 7px;
+}
+
+.mod-superadmin .company-widget-options > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 9px;
+}
+
+.mod-superadmin .company-widget-options label {
+  display: grid;
+  grid-template-columns: 16px minmax(110px, 1fr) 1fr;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  color: #c5d8d6;
+  font-size: 10px;
+}
+
+.mod-superadmin .company-widget-options input {
+  accent-color: var(--company-primary);
+}
+
+.mod-superadmin .company-widget-options small {
+  color: #8ea9a8;
+  text-align: right;
+  font-size: 9px;
+}
+
+.mod-superadmin .company-widget-order {
+  display: flex;
+  gap: 4px;
+}
+
+.mod-superadmin .company-widget-order button {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 6px;
+  color: #a9c2c0;
+  background: transparent;
+}
+
+.mod-superadmin .company-widget-order button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.mod-superadmin .company-domain-preview {
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 9px;
+  color: var(--company-primary);
+  background: rgba(0,0,0,.18);
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.mod-superadmin .company-domain-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mod-superadmin .company-domain-actions .company-save-button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.mod-superadmin .company-domain-status {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 9px;
+  font-size: 10px;
+}
+
+.mod-superadmin .company-domain-status span {
+  color: #91abaa;
+}
+
+.mod-superadmin .company-email-preview {
+  display: grid;
+  gap: 9px;
+  padding: 13px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  background: rgba(0,0,0,.18);
+}
+
+.mod-superadmin .company-email-preview > span {
+  color: var(--company-primary);
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.mod-superadmin .company-email-preview strong {
+  font-size: 11px;
+}
+
+.mod-superadmin .company-email-preview pre {
+  white-space: pre-wrap;
+  color: #b6ccca;
+  font: inherit;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.mod-superadmin .company-template-placeholders {
+  color: #9db9bb;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.mod-superadmin .company-preview-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 15px;
+  color: color-mix(in srgb, var(--company-text) 58%, transparent);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .09em;
+}
+
+.mod-superadmin .company-dashboard-preview {
+  min-height: 270px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--company-text) 13%, transparent);
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--company-text) 3%, transparent);
+}
+
+.mod-superadmin .company-dashboard-preview header {
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 7px;
+}
+
+.mod-superadmin .company-dashboard-preview header img {
+  max-width: 100%;
+  max-height: 30px;
+  object-fit: contain;
+}
+
+.mod-superadmin .company-dashboard-preview header strong {
+  overflow: hidden;
+  font-size: 9px;
+  text-overflow: ellipsis;
+}
+
+.mod-superadmin .company-preview-card {
+  display: grid;
+  gap: 8px;
+  margin-top: 13px;
+  padding: 15px;
+  border: 1px solid;
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--company-text) 4%, transparent);
+}
+
+.mod-superadmin .company-preview-card span,
+.mod-superadmin .company-preview-card small {
+  color: color-mix(in srgb, var(--company-text) 56%, transparent);
+  font-size: 9px;
+}
+
+.mod-superadmin .company-preview-card strong {
+  font-size: 15px;
+}
+
+.mod-superadmin .company-preview-swatches {
+  display: flex;
+  gap: 7px;
+  margin: 13px 0;
+}
+
+.mod-superadmin .company-preview-swatches span {
+  width: 23px;
+  height: 23px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 6px;
+}
+
+.mod-superadmin .company-dashboard-preview > button,
+.mod-superadmin .company-login-preview button {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.mod-superadmin .company-preview-isolation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 13px;
+  color: var(--company-primary);
+  font-size: 9px;
+}
+
+.mod-superadmin .company-login-preview {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 11px;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+.mod-superadmin .company-login-preview img {
+  max-width: 100%;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.mod-superadmin .company-login-preview > span {
+  color: var(--company-primary);
+  font-size: 9px;
+}
+
+.mod-superadmin .company-login-preview > strong {
+  font-size: 15px;
+}
+
+.mod-superadmin .company-login-preview > p {
+  color: color-mix(in srgb, var(--company-text) 70%, transparent);
+  font-size: 9px;
+}
+
+.mod-superadmin .company-login-preview > small {
+  color: #a6c0bf;
+  font-size: 8px;
+}
+
+.mod-superadmin .company-builder-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.mod-superadmin .company-builder-bottom > a {
+  color: var(--company-primary);
+  font-size: 10px;
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .mod-superadmin .company-builder-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .mod-superadmin .company-shell,
+.mod-superadmin .company-shell.sidebar-right,
+.mod-superadmin .company-shell.is-collapsed,
+.mod-superadmin .company-shell.menu-icon-only-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .company-sidebar,
+.mod-superadmin .company-shell.sidebar-right .company-sidebar {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: auto;
+    position: static;
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+
+  .mod-superadmin .company-shell.sidebar-right .company-main,
+.mod-superadmin .company-shell.menu-horizontal-navigation .company-main {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .mod-superadmin .company-nav {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .mod-superadmin .company-nav a {
+    flex: 0 0 auto;
+  }
+
+  .mod-superadmin .company-shell.menu-icon-only-sidebar .company-nav a span,
+.mod-superadmin .company-shell.is-collapsed .company-nav a span {
+    display: inline;
+  }
+
+  .mod-superadmin .company-brand strong,
+.mod-superadmin .company-signout span {
+    display: inline !important;
+  }
+
+  .mod-superadmin .company-content {
+    padding: 18px;
+  }
+
+  .mod-superadmin .company-topbar {
+    padding: 12px 18px;
+  }
+
+  .mod-superadmin .company-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .company-page-heading,
+.mod-superadmin .company-builder-heading {
+    flex-direction: column;
+  }
+
+  .mod-superadmin .company-builder-actions {
+    width: 100%;
+  }
+
+  .mod-superadmin .company-builder-actions > button {
+    flex: 1;
+  }
+
+  .mod-superadmin .company-color-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .company-upload-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .company-public-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 430px) {
+  .mod-superadmin .company-topbar-actions .company-license-chip,
+.mod-superadmin .company-topbar-actions > img {
+    display: none;
+  }
+
+  .mod-superadmin .company-widget-options label {
+    grid-template-columns: 16px 1fr;
+  }
+
+  .mod-superadmin .company-widget-options small {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .mod-superadmin .company-color-field {
+    grid-template-columns: 1fr 34px 78px;
+  }
+}

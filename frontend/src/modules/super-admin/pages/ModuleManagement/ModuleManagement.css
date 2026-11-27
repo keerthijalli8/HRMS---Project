@@ -1,0 +1,1378 @@
+
+/* HRMS SUPER ADMIN - MODULE MANAGEMENT */
+/* PREMIUM DARK TEAL MONSOON GLASS */
+
+.mod-superadmin .mm-page {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 4px 36px;
+  color: #e8f5f4;
+  font-family: inherit;
+}
+
+.mod-superadmin .mm-page *,
+.mod-superadmin .mm-page *::before,
+.mod-superadmin .mm-page *::after {
+  box-sizing: border-box;
+}
+
+.mod-superadmin .mm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.mod-superadmin .mm-eyebrow {
+  color: #65d7c7;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 9px;
+}
+
+.mod-superadmin .mm-header h1 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+
+.mod-superadmin .mm-header p {
+  margin: 7px 0 0;
+  color: #91aeb1;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-primary,
+.mod-superadmin .mm-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mod-superadmin .mm-primary {
+  background: #64d4bf;
+  color: #06272b;
+  border: 1px solid #64d4bf;
+}
+
+.mod-superadmin .mm-primary:hover {
+  background: #8be8d8;
+  transform: translateY(-1px);
+}
+
+.mod-superadmin .mm-secondary {
+  background: rgba(255,255,255,.055);
+  color: #d6e9e7;
+  border: 1px solid rgba(185,220,222,.16);
+}
+
+.mod-superadmin .mm-secondary:hover {
+  background: rgba(255,255,255,.11);
+}
+
+.mod-superadmin .mm-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(100,212,191,.35);
+  border-radius: 11px;
+  background: rgba(100,212,191,.09);
+  color: #a8e9dc;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-notice span {
+  flex: 1;
+}
+
+.mod-superadmin .mm-notice button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* NAVIGATION TABS */
+
+.mod-superadmin .mm-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 8px;
+  border: 1px solid rgba(185,220,222,.12);
+  border-radius: 13px;
+  background: rgba(255,255,255,.035);
+}
+
+.mod-superadmin .mm-tabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #9cb5b6;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-tabs button:hover {
+}
+
+.mod-superadmin .mm-tabs button.active {
+  color: #72ddca;
+  background: rgba(100,212,191,.1);
+  border-color: rgba(100,212,191,.24);
+}
+
+/* OVERVIEW */
+
+.mod-superadmin .mm-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mod-superadmin .mm-overview-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.mod-superadmin .mm-overview-heading h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #eaf6f4;
+}
+
+.mod-superadmin .mm-overview-heading p {
+  margin: 7px 0 0;
+  color: #91aeb1;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.mod-superadmin .mm-overview-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.mod-superadmin .mm-overview-stat,
+.mod-superadmin .mm-stat-card {
+  min-width: 0;
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  color: #e8f5f4;
+  border: 1px solid rgba(187,216,220,.13);
+  border-radius: 17px;
+  background: linear-gradient(
+    120deg,
+    rgba(99,210,194,.07),
+    rgba(255,255,255,.035)
+  );
+  backdrop-filter: blur(18px);
+  transition: .2s;
+}
+
+.mod-superadmin .mm-overview-stat:hover,
+.mod-superadmin .mm-stat-card:hover {
+  border-color: rgba(100,212,191,.55);
+  transform: translateY(-2px);
+}
+
+.mod-superadmin .mm-stat-card.selected {
+  border-color: #5ed3bd;
+  background: rgba(45,161,149,.16);
+}
+
+.mod-superadmin .mm-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #a2b9ba;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-stat-top svg {
+  flex-shrink: 0;
+  color: #9cded2;
+}
+
+.mod-superadmin .mm-overview-stat strong,
+.mod-superadmin .mm-stat-card strong {
+  display: block;
+  margin-top: 13px;
+  font-size: 30px;
+  line-height: 1.2;
+  color: #ecfbf8;
+}
+
+.mod-superadmin .mm-overview-stat small,
+.mod-superadmin .mm-stat-card small {
+  display: block;
+  margin-top: 9px;
+  color: #8faeb0;
+  font-size: 11px;
+}
+
+.mod-superadmin .mm-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.mod-superadmin .mm-panel {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(187,216,220,.13);
+  border-radius: 18px;
+  background: linear-gradient(
+    115deg,
+    rgba(255,255,255,.065),
+    rgba(255,255,255,.035)
+  );
+  backdrop-filter: blur(18px);
+}
+
+.mod-superadmin .mm-overview-panel {
+  min-height: 180px;
+}
+
+.mod-superadmin .mm-panel-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 23px;
+}
+
+.mod-superadmin .mm-panel-title h3 {
+  margin: 0;
+  color: #eaf6f4;
+  font-size: 16px;
+}
+
+.mod-superadmin .mm-panel-title p {
+  margin: 7px 0 0;
+  color: #91aeb1;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-panel-title > svg {
+  color: #6ee7d0;
+}
+
+.mod-superadmin .mm-status-summary {
+  padding: 6px 0;
+}
+
+.mod-superadmin .mm-status-number {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.mod-superadmin .mm-status-number strong {
+  color: #eaf6f4;
+  font-size: 31px;
+}
+
+.mod-superadmin .mm-status-number span {
+  color: #91aeb1;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-status-chart {
+  display: flex;
+  width: 100%;
+  height: 13px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: rgba(255,255,255,.06);
+}
+
+.mod-superadmin .mm-status-enabled-bar {
+  height: 100%;
+  background: #5fd1b8;
+  transition: width .2s;
+}
+
+.mod-superadmin .mm-status-disabled-bar {
+  height: 100%;
+  background: #ef9a86;
+  transition: width .2s;
+}
+
+.mod-superadmin .mm-status-legend {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 19px;
+  color: #a9c3c2;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-status-legend span,
+.mod-superadmin .mm-legend-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mod-superadmin .mm-legend-filter {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-legend-filter:hover,
+.mod-superadmin .mm-category-row:hover .mm-category-label {
+  color: #62cdb9;
+}
+
+.mod-superadmin .mm-legend-filter:focus-visible,
+.mod-superadmin .mm-category-row:focus-visible {
+  outline: 2px solid #62cdb9;
+  outline-offset: 3px;
+}
+
+.mod-superadmin .mm-dot-enabled,
+.mod-superadmin .mm-dot-disabled {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.mod-superadmin .mm-dot-enabled {
+  background: #5fd1b8;
+}
+
+.mod-superadmin .mm-dot-disabled {
+  background: #ef9a86;
+}
+
+.mod-superadmin .mm-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mod-superadmin .mm-category-row {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-category-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: #b8cecd;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-category-label strong {
+  color: #eaf6f4;
+}
+
+.mod-superadmin .mm-category-track {
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255,255,255,.08);
+}
+
+.mod-superadmin .mm-category-track div {
+  height: 100%;
+  border-radius: inherit;
+  background: #62cdb9;
+}
+
+.mod-superadmin .mm-overview-tenant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.mod-superadmin .mm-overview-tenant {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgba(185,220,222,.1);
+  border-radius: 11px;
+  background: rgba(7,26,33,.28);
+  color: #eaf6f4;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-overview-tenant:hover {
+  border-color: rgba(100,212,191,.4);
+  background: rgba(100,212,191,.055);
+}
+
+.mod-superadmin .mm-tenant-avatar {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: rgba(100,212,191,.11);
+  color: #6ee7d0;
+}
+
+.mod-superadmin .mm-overview-tenant-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  flex: 1;
+}
+
+.mod-superadmin .mm-overview-tenant-info strong {
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-overview-tenant-info span {
+  color: #91aeb1;
+  font-size: 11px;
+}
+
+.mod-superadmin .mm-overview-tenant-count {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+}
+
+.mod-superadmin .mm-overview-tenant-count strong {
+  font-size: 17px;
+  color: #7ee4d2;
+}
+
+.mod-superadmin .mm-overview-tenant-count span {
+  color: #91aeb1;
+  font-size: 10px;
+}
+
+.mod-superadmin .mm-overview-tenant > svg {
+  color: #91aeb1;
+  flex-shrink: 0;
+}
+
+.mod-superadmin .mm-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mod-superadmin .mm-quick-action {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 130px;
+  padding: 16px;
+  border: 1px solid rgba(185,220,222,.12);
+  border-radius: 12px;
+  background: rgba(7,26,33,.32);
+  color: #eaf6f4;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-quick-action:hover {
+  border-color: rgba(100,212,191,.5);
+  background: rgba(100,212,191,.06);
+}
+
+.mod-superadmin .mm-quick-icon {
+  display: grid;
+  place-items: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 9px;
+  color: #6ee7d0;
+  background: rgba(100,212,191,.1);
+}
+
+.mod-superadmin .mm-quick-action strong {
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-quick-action span {
+  max-width: 90%;
+  color: #91aeb1;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.mod-superadmin .mm-quick-arrow {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  color: #6ee7d0;
+}
+
+.mod-superadmin .mm-text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: #6ee7d0;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-recent-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mod-superadmin .mm-recent-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.mod-superadmin .mm-recent-item:last-child {
+  border-bottom: 0;
+}
+
+.mod-superadmin .mm-recent-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  color: #6ee7d0;
+  background: rgba(100,212,191,.09);
+}
+
+.mod-superadmin .mm-recent-item > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.mod-superadmin .mm-recent-item strong {
+  color: #eaf6f4;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-recent-item p {
+  margin: 5px 0 0;
+  color: #91aeb1;
+  font-size: 11px;
+}
+
+.mod-superadmin .mm-recent-item > span {
+  color: #91aeb1;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.mod-superadmin .mm-overview-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px;
+  color: #91aeb1;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-muted {
+  color: #91aeb1;
+  font-size: 12px;
+}
+
+/* ALL MODULES */
+
+.mod-superadmin .mm-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.mod-superadmin .mm-panel-heading {
+  margin-bottom: 20px;
+}
+
+.mod-superadmin .mm-panel-heading h2 {
+  margin: 0;
+  color: #eaf6f4;
+  font-size: 19px;
+}
+
+.mod-superadmin .mm-panel-heading p {
+  margin: 7px 0 0;
+  color: #91aeb1;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-bottom: 13px;
+}
+
+.mod-superadmin .mm-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+  max-width: 100%;
+  min-height: 43px;
+  padding: 0 13px;
+  border: 1px solid rgba(185,220,222,.16);
+  border-radius: 10px;
+  background: rgba(0,0,0,.12);
+  color: #91afb2;
+}
+
+.mod-superadmin .mm-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #ecfbf8;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-select {
+  min-height: 43px;
+  padding: 10px 13px;
+  border: 1px solid rgba(185,220,222,.16);
+  border-radius: 10px;
+  background: #19303a;
+  color: #ecfbf8;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-results {
+  margin: 12px 0 18px;
+  color: #91afb2;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mod-superadmin .mm-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(185,220,222,.12);
+  border-radius: 15px;
+  background: rgba(7,26,33,.42);
+  transition: .2s;
+}
+
+.mod-superadmin .mm-card:hover {
+  border-color: rgba(100,212,191,.4);
+  transform: translateY(-2px);
+}
+
+.mod-superadmin .mm-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mod-superadmin .mm-module-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  color: #6ee7d0;
+  background: rgba(110,231,208,.11);
+}
+
+.mod-superadmin .mm-enabled,
+.mod-superadmin .mm-disabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 11px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.mod-superadmin .mm-enabled {
+  color: #6ee7d0;
+  background: rgba(110,231,208,.12);
+}
+
+.mod-superadmin .mm-disabled {
+  color: #ff9e9e;
+  background: rgba(255,100,100,.12);
+}
+
+.mod-superadmin .mm-card-body {
+  flex: 1;
+  padding-top: 18px;
+}
+
+.mod-superadmin .mm-category {
+  color: #6ed9c7;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mod-superadmin .mm-card h3 {
+  margin: 9px 0;
+  color: #edf8f6;
+  font-size: 16px;
+}
+
+.mod-superadmin .mm-card p {
+  min-height: 40px;
+  margin: 0;
+  color: #92aeb0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mod-superadmin .mm-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px;
+  margin-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+
+.mod-superadmin .mm-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(185,220,222,.12);
+  border-radius: 9px;
+  background: rgba(255,255,255,.035);
+  color: #a99aff;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-icon-button:hover {
+  background: rgba(255,255,255,.1);
+}
+
+.mod-superadmin .mm-icon-button.mm-delete,
+.mod-superadmin .mm-icon-button.mm-power-off {
+  color: #ff8585;
+}
+
+.mod-superadmin .mm-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 45px 20px;
+  color: #91afb2;
+  text-align: center;
+}
+
+.mod-superadmin .mm-empty h3 {
+  margin: 0;
+  color: #eaf6f4;
+}
+
+.mod-superadmin .mm-empty p {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+
+/* TENANT ACCESS AND PLAN ENTITLEMENTS */
+
+.mod-superadmin .mm-section {
+  min-width: 0;
+}
+
+.mod-superadmin .mm-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 19px;
+}
+
+.mod-superadmin .mm-section-heading h3 {
+  margin: 0;
+  color: #eaf6f4;
+  font-size: 17px;
+}
+
+.mod-superadmin .mm-section-heading p {
+  margin: 7px 0 0;
+  color: #91aeb1;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-tenant-selector {
+  display: grid;
+  grid-template-columns: minmax(180px, 2fr) 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.mod-superadmin .mm-tenant-selector > label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #a2b9ba;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-tenant-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border: 1px solid rgba(185,220,222,.12);
+  border-radius: 11px;
+  background: rgba(255,255,255,.04);
+}
+
+.mod-superadmin .mm-tenant-summary span {
+  color: #91aeb1;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-tenant-summary strong {
+  color: #e8f5f4;
+  font-size: 16px;
+}
+
+.mod-superadmin .mm-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 15px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(100,212,191,.18);
+  border-radius: 11px;
+  background: rgba(100,212,191,.055);
+  color: #a5c7c4;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.mod-superadmin .mm-info svg {
+  flex-shrink: 0;
+  color: #6ee7d0;
+}
+
+.mod-superadmin .mm-access-list {
+  overflow: hidden;
+  border: 1px solid rgba(185,220,222,.12);
+  border-radius: 13px;
+}
+
+.mod-superadmin .mm-access-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 17px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(7,26,33,.3);
+}
+
+.mod-superadmin .mm-access-row:last-child {
+  border-bottom: 0;
+}
+
+.mod-superadmin .mm-access-info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.mod-superadmin .mm-access-info strong {
+  color: #eaf6f4;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-access-info p {
+  margin: 5px 0 0;
+  color: #91aeb1;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.mod-superadmin .mm-access-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.mod-superadmin .mm-switch {
+  position: relative;
+  display: inline-flex;
+  width: 42px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-switch input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-switch span {
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: #42525c;
+  pointer-events: none;
+  transition: .2s;
+}
+
+.mod-superadmin .mm-switch span::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #eaf6f4;
+  transition: .2s;
+}
+
+.mod-superadmin .mm-switch input:checked + span {
+  background: #48bba7;
+}
+
+.mod-superadmin .mm-switch input:checked + span::before {
+  transform: translateX(18px);
+}
+
+.mod-superadmin .mm-switch input:focus-visible + span {
+  outline: 2px solid #eaf6f4;
+  outline-offset: 3px;
+}
+
+.mod-superadmin .mm-plan-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.mod-superadmin .mm-plan-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid rgba(185,220,222,.13);
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  color: #eaf6f4;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-plan-tabs button.active {
+  border-color: #64d4bf;
+  background: rgba(100,212,191,.11);
+}
+
+.mod-superadmin .mm-plan-tabs button svg {
+  flex-shrink: 0;
+  color: #64d4bf;
+}
+
+.mod-superadmin .mm-plan-tabs button span {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.mod-superadmin .mm-plan-tabs button small {
+  margin-left: auto;
+  color: #91aeb1;
+  font-size: 11px;
+}
+
+/* ACTIVITY HISTORY */
+
+.mod-superadmin .mm-history-count {
+  color: #9db9bb;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.mod-superadmin .mm-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.mod-superadmin .mm-table th {
+  padding: 15px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  color: #91afb2;
+  font-size: 12px;
+  text-align: left;
+}
+
+.mod-superadmin .mm-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  color: #dbe9e8;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-history-action {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: rgba(110,231,208,.1);
+  color: #8ce5d5;
+}
+
+.mod-superadmin .mm-table-empty {
+  padding: 35px !important;
+  color: #91afb2 !important;
+  text-align: center;
+}
+
+/* MODALS */
+
+.mod-superadmin .mm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(0,8,14,.82);
+}
+
+.mod-superadmin .mm-modal {
+  width: 100%;
+  max-width: 520px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 26px;
+  border: 1px solid #34505a;
+  border-radius: 18px;
+  background: #12232d;
+  color: #ecfbf8;
+  box-shadow: 0 20px 80px rgba(0,0,0,.5);
+}
+
+.mod-superadmin .mm-modal-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.mod-superadmin .mm-modal-heading h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.mod-superadmin .mm-modal-heading p {
+  margin: 7px 0 0;
+  color: #9db9bb;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-close {
+  display: inline-flex;
+  padding: 8px;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(255,255,255,.07);
+  color: #eaf6f4;
+  cursor: pointer;
+}
+
+.mod-superadmin .mm-modal label:not(.mm-switch) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 18px;
+  color: #b9d2d2;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-modal input,
+.mod-superadmin .mm-modal textarea,
+.mod-superadmin .mm-modal select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #3b5961;
+  border-radius: 9px;
+  outline: none;
+  background: #193440;
+  color: #ecfbf8;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-modal textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.mod-superadmin .mm-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.mod-superadmin .mm-details-modal {
+  max-width: 620px;
+}
+
+.mod-superadmin .mm-detail-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.mod-superadmin .mm-detail-title h3 {
+  margin: 0 0 7px;
+}
+
+.mod-superadmin .mm-detail-title p {
+  margin: 0;
+  color: #91aeb1;
+  font-size: 13px;
+}
+
+.mod-superadmin .mm-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.mod-superadmin .mm-detail-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 15px;
+  border-radius: 11px;
+  background: rgba(255,255,255,.05);
+}
+
+.mod-superadmin .mm-detail-grid span {
+  color: #91aeb1;
+  font-size: 12px;
+}
+
+.mod-superadmin .mm-detail-grid strong {
+  font-size: 16px;
+}
+
+.mod-superadmin .mm-detail-subtitle {
+  margin: 24px 0 13px;
+  font-size: 14px;
+}
+
+.mod-superadmin .mm-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .mod-superadmin .mm-overview-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mod-superadmin .mm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mod-superadmin .mm-tenant-selector {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mod-superadmin .mm-tenant-selector > label {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 800px) {
+  .mod-superadmin .mm-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .mod-superadmin .mm-header,
+.mod-superadmin .mm-overview-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mod-superadmin .mm-stats,
+.mod-superadmin .mm-grid,
+.mod-superadmin .mm-plan-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .mm-panel {
+    padding: 15px;
+  }
+
+  .mod-superadmin .mm-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mod-superadmin .mm-search,
+.mod-superadmin .mm-select,
+.mod-superadmin .mm-toolbar .mm-secondary {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mod-superadmin .mm-access-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .mod-superadmin .mm-access-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .mod-superadmin .mm-tenant-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .mm-tenant-selector > label {
+    grid-column: auto;
+  }
+
+  .mod-superadmin .mm-modal {
+    padding: 18px;
+  }
+
+  .mod-superadmin .mm-overlay {
+    padding: 10px;
+  }
+
+  .mod-superadmin .mm-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .mm-recent-item {
+    flex-wrap: wrap;
+  }
+
+  .mod-superadmin .mm-recent-item > span {
+    margin-left: 49px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mod-superadmin .mm-overview-stats,
+.mod-superadmin .mm-quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .mm-tabs button {
+    flex: 1;
+  }
+}
+ .mod-superadmin .mm-history-filters{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:0 0 16px}.mod-superadmin .mm-history-filters .mm-search{display:flex;align-items:center;gap:8px;flex:1 1 240px;min-height:40px;padding:0 11px;border:1px solid rgba(166,205,212,.18);border-radius:9px;background:rgba(4,22,30,.3);color:#89a9ad}.mod-superadmin .mm-history-filters .mm-search input{width:100%;border:0;outline:0;background:transparent;color:#e9f5f4;font-size:12px}.mod-superadmin .mm-history-filters select,
+.mod-superadmin .mm-history-filters label{min-height:40px;padding:0 10px;border:1px solid rgba(166,205,212,.18);border-radius:9px;background:#19303b;color:#dcebe9;font-size:11px}.mod-superadmin .mm-history-filters label{display:inline-flex;align-items:center;gap:5px;padding:0 8px}.mod-superadmin .mm-history-filters label input{border:0;outline:0;background:transparent;color:#dcebe9;font-size:11px}.mod-superadmin .mm-history-filters .mm-secondary{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 11px;border:1px solid rgba(166,205,212,.18);border-radius:9px;background:rgba(255,255,255,.045);color:#c3d8d7;font-size:11px;cursor:pointer}

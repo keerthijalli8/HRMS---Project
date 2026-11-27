@@ -1,0 +1,189 @@
+
+.mod-superadmin .profile-page {
+  color: #ecfbf8;
+  padding: 8px 4px 30px;
+}
+
+.mod-superadmin .profile-heading {
+  margin-bottom: 20px;
+}
+
+.mod-superadmin .profile-heading h1 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.mod-superadmin .profile-heading p {
+  color: #9db9bb;
+  margin-top: 7px;
+  font-size: 13px;
+}
+
+.mod-superadmin .profile-panel {
+  max-width: 900px;
+  padding: 25px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  backdrop-filter: blur(18px);
+}
+
+.mod-superadmin .profile-photo-area {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 25px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.mod-superadmin .profile-photo-area .profile-avatar {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  color: #6ee7d0;
+  background: rgba(110,231,208,.12);
+  border: 2px solid rgba(110,231,208,.35);
+}
+
+.mod-superadmin .profile-photo-area .profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mod-superadmin .profile-photo-details {
+  min-width: 0;
+}
+
+.mod-superadmin .profile-photo-area p {
+  color: #9db9bb;
+  font-size: 13px;
+}
+
+.mod-superadmin .profile-photo-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.mod-superadmin .profile-upload,
+.mod-superadmin .profile-remove {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid rgba(110,231,208,.4);
+  border-radius: 8px;
+  color: #6ee7d0;
+  background: rgba(110,231,208,.07);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mod-superadmin .profile-upload input {
+  display: none;
+}
+
+.mod-superadmin .profile-remove {
+  color: #ffaaaa;
+  background: rgba(255,90,90,.07);
+  border-color: rgba(255,90,90,.3);
+}
+
+.mod-superadmin .profile-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.mod-superadmin .profile-fields label {
+  color: #9db9bb;
+  font-size: 13px;
+}
+
+.mod-superadmin .profile-fields input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 9px;
+  outline: 0;
+  color: #ecfbf8;
+  background: rgba(0,0,0,.2);
+}
+
+.mod-superadmin .profile-fields input:focus {
+  border-color: #6ee7d0;
+}
+
+.mod-superadmin .profile-full {
+  grid-column: 1 / -1;
+}
+
+.mod-superadmin .profile-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.mod-superadmin .profile-footer span {
+  color: #6ee7d0;
+  font-size: 13px;
+}
+
+.mod-superadmin .profile-footer .profile-error {
+  color: #ffaaaa;
+}
+
+.mod-superadmin .profile-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #6ee7d0;
+  color: #06232a;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mod-superadmin .profile-save:hover {
+  background: #91f1df;
+}
+
+@media (max-width: 600px) {
+  .mod-superadmin .profile-panel {
+    padding: 16px;
+  }
+
+  .mod-superadmin .profile-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .profile-full {
+    grid-column: auto;
+  }
+
+  .mod-superadmin .profile-photo-area {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mod-superadmin .profile-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

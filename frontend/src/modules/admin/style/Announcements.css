@@ -1,0 +1,1250 @@
+.mod-admin .announcement-page {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 18px;
+  color: var(--ink);
+}
+
+.mod-admin .ann-page-header,
+.mod-admin .announcement-topline,
+.mod-admin .ann-list-heading,
+.mod-admin .ann-form-actions,
+.mod-admin .ann-pagination,
+.mod-admin .ann-detail-meta,
+.mod-admin .ann-inbox-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mod-admin .ann-page-header {
+  min-height: 76px;
+  margin-bottom: 2px;
+}
+
+.mod-admin .ann-page-header h1 {
+  margin: 4px 0 3px;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: -0.035em;
+}
+
+.mod-admin .ann-page-header p,
+.mod-admin .ann-list-heading p,
+.mod-admin .ann-section-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.mod-admin .ann-eyebrow,
+.mod-admin .ann-preview-label {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.mod-admin .ann-header-actions,
+.mod-admin .ann-form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.mod-admin .ann-button {
+  display: inline-flex;
+  min-height: 39px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.mod-admin .ann-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.mod-admin .ann-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.mod-admin .ann-button-primary {
+  border-color: transparent;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.mod-admin .ann-button-primary:hover:not(:disabled) {
+  background: #8af0dd;
+}
+
+.mod-admin .ann-button-secondary {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.mod-admin .ann-button-secondary:hover:not(:disabled) {
+  background: var(--surface2);
+}
+
+.mod-admin .ann-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mod-admin .ann-kpi-card {
+  display: grid;
+  min-width: 0;
+  min-height: 136px;
+  grid-template-columns: 38px 1fr;
+  grid-template-rows: 28px 1fr 18px;
+  align-items: center;
+  column-gap: 10px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+  box-shadow: var(--card-shadow);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 150ms ease, transform 150ms ease, background 150ms ease;
+}
+
+.mod-admin .ann-kpi-card:hover,
+.mod-admin .ann-kpi-card.is-active {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 56%, var(--line));
+  background: rgba(255, 255, 255, 0.105);
+}
+
+.mod-admin .ann-kpi-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  grid-row: span 2;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.075);
+  color: var(--kpi-color);
+}
+
+.mod-admin .ann-kpi-label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.mod-admin .ann-kpi-card strong {
+  align-self: end;
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.05;
+}
+
+.mod-admin .ann-kpi-card small {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.mod-admin .ann-kpi-blue { --kpi-color: #93c5fd; }
+.mod-admin .ann-kpi-green { --kpi-color: #5eead4; }
+.mod-admin .ann-kpi-purple { --kpi-color: #c4b5fd; }
+.mod-admin .ann-kpi-amber { --kpi-color: #fcd34d; }
+.mod-admin .ann-kpi-rose { --kpi-color: #fda4af; }
+.mod-admin .ann-kpi-slate { --kpi-color: #cbd5e1; }
+
+.mod-admin .ann-panel {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+}
+
+.mod-admin .ann-list-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+.mod-admin .ann-list-heading {
+  flex-wrap: wrap;
+  padding: 17px 18px 14px;
+}
+
+.mod-admin .ann-list-heading h2 {
+  margin: 0 0 3px;
+  font-family: var(--font-display);
+  font-size: 17px;
+}
+
+.mod-admin .ann-filter-grid {
+  display: grid;
+  grid-template-columns: minmax(190px, 1.4fr) repeat(4, minmax(120px, 1fr)) repeat(2, minmax(130px, 0.8fr));
+  gap: 8px;
+  padding: 0 18px 15px;
+}
+
+.mod-admin .ann-filter-grid select,
+.mod-admin .ann-filter-grid input,
+.mod-admin .ann-field input,
+.mod-admin .ann-field select,
+.mod-admin .ann-field textarea,
+.mod-admin .ann-report-filters select {
+  width: 100%;
+  min-width: 0;
+  min-height: 39px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  background: rgba(2, 15, 21, 0.58);
+  color: var(--ink);
+  font-size: 11px;
+}
+
+.mod-admin .ann-filter-grid select:focus,
+.mod-admin .ann-filter-grid input:focus,
+.mod-admin .ann-field input:focus,
+.mod-admin .ann-field select:focus,
+.mod-admin .ann-field textarea:focus,
+.mod-admin .ann-report-filters select:focus {
+  border-color: var(--accent);
+}
+
+.mod-admin .ann-search {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+}
+
+.mod-admin .ann-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 11px;
+}
+
+.mod-admin .ann-clear-filter {
+  min-height: 35px;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mod-admin .ann-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+}
+
+.mod-admin .ann-table {
+  width: 100%;
+  min-width: 1500px;
+  border-collapse: collapse;
+  font-size: 10px;
+  text-align: left;
+}
+
+.mod-admin .ann-table th {
+  padding: 11px 9px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.mod-admin .ann-table td {
+  max-width: 190px;
+  padding: 11px 9px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: var(--ink);
+  vertical-align: middle;
+}
+
+.mod-admin .ann-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-admin .ann-table td small {
+  display: block;
+  max-width: 220px;
+  overflow: hidden;
+  margin-top: 3px;
+  color: var(--muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mod-admin .ann-table .ann-id {
+  color: var(--muted);
+  font-family: var(--font-data);
+  white-space: nowrap;
+}
+
+.mod-admin .ann-title-link {
+  max-width: 220px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 750;
+  text-align: left;
+}
+
+.mod-admin .ann-title-link:hover {
+  color: var(--accent);
+}
+
+.mod-admin .ann-audience-cell {
+  min-width: 120px;
+  line-height: 1.4;
+}
+
+.mod-admin .ann-sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  white-space: nowrap;
+}
+
+.mod-admin .ann-priority,
+.mod-admin .ann-category,
+.mod-admin .ann-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.mod-admin .ann-priority-normal { background: rgba(148, 163, 184, 0.12); color: #cbd5e1; }
+.mod-admin .ann-priority-important { background: rgba(96, 165, 250, 0.12); color: #93c5fd; }
+.mod-admin .ann-priority-urgent { background: rgba(251, 191, 36, 0.13); color: #fcd34d; }
+.mod-admin .ann-priority-critical { background: rgba(248, 113, 113, 0.15); color: #fca5a5; }
+.mod-admin .ann-category { border-color: rgba(110, 231, 208, 0.2); background: rgba(110, 231, 208, 0.08); color: var(--accent); }
+
+.mod-admin .ann-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.mod-admin .ann-status-published,
+.mod-admin .ann-status-delivered,
+.mod-admin .ann-status-read,
+.mod-admin .ann-status-acknowledged { color: #5eead4; background: rgba(94, 234, 212, 0.1); }
+.mod-admin .ann-status-scheduled { color: #c4b5fd; background: rgba(196, 181, 253, 0.11); }
+.mod-admin .ann-status-draft,
+.mod-admin .ann-status-unread,
+.mod-admin .ann-status-pending { color: #fcd34d; background: rgba(252, 211, 77, 0.1); }
+.mod-admin .ann-status-expired { color: #fda4af; background: rgba(253, 164, 175, 0.1); }
+.mod-admin .ann-status-archived { color: #cbd5e1; background: rgba(203, 213, 225, 0.1); }
+
+.mod-admin .ann-row-actions {
+  display: flex;
+  min-width: 160px;
+  align-items: center;
+  gap: 3px;
+}
+
+.mod-admin .ann-row-actions button,
+.mod-admin .ann-icon-button,
+.mod-admin .ann-pagination button,
+.mod-admin .ann-attachment a {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  flex: 0 0 auto;
+  place-items: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.mod-admin .ann-row-actions button:hover,
+.mod-admin .ann-icon-button:hover,
+.mod-admin .ann-pagination button:not(:disabled):hover,
+.mod-admin .ann-attachment a:hover {
+  border-color: var(--line);
+  background: var(--surface2);
+  color: var(--ink);
+}
+
+.mod-admin .ann-row-actions .ann-danger-icon:hover {
+  color: #fda4af;
+}
+
+.mod-admin .ann-pagination {
+  padding: 12px 18px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .ann-pagination > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.mod-admin .ann-pagination button {
+  border-color: var(--line);
+}
+
+.mod-admin .ann-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.mod-admin .ann-empty {
+  display: flex;
+  min-height: 150px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.mod-admin .ann-empty strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.mod-admin .ann-empty span {
+  font-size: 11px;
+}
+
+.mod-admin .ann-topline {
+  justify-content: flex-start;
+}
+
+.mod-admin .ann-autofill-note,
+.mod-admin .ann-muted,
+.mod-admin .ann-help,
+.mod-admin .ann-field small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .ann-form-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 14px;
+}
+
+.mod-admin .ann-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.mod-admin .ann-section-heading h2,
+.mod-admin .ann-detail-side h3,
+.mod-admin .ann-report-charts h3 {
+  margin: 0 0 3px;
+  font-family: var(--font-display);
+  font-size: 15px;
+}
+
+.mod-admin .ann-section-icon {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  place-items: center;
+  border: 1px solid rgba(110, 231, 208, 0.2);
+  border-radius: 11px;
+  background: rgba(110, 231, 208, 0.09);
+  color: var(--accent);
+}
+
+.mod-admin .ann-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 13px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mod-admin .ann-field b {
+  display: inline;
+  color: #fda4af;
+}
+
+.mod-admin .ann-field textarea {
+  min-height: 70px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.mod-admin .ann-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mod-admin .ann-help {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 1px 0 0;
+}
+
+.mod-admin .ann-option-list {
+  display: grid;
+  max-height: 170px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  overflow: auto;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.mod-admin .ann-check-option {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  padding: 6px;
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .ann-check-option:hover {
+  background: var(--surface2);
+  color: var(--ink);
+}
+
+.mod-admin .ann-check-option input,
+.mod-admin .ann-toggle input {
+  accent-color: var(--accent);
+}
+
+.mod-admin .ann-check-option span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mod-admin .ann-audience-count,
+.mod-admin .ann-inbox-unread {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.mod-admin .ann-audience-count svg {
+  color: var(--accent);
+}
+
+.mod-admin .ann-audience-count strong,
+.mod-admin .ann-inbox-unread strong {
+  color: var(--ink);
+}
+
+.mod-admin .ann-toggles {
+  display: grid;
+  gap: 11px;
+  margin-top: 16px;
+}
+
+.mod-admin .ann-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.mod-admin .ann-toggle > input {
+  margin-top: 3px;
+}
+
+.mod-admin .ann-toggle span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mod-admin .ann-toggle strong {
+  font-size: 11px;
+}
+
+.mod-admin .ann-toggle small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .ann-upload {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px dashed rgba(110, 231, 208, 0.45);
+  border-radius: 10px;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mod-admin .ann-upload input {
+  display: none;
+}
+
+.mod-admin .ann-attachments {
+  display: grid;
+  gap: 7px;
+  margin-top: 11px;
+}
+
+.mod-admin .ann-attachment {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-admin .ann-attachment > svg {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+.mod-admin .ann-attachment > div {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mod-admin .ann-attachment strong,
+.mod-admin .ann-attachment small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mod-admin .ann-attachment strong {
+  font-size: 10px;
+}
+
+.mod-admin .ann-attachment small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.mod-admin .ann-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  border-radius: 10px;
+  background: rgba(248, 113, 113, 0.09);
+  color: #fca5a5;
+  font-size: 11px;
+}
+
+.mod-admin .ann-action-spacer {
+  flex: 1;
+}
+
+.mod-admin .ann-form-actions {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.mod-admin .ann-preview {
+  max-width: 760px;
+  margin: 18px auto;
+  padding: clamp(20px, 5vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035));
+}
+
+.mod-admin .ann-preview h1 {
+  margin: 18px 0 8px;
+  font-family: var(--font-display);
+  font-size: 28px;
+}
+
+.mod-admin .ann-preview-short,
+.mod-admin .ann-detail-short {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.mod-admin .ann-preview-content,
+.mod-admin .ann-detail-content {
+  padding: 17px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.mod-admin .ann-preview-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .ann-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+  align-items: start;
+  gap: 14px;
+}
+
+.mod-admin .ann-detail-main h2 {
+  margin: 18px 0 4px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 30px);
+}
+
+.mod-admin .ann-detail-main .ann-attachments {
+  margin-top: 8px;
+}
+
+.mod-admin .ann-detail-side h3 {
+  margin-bottom: 14px;
+}
+
+.mod-admin .ann-info-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 10px;
+}
+
+.mod-admin .ann-info-line span {
+  color: var(--muted);
+}
+
+.mod-admin .ann-info-line strong {
+  max-width: 62%;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.mod-admin .ann-detail-side .ann-detail-stats-heading {
+  margin: 18px 0 8px;
+}
+
+.mod-admin .ann-mini-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.mod-admin .ann-mini-stats span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.mod-admin .ann-mini-stats strong {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+}
+
+.mod-admin .ann-full-button {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.mod-admin .ann-ack-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 13px;
+  border: 1px solid rgba(110, 231, 208, 0.25);
+  border-radius: 12px;
+  background: rgba(110, 231, 208, 0.07);
+  color: var(--accent);
+  font-size: 11px;
+}
+
+.mod-admin .ann-read-note {
+  margin-top: 11px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .ann-report-kpis {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mod-admin .ann-report-card {
+  display: flex;
+  min-height: 90px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.mod-admin .ann-report-card span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .ann-report-card strong {
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+.mod-admin .ann-report-blue strong { color: #93c5fd; }
+.mod-admin .ann-report-green strong { color: #5eead4; }
+.mod-admin .ann-report-teal strong { color: #6ee7d0; }
+.mod-admin .ann-report-amber strong { color: #fcd34d; }
+.mod-admin .ann-report-purple strong { color: #c4b5fd; }
+.mod-admin .ann-report-rose strong { color: #fda4af; }
+
+.mod-admin .ann-report-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mod-admin .ann-report-charts .ann-panel h3 {
+  margin-bottom: 15px;
+}
+
+.mod-admin .ann-department-chart {
+  grid-column: 1 / -1;
+}
+
+.mod-admin .ann-progress-row {
+  margin: 11px 0;
+}
+
+.mod-admin .ann-progress-row > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .ann-progress-row strong {
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.mod-admin .ann-progress-row strong small {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.mod-admin .ann-progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.mod-admin .ann-progress-track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.mod-admin .ann-progress-teal { background: #5eead4 !important; }
+.mod-admin .ann-progress-amber { background: #fcd34d !important; }
+.mod-admin .ann-progress-purple { background: #c4b5fd !important; }
+.mod-admin .ann-progress-rose { background: #fda4af !important; }
+.mod-admin .ann-progress-blue { background: #93c5fd !important; }
+
+.mod-admin .ann-report-filters {
+  padding: 0 18px 13px;
+}
+
+.mod-admin .ann-report-filters label {
+  display: flex;
+  max-width: 260px;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mod-admin .ann-recipient-table {
+  min-width: 1250px;
+}
+
+.mod-admin .ann-inbox-toolbar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.mod-admin .ann-inbox-toolbar .ann-field {
+  width: min(460px, 100%);
+  margin: 0;
+}
+
+.mod-admin .ann-inbox-unread {
+  margin: 0 0 10px;
+}
+
+.mod-admin .ann-inbox-unread svg {
+  color: var(--accent);
+}
+
+.mod-admin .ann-inbox-feed {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mod-admin .ann-inbox-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 9px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--surface);
+  color: var(--ink);
+  text-align: left;
+}
+
+.mod-admin .ann-inbox-card:hover,
+.mod-admin .ann-inbox-card.is-unread {
+  border-color: rgba(110, 231, 208, 0.38);
+}
+
+.mod-admin .ann-inbox-card h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+.mod-admin .ann-inbox-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.mod-admin .ann-inbox-card-top {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.mod-admin .ann-inbox-card-top > span:last-child {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.mod-admin .ann-inbox-attachment,
+.mod-admin .ann-inbox-ack {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.mod-admin .ann-inbox-ack {
+  color: #fcd34d;
+}
+
+.mod-admin .ann-storage-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.mod-admin .ann-storage-note svg {
+  flex: 0 0 auto;
+  color: #fcd34d;
+}
+
+.mod-admin .ann-message {
+  min-height: 50vh;
+}
+
+@media (max-width: 1250px) {
+  .mod-admin .ann-kpi-grid,
+.mod-admin .ann-report-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .mod-admin .ann-filter-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .mod-admin .ann-search {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 850px) {
+  .mod-admin .ann-form-layout,
+.mod-admin .ann-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .mod-admin .ann-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mod-admin .ann-search {
+    grid-column: 1 / -1;
+    min-height: 39px;
+  }
+  .mod-admin .ann-report-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .mod-admin .ann-page-header,
+.mod-admin .ann-list-heading,
+.mod-admin .ann-inbox-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .mod-admin .ann-kpi-grid,
+.mod-admin .ann-report-kpis,
+.mod-admin .ann-report-charts,
+.mod-admin .ann-inbox-feed {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mod-admin .ann-kpi-card {
+    min-height: 118px;
+    padding: 11px;
+  }
+  .mod-admin .ann-filter-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .mod-admin .ann-search {
+    grid-column: auto;
+  }
+  .mod-admin .ann-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .mod-admin .ann-option-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .mod-admin .ann-form-actions {
+    align-items: stretch;
+  }
+  .mod-admin .ann-action-spacer {
+    display: none;
+  }
+  .mod-admin .ann-form-actions .ann-button {
+    flex: 1;
+  }
+  .mod-admin .ann-form-actions .ann-button:nth-child(2) {
+    flex-basis: 100%;
+  }
+  .mod-admin .ann-report-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media print {
+  .mod-admin {
+    background: #fff !important;
+    color: #111 !important;
+  }
+  .mod-admin .admin-sidebar,
+.mod-admin .ann-page-header,
+.mod-admin .ann-report-filters,
+.mod-admin .ann-list-heading .ann-button,
+.mod-admin .ann-storage-note {
+    display: none !important;
+  }
+  .mod-admin .announcement-page,
+.mod-admin .ann-panel,
+.mod-admin .ann-report-card {
+    color: #111 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+  .mod-admin .ann-table {
+    min-width: 0;
+  }
+}
+
+.mod-admin .ann-record-count {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.mod-admin .ann-record-filters {
+  grid-template-columns: minmax(210px, 1.5fr) repeat(3, minmax(130px, 1fr)) repeat(2, minmax(145px, 0.9fr));
+}
+
+.mod-admin .ann-date-filter {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.mod-admin .ann-date-filter input {
+  min-height: 34px;
+}
+
+.mod-admin .ann-record-table {
+  min-width: 1500px;
+}
+
+.mod-admin .ann-record-table .ann-sort-button {
+  cursor: pointer;
+}
+
+.mod-admin .ann-record-actions {
+  display: flex;
+  min-width: 140px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.mod-admin .ann-record-actions button {
+  display: inline-flex;
+  min-height: 27px;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 6px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 9px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.mod-admin .ann-record-actions button:hover {
+  border-color: var(--line);
+  background: var(--surface2);
+  color: var(--ink);
+}
+
+.mod-admin .ann-record-actions button.is-danger:hover {
+  color: #fda4af;
+}
+
+.mod-admin .ann-record-loading {
+  display: grid;
+  min-height: 170px;
+  place-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 1250px) {
+  .mod-admin .ann-record-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .mod-admin .ann-record-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .mod-admin .ann-record-count {
+    white-space: normal;
+  }
+}

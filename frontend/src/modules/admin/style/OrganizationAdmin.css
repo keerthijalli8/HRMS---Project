@@ -1,0 +1,78 @@
+.mod-admin .module-notice { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; padding: 11px 13px; border: 1px solid rgba(110,231,208,.28); border-radius: 12px; background: rgba(110,231,208,.08); color: var(--accent); font-size: 12px; }
+.mod-admin .module-stat-icon { display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--accent); }
+.mod-admin .module-table-wrap { overflow-x: auto; margin-top: 16px; }
+.mod-admin .module-table { width: 100%; border-collapse: collapse; min-width: 720px; }
+.mod-admin .module-table th,
+.mod-admin .module-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 11px; text-align: left; vertical-align: middle; }
+.mod-admin .module-table th { color: var(--ink); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.mod-admin .module-table td:first-child { color: var(--ink); font-weight: 700; }
+.mod-admin .module-table tr:last-child td { border-bottom: 0; }
+.mod-admin .module-icon-button { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--accent); cursor: pointer; }
+.mod-admin .module-icon-button.danger { color: var(--bad); }
+.mod-admin .module-status { display: inline-flex; padding: 4px 8px; border-radius: 999px; background: rgba(148,163,184,.12); color: var(--muted); font-size: 10px; font-weight: 800; white-space: nowrap; }
+.mod-admin .module-status.success { background: rgba(110,231,208,.12); color: var(--accent); }
+.mod-admin .module-status.warning { background: rgba(252,211,77,.12); color: var(--warn); }
+.mod-admin .module-list { display: flex; flex-direction: column; gap: 10px; }
+.mod-admin .module-list-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.mod-admin .module-list-row:last-child { border-bottom: 0; }
+.mod-admin .module-row-icon { display: grid; width: 34px; height: 34px; flex: 0 0 34px; place-items: center; border-radius: 10px; background: rgba(110,231,208,.1); color: var(--accent); }
+.mod-admin .module-row-main { display: flex; min-width: 180px; flex: 1; flex-direction: column; gap: 4px; }
+.mod-admin .module-row-main strong { color: var(--ink); font-size: 12px; }
+.mod-admin .module-row-main span,
+.mod-admin .module-list-row small { color: var(--muted); font-size: 10px; }
+.mod-admin .module-inline-form { margin: 0 0 16px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.025); }
+.mod-admin .module-empty { display: flex; justify-content: center; align-items: center; gap: 8px; padding: 30px; color: var(--muted); font-size: 12px; }
+.mod-admin .module-kpi-detail { margin-bottom: 16px; }
+.mod-admin .module-detail-list { display: grid; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.mod-admin .module-detail-list li { display: flex; align-items: center; gap: 9px; padding: 11px 12px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); font-size: 12px; }
+.mod-admin .module-detail-list li span { margin-left: auto; color: var(--muted); font-size: 10px; }
+@media (max-width: 780px) { .mod-admin .module-form-grid { grid-template-columns: 1fr; } .mod-admin .module-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } .mod-admin .module-list-row { align-items: flex-start; flex-wrap: wrap; } .mod-admin .module-list-row small { margin-left: 46px; } }
+
+.mod-admin .permissions-target { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.mod-admin .permissions-target-type { display: flex; gap: 5px; padding: 4px; border: 1px solid var(--line); border-radius: 11px; background: rgba(255,255,255,.03); }
+.mod-admin .permissions-target-type button,
+.mod-admin .permissions-toolbar button { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 8px 11px; border: 1px solid transparent; border-radius: 9px; background: transparent; color: var(--muted); font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; }
+.mod-admin .permissions-target-type button.active { border-color: var(--line); background: var(--surface2); color: var(--accent); }
+.mod-admin .permissions-target > select { min-height: 40px; min-width: 250px; flex: 1; padding: 0 11px; border: 1px solid var(--line); border-radius: 10px; background: #10232c; color: var(--ink); }
+.mod-admin .permissions-inherited { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.mod-admin .permissions-toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+.mod-admin .permissions-search { display: flex; align-items: center; gap: 8px; min-width: 220px; flex: 1; padding: 0 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--muted); }
+.mod-admin .permissions-search input { width: 100%; min-height: 38px; border: 0; outline: 0; background: transparent; color: var(--ink); font: inherit; font-size: 12px; }
+.mod-admin .permissions-layout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; align-items: start; }
+.mod-admin .permissions-section { margin-bottom: 16px; }
+.mod-admin .permission-module { border-top: 1px solid var(--line); }
+.mod-admin .permission-module-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; }
+.mod-admin .permission-expand { display: flex; min-width: 0; flex: 1; align-items: center; gap: 8px; border: 0; background: transparent; color: var(--ink); text-align: left; cursor: pointer; }
+.mod-admin .permission-expand svg { flex: 0 0 auto; color: var(--muted); transition: transform 160ms ease; }
+.mod-admin .permission-expand svg.expanded { transform: rotate(180deg); }
+.mod-admin .permission-expand span { margin-left: auto; color: var(--muted); font-size: 10px; font-weight: 600; }
+.mod-admin .permission-toggle { display: inline-flex; align-items: center; gap: 5px; min-width: 112px; justify-content: center; padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; background: rgba(148,163,184,.08); color: var(--muted); font-size: 10px; font-weight: 800; cursor: pointer; }
+.mod-admin .permission-toggle.allowed { border-color: rgba(110,231,208,.3); background: rgba(110,231,208,.1); color: var(--accent); }
+.mod-admin .permission-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 10px; padding: 0 0 13px 25px; }
+.mod-admin .permission-actions label { display: flex; align-items: center; gap: 8px; min-width: 0; padding: 8px 9px; border: 1px solid transparent; border-radius: 8px; background: rgba(255,255,255,.025); color: var(--muted); font-size: 11px; cursor: pointer; }
+.mod-admin .permission-actions label:has(input:checked) { border-color: rgba(110,231,208,.18); color: var(--ink); }
+.mod-admin .permission-actions input,
+.mod-admin .scope-grid input { accent-color: var(--accent); }
+.mod-admin .permission-actions small { margin-left: auto; color: var(--muted); font-size: 9px; }
+.mod-admin .permissions-summary { position: sticky; top: 18px; }
+.mod-admin .permission-summary-stat { display: flex; align-items: baseline; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.mod-admin .permission-summary-stat strong { color: var(--accent); font-family: var(--font-display); font-size: 25px; }
+.mod-admin .permission-summary-stat span,
+.mod-admin .permission-summary-scope span { color: var(--muted); font-size: 11px; }
+.mod-admin .permission-summary-scope { display: flex; flex-direction: column; gap: 6px; padding: 14px 0; }
+.mod-admin .permission-summary-scope strong { color: var(--ink); font-size: 12px; }
+.mod-admin .permissions-save,
+.mod-admin .permissions-cancel { width: 100%; margin-top: 8px; }
+.mod-admin .scope-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-bottom: 12px; }
+.mod-admin .scope-grid label { display: flex; align-items: center; gap: 9px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.025); color: var(--muted); font-size: 11px; cursor: pointer; }
+.mod-admin .scope-grid label.selected { border-color: rgba(110,231,208,.45); background: rgba(110,231,208,.08); color: var(--ink); }
+.mod-admin .scope-grid label svg { color: var(--accent); }
+.mod-admin .permissions-empty { padding: 22px 0; color: var(--muted); font-size: 12px; text-align: center; }
+.mod-admin .workflow-permission-groups { display: grid; gap: 12px; padding: 12px 0; }
+.mod-admin .workflow-permission-groups section { padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.02); }
+.mod-admin .workflow-permission-groups h4 { margin: 0 0 8px; color: var(--ink); font-size: 12px; }
+.mod-admin .workflow-permission-groups .permission-actions { padding: 0; }
+@media (max-width: 850px) { .mod-admin .permissions-layout { grid-template-columns: 1fr; } .mod-admin .permissions-summary { position: static; } }
+@media (max-width: 620px) { .mod-admin .permissions-target,
+.mod-admin .permissions-toolbar { align-items: stretch; flex-direction: column; } .mod-admin .permissions-target > select { min-width: 0; } .mod-admin .permission-actions,
+.mod-admin .scope-grid { grid-template-columns: 1fr; } .mod-admin .permission-module-header { align-items: flex-start; flex-direction: column; } .mod-admin .permission-toggle { align-self: flex-end; } }

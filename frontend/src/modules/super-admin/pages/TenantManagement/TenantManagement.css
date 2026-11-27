@@ -1,0 +1,1324 @@
+
+.mod-superadmin .tenant-page {
+  width: 100%;
+  min-width: 0;
+  color: #ecfbf8;
+  animation: tenantFadeIn 0.35s ease;
+}
+
+@keyframes tenantFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page heading */
+
+.mod-superadmin .tenant-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.mod-superadmin .tenant-eyebrow {
+  color: #6ee7d0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.mod-superadmin .tenant-heading h1 {
+  margin: 8px 0 6px;
+  font-family: "Syne", sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.mod-superadmin .tenant-heading p {
+  margin: 0;
+  color: #9db9bb;
+  font-size: 13px;
+}
+
+.mod-superadmin .tenant-add-btn,
+.mod-superadmin .tenant-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  color: #061b1c;
+  background: linear-gradient(120deg, #6ee7d0, #50cbb8);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-superadmin .tenant-add-btn:hover,
+.mod-superadmin .tenant-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(110, 231, 208, 0.2);
+}
+
+/* Dashboard-style pill navigation */
+
+.mod-superadmin .tenant-pill-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding: 6px;
+  overflow-x: auto;
+  border: 1px solid rgba(110, 231, 208, 0.18);
+  border-radius: 15px;
+  background: rgba(4, 20, 27, 0.72);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  scrollbar-width: none;
+}
+
+.mod-superadmin .tenant-pill-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.mod-superadmin .tenant-pill {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 43px;
+  padding: 0 15px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #9db9bb;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.mod-superadmin .tenant-pill svg {
+  flex-shrink: 0;
+}
+
+.mod-superadmin .tenant-pill:hover {
+}
+
+.mod-superadmin .tenant-pill.active {
+  color: #6ee7d0;
+  border-color: rgba(110, 231, 208, 0.28);
+  background: rgba(110, 231, 208, 0.13);
+}
+
+.mod-superadmin .tenant-pill:focus-visible {
+  outline: 2px solid #6ee7d0;
+  outline-offset: 3px;
+}
+
+.mod-superadmin .tenant-pill-count {
+  min-width: 19px;
+  height: 19px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 5px;
+  border-radius: 999px;
+  color: #061b1c;
+  background: #6ee7d0;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* KPI cards */
+
+.mod-superadmin .tenant-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.mod-superadmin .tenant-stat-card {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 21px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  color: #ecfbf8;
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.7);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.mod-superadmin .tenant-stat-card:hover,
+.mod-superadmin .tenant-stat-card.selected {
+  transform: translateY(-3px);
+  border-color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(110, 231, 208, 0.2),
+    0 0 18px rgba(110, 231, 208, 0.1);
+}
+
+.mod-superadmin .tenant-stat-card:focus-visible {
+  outline: 2px solid #6ee7d0;
+  outline-offset: 3px;
+}
+
+.mod-superadmin .tenant-stat-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+}
+
+.mod-superadmin .tenant-stat-icon.purple {
+  color: #b2a4ff;
+  background: rgba(155, 140, 255, 0.14);
+}
+
+.mod-superadmin .tenant-stat-icon.mint {
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.13);
+}
+
+.mod-superadmin .tenant-stat-icon.red {
+  color: #ff929d;
+  background: rgba(255, 110, 130, 0.12);
+}
+
+.mod-superadmin .tenant-stat-icon.blue {
+  color: #80caff;
+  background: rgba(100, 180, 255, 0.13);
+}
+
+.mod-superadmin .tenant-stat-content {
+  min-width: 0;
+}
+
+.mod-superadmin .tenant-stat-card span {
+  display: block;
+  color: #9db9bb;
+  font-size: 11px;
+  margin-bottom: 7px;
+}
+
+.mod-superadmin .tenant-stat-card h2 {
+  margin: 0;
+  color: #ecfbf8;
+  font-family: "Syne", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Table section */
+
+.mod-superadmin .tenant-table-section {
+  overflow: visible;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 19px;
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.7);
+}
+
+.mod-superadmin .tenant-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 23px 23px 18px;
+}
+
+.mod-superadmin .tenant-table-header h2 {
+  margin: 0 0 6px;
+  font-family: "Syne", sans-serif;
+  font-size: 17px;
+}
+
+.mod-superadmin .tenant-table-header p {
+  margin: 0;
+  color: #9db9bb;
+  font-size: 13px;
+}
+
+.mod-superadmin .tenant-count {
+  padding: 7px 11px;
+  border-radius: 20px;
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.1);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Toolbar */
+
+.mod-superadmin .tenant-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 23px 19px;
+}
+
+.mod-superadmin .tenant-search,
+.mod-superadmin .tenant-filter {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #9db9bb;
+  background: rgba(0, 0, 0, 0.13);
+}
+
+.mod-superadmin .tenant-search {
+  flex: 1;
+  max-width: 390px;
+}
+
+.mod-superadmin .tenant-search input,
+.mod-superadmin .tenant-filter select {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  color: #ecfbf8;
+  background: transparent;
+  font-size: 12px;
+}
+
+.mod-superadmin .tenant-search input::placeholder {
+  color: #789496;
+}
+
+.mod-superadmin .tenant-search:focus-within,
+.mod-superadmin .tenant-filter:focus-within {
+  border-color: rgba(110, 231, 208, 0.55);
+  box-shadow: 0 0 0 3px rgba(110, 231, 208, 0.06);
+}
+
+.mod-superadmin .tenant-search-clear {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 6px;
+  color: #9db9bb;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mod-superadmin .tenant-search-clear:hover {
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.1);
+}
+
+.mod-superadmin .tenant-filter select {
+  min-width: 105px;
+  cursor: pointer;
+}
+
+.mod-superadmin .tenant-filter option,
+.mod-superadmin .tenant-form-grid select option {
+  color: #ecfbf8;
+  background: #10262e;
+}
+
+.mod-superadmin .tenant-reset-btn {
+  height: 42px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #9db9bb;
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-superadmin .tenant-reset-btn:hover {
+  color: #6ee7d0;
+  border-color: rgba(110, 231, 208, 0.4);
+  background: rgba(110, 231, 208, 0.08);
+}
+
+/* Table */
+
+.mod-superadmin .tenant-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 0 0 19px 19px;
+}
+
+.mod-superadmin .tenant-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.mod-superadmin .tenant-table thead {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-superadmin .tenant-table th {
+  padding: 14px 16px;
+  color: #8ca9ab;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.mod-superadmin .tenant-table td {
+  padding: 15px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.055);
+  color: #c4d8d7;
+  font-size: 11px;
+}
+
+.mod-superadmin .tenant-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.mod-superadmin .tenant-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-superadmin .tenant-org {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.mod-superadmin .tenant-org-icon {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 11px;
+  color: #9b8cff;
+  background: rgba(155, 140, 255, 0.13);
+}
+
+.mod-superadmin .tenant-org strong,
+.mod-superadmin .tenant-contact strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #ecfbf8;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.mod-superadmin .tenant-org span,
+.mod-superadmin .tenant-contact span {
+  display: block;
+  color: #829fa1;
+  font-size: 10px;
+}
+
+/* Plan labels */
+
+.mod-superadmin .tenant-plan {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mod-superadmin .tenant-plan.starter {
+  color: #80caff;
+  background: rgba(100, 180, 255, 0.11);
+}
+
+.mod-superadmin .tenant-plan.professional {
+  color: #b2a4ff;
+  background: rgba(155, 140, 255, 0.13);
+}
+
+.mod-superadmin .tenant-plan.enterprise {
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.11);
+}
+
+/* Status labels */
+
+.mod-superadmin .tenant-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mod-superadmin .tenant-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.mod-superadmin .tenant-status.active {
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.1);
+}
+
+.mod-superadmin .tenant-status.suspended {
+  color: #ff929d;
+  background: rgba(255, 110, 130, 0.1);
+}
+
+.mod-superadmin .tenant-status.pending {
+  color: #f5c875;
+  background: rgba(245, 200, 117, 0.1);
+}
+
+.mod-superadmin .tenant-status.rejected {
+  color: #ff929d;
+  background: rgba(255, 110, 130, 0.13);
+}
+
+/* Actions */
+
+.mod-superadmin .tenant-action-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mod-superadmin .tenant-action-btn {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 8px;
+  color: #9db9bb;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mod-superadmin .tenant-action-btn:hover {
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.1);
+}
+
+.mod-superadmin .tenant-approve-btn,
+.mod-superadmin .tenant-reject-btn {
+  min-height: 31px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-superadmin .tenant-approve-btn {
+  color: #6ee7d0;
+  border-color: rgba(110, 231, 208, 0.25);
+  background: rgba(110, 231, 208, 0.1);
+}
+
+.mod-superadmin .tenant-approve-btn:hover {
+  color: #061b1c;
+  background: #6ee7d0;
+}
+
+.mod-superadmin .tenant-reject-btn {
+  color: #ff929d;
+  border-color: rgba(255, 146, 157, 0.22);
+  background: rgba(255, 110, 130, 0.09);
+}
+
+.mod-superadmin .tenant-reject-btn:hover {
+  color: #fff;
+  background: rgba(255, 110, 130, 0.22);
+}
+
+.mod-superadmin .tenant-action-menu {
+  position: absolute;
+  z-index: 10;
+  top: 34px;
+  right: 0;
+  width: 180px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+  background: #10262e;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+.mod-superadmin .tenant-action-menu button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  color: #c4d8d7;
+  background: transparent;
+  text-align: left;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.mod-superadmin .tenant-action-menu button:hover {
+  color: #6ee7d0;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Empty state */
+
+.mod-superadmin .tenant-empty {
+  padding: 45px 20px !important;
+  text-align: center;
+  color: #9db9bb !important;
+}
+
+.mod-superadmin .tenant-empty svg {
+  display: block;
+  margin: 0 auto 12px;
+  color: #6ee7d0;
+}
+
+.mod-superadmin .tenant-empty strong,
+.mod-superadmin .tenant-empty span {
+  display: block;
+}
+
+.mod-superadmin .tenant-empty strong {
+  margin-bottom: 7px;
+  color: #ecfbf8;
+  font-size: 13px;
+}
+
+.mod-superadmin .tenant-empty span {
+  color: #9db9bb;
+  font-size: 11px;
+}
+
+.mod-superadmin .tenant-empty button {
+  margin-top: 15px;
+  padding: 8px 13px;
+  border: 1px solid rgba(110, 231, 208, 0.3);
+  border-radius: 8px;
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.08);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/* Modal */
+
+.mod-superadmin .tenant-modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(1, 10, 16, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.mod-superadmin .tenant-modal {
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 21px;
+  background: linear-gradient(
+    145deg,
+    rgba(19, 48, 56, 0.98),
+    rgba(10, 27, 39, 0.99)
+  );
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.55);
+}
+
+.mod-superadmin .tenant-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.mod-superadmin .tenant-modal-header span {
+  color: #6ee7d0;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.mod-superadmin .tenant-modal-header h2 {
+  margin: 8px 0 5px;
+  font-family: "Syne", sans-serif;
+  font-size: 22px;
+}
+
+.mod-superadmin .tenant-modal-header p {
+  margin: 0;
+  color: #9db9bb;
+  font-size: 12px;
+}
+
+.mod-superadmin .tenant-modal-close {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #9db9bb;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+
+.mod-superadmin .tenant-modal-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Form */
+
+.mod-superadmin .tenant-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.mod-superadmin .tenant-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #b8cecc;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mod-superadmin .tenant-form-grid input,
+.mod-superadmin .tenant-form-grid select {
+  width: 100%;
+  height: 43px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 9px;
+  outline: none;
+  color: #ecfbf8;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 11px;
+}
+
+.mod-superadmin .tenant-form-grid input:focus,
+.mod-superadmin .tenant-form-grid select:focus {
+  border-color: rgba(110, 231, 208, 0.65);
+  box-shadow: 0 0 0 3px rgba(110, 231, 208, 0.07);
+}
+
+.mod-superadmin .tenant-form-grid input::placeholder {
+  color: #718e90;
+}
+
+.mod-superadmin .tenant-form-full {
+  grid-column: 1 / -1;
+}
+
+.mod-superadmin .tenant-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 11px;
+  margin-top: 27px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.mod-superadmin .tenant-cancel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #b8cecc;
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mod-superadmin .tenant-cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mod-superadmin .tenant-submit-btn {
+  padding: 11px 17px;
+}
+
+/* Tenant details */
+
+.mod-superadmin .tenant-details-modal {
+  max-width: 570px;
+}
+
+.mod-superadmin .tenant-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.mod-superadmin .tenant-details-grid > div {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  align-items: center;
+  gap: 6px 9px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mod-superadmin .tenant-details-grid svg {
+  grid-row: span 2;
+  color: #6ee7d0;
+}
+
+.mod-superadmin .tenant-details-grid span {
+  color: #8da9aa;
+  font-size: 10px;
+}
+
+.mod-superadmin .tenant-details-grid strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #ecfbf8;
+  font-size: 11px;
+}
+
+.mod-superadmin .tenant-details-approval {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.mod-superadmin .tenant-details-approval .tenant-approve-btn,
+.mod-superadmin .tenant-details-approval .tenant-reject-btn {
+  min-height: 38px;
+  padding: 0 14px;
+}
+
+.mod-superadmin .tenant-details-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 23px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.mod-superadmin .tenant-activation-review-modal {
+  max-width: 760px;
+}
+
+.mod-superadmin .tenant-activation-validation {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border: 1px solid rgba(253, 164, 175, 0.25);
+  border-radius: 10px;
+  color: #ffb8bf;
+  background: rgba(253, 164, 175, 0.07);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.mod-superadmin .tenant-activation-validation.valid {
+  border-color: rgba(110, 231, 208, 0.25);
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.07);
+}
+
+.mod-superadmin .tenant-activation-review-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(253, 164, 175, 0.24);
+  border-radius: 10px;
+  color: #ffb8bf;
+  background: rgba(253, 164, 175, 0.07);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.mod-superadmin .tenant-activation-review-note strong {
+  color: #ecfbf8;
+}
+
+.mod-superadmin .tenant-form-error {
+  margin-top: 12px;
+  color: #ff929d;
+  font-size: 11px;
+}
+
+.mod-superadmin .tenant-modal-footer .tenant-approve-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mod-superadmin .tenant-activation-table .tenant-activation-reason {
+  min-width: 220px;
+  max-width: 300px;
+  white-space: normal;
+  line-height: 1.45;
+}
+
+.mod-superadmin .tenant-activation-table td:last-child {
+  min-width: 56px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.mod-superadmin .tenant-activation-history {
+  margin-top: 20px;
+  padding-bottom: 12px;
+}
+
+.mod-superadmin .tenant-activation-history-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.7fr) minmax(0, 2fr) minmax(160px, 0.8fr);
+  align-items: center;
+  gap: 12px;
+  margin: 0 23px;
+  padding: 13px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.055);
+  font-size: 11px;
+}
+
+.mod-superadmin .tenant-activation-history-row strong {
+  color: #6ee7d0;
+}
+
+.mod-superadmin .tenant-activation-history-row span,
+.mod-superadmin .tenant-activation-history-row time {
+  color: #9db9bb;
+  overflow-wrap: anywhere;
+}
+
+.mod-superadmin .tenant-rejection-reason {
+  grid-column: 1 / -1;
+}
+
+.mod-superadmin .tenant-rejection-reason svg {
+  color: #ff929d;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .mod-superadmin .tenant-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mod-superadmin .tenant-pill-nav {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 700px) {
+  .mod-superadmin .tenant-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mod-superadmin .tenant-heading h1 {
+    font-size: 23px;
+  }
+
+  .mod-superadmin .tenant-add-btn {
+    width: 100%;
+  }
+
+  .mod-superadmin .tenant-table-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mod-superadmin .tenant-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .mod-superadmin .tenant-search {
+    max-width: none;
+  }
+
+  .mod-superadmin .tenant-filter {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mod-superadmin .tenant-reset-btn {
+    width: 100%;
+  }
+
+  .mod-superadmin .tenant-form-grid,
+.mod-superadmin .tenant-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .tenant-form-full {
+    grid-column: auto;
+  }
+
+  .mod-superadmin .tenant-modal {
+    padding: 20px;
+  }
+
+  .mod-superadmin .tenant-modal-footer {
+    flex-direction: column-reverse;
+  }
+
+  .mod-superadmin .tenant-modal-footer > button {
+    width: 100%;
+  }
+
+  .mod-superadmin .tenant-activation-history-row {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin: 0 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .mod-superadmin .tenant-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .tenant-stat-card {
+    padding: 16px;
+  }
+
+  .mod-superadmin .tenant-modal-overlay {
+    padding: 10px;
+  }
+
+  .mod-superadmin .tenant-pill {
+    min-height: 39px;
+  }
+}
+
+.mod-superadmin .tenant-license-panel {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid rgba(110, 231, 208, 0.18);
+  border-radius: 14px;
+  background: rgba(110, 231, 208, 0.045);
+}
+
+.mod-superadmin .tenant-license-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mod-superadmin .tenant-license-heading > div {
+  display: grid;
+  gap: 3px;
+}
+
+.mod-superadmin .tenant-license-heading > div > span {
+  color: #8da9aa;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.mod-superadmin .tenant-license-heading strong {
+  color: #ecfbf8;
+  font-size: 13px;
+}
+
+.mod-superadmin .tenant-license-status {
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.1);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mod-superadmin .tenant-license-status.inactive,
+.mod-superadmin .tenant-license-status.expired,
+.mod-superadmin .tenant-license-status.suspended,
+.mod-superadmin .tenant-license-status.revoked {
+  color: #fda4af;
+  background: rgba(253, 164, 175, 0.1);
+}
+
+.mod-superadmin .tenant-license-status.pending,
+.mod-superadmin .tenant-license-status.pending-activation {
+  color: #f5c875;
+  background: rgba(245, 200, 117, 0.1);
+}
+
+.mod-superadmin .tenant-license-value {
+  overflow-wrap: anywhere;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 9px;
+  color: #ecfbf8;
+  background: rgba(3, 18, 25, 0.55);
+  font-size: 12px;
+  letter-spacing: 0.07em;
+}
+
+.mod-superadmin .tenant-license-expiry,
+.mod-superadmin .tenant-license-note {
+  color: #8da9aa;
+  font-size: 10px;
+}
+
+.mod-superadmin .tenant-license-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.mod-superadmin .tenant-license-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 33px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 8px;
+  color: #c4d8d7;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 10px;
+}
+
+.mod-superadmin .tenant-license-actions button:hover {
+  border-color: rgba(110, 231, 208, 0.35);
+  color: #6ee7d0;
+}
+
+.mod-superadmin .tenant-license-message {
+  color: #6ee7d0;
+  font-size: 11px;
+}
+
+.mod-superadmin .tenant-license-panel > p {
+  margin: 0;
+}
+
+.mod-superadmin .tenant-license-management .tenant-toolbar {
+  align-items: center;
+}
+
+.mod-superadmin .tenant-license-table {
+  min-width: 1180px;
+}
+
+.mod-superadmin .tenant-license-table code {
+  color: #ecfbf8;
+  font-size: 10px;
+  letter-spacing: 0.035em;
+}
+
+.mod-superadmin .tenant-license-table .tenant-license-status {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.mod-superadmin .tenant-license-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.mod-superadmin .tenant-license-row-actions button {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: #a9c2c0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mod-superadmin .tenant-license-row-actions button:hover {
+  color: #6ee7d0;
+  border-color: rgba(110, 231, 208, 0.25);
+  background: rgba(110, 231, 208, 0.08);
+}
+
+.mod-superadmin .tenant-license-row-actions button.danger:hover {
+  color: #ff929d;
+  border-color: rgba(255, 146, 157, 0.3);
+  background: rgba(255, 110, 130, 0.1);
+}
+
+.mod-superadmin .tenant-license-menu {
+  z-index: 1000;
+  width: 240px;
+  max-height: calc(100vh - 16px);
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+  background: #10262e;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+.mod-superadmin .tenant-license-menu button {
+  width: 100%;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 7px;
+  color: #c4d8d7;
+  background: transparent;
+  text-align: left;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.mod-superadmin .tenant-license-menu button:hover {
+  color: #6ee7d0;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.mod-superadmin .tenant-license-menu button.danger:hover {
+  color: #ff929d;
+  background: rgba(255, 110, 130, 0.1);
+}
+
+.mod-superadmin .tenant-license-menu-separator {
+  height: 1px;
+  margin: 5px 7px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mod-superadmin .tenant-license-global-message {
+  padding: 0 23px 12px;
+}
+
+.mod-superadmin .tenant-license-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 8px;
+  color: #6ee7d0;
+  font-size: 10px;
+}
+
+.mod-superadmin .tenant-module-picker {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 10px;
+}
+
+.mod-superadmin .tenant-module-picker legend {
+  padding: 0 6px;
+  color: #b8cecc;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mod-superadmin .tenant-module-picker > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.mod-superadmin .tenant-module-picker label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+}
+
+.mod-superadmin .tenant-module-picker input {
+  width: 14px;
+  height: 14px;
+  accent-color: #6ee7d0;
+}
+
+.mod-superadmin .tenant-module-picker small {
+  display: block;
+  margin-top: 9px;
+  color: #8da9aa;
+  font-size: 10px;
+}
+
+.mod-superadmin .tenant-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 700px) {
+  .mod-superadmin .tenant-module-picker > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

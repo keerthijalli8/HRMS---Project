@@ -1,0 +1,419 @@
+
+/* =========================================
+   HRMS INDIA - MONSOON GLASS
+   ADMIN SETTINGS
+========================================= */
+
+.mod-admin .settings-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 55px;
+  box-sizing: border-box;
+  color: #eaf5f3;
+  font-family: "Manrope", sans-serif;
+}
+
+.mod-admin .settings-header {
+  margin-bottom: 28px;
+}
+
+.mod-admin .settings-eyebrow {
+  color: #71d7c1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.mod-admin .settings-header h1 {
+  margin: 12px 0 7px;
+  color: #f0f8f7;
+  font-family: "Syne", sans-serif;
+  font-size: 30px;
+}
+
+.mod-admin .settings-header p {
+  margin: 0;
+  color: #91aaa9;
+  font-size: 13px;
+}
+
+/* SETTINGS LAYOUT */
+
+.mod-admin .settings-layout {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  align-items: start;
+  gap: 22px;
+}
+
+/* LEFT TABS */
+
+.mod-admin .settings-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  background: linear-gradient(145deg, #15363a, #102a2e);
+  border: 1px solid #29494c;
+  border-radius: 16px;
+}
+
+.mod-admin .settings-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 12px;
+  color: #9ab8b2;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-admin .settings-tab:hover {
+  color: #dff8f0;
+  background: rgba(91, 195, 170, 0.08);
+}
+
+.mod-admin .settings-tab.active {
+  color: #6ee2c6;
+  background: rgba(73, 195, 167, 0.12);
+  border-color: rgba(73, 195, 167, 0.25);
+}
+
+/* CONTENT PANEL */
+
+.mod-admin .settings-content {
+  min-width: 0;
+  padding: 28px;
+  background: linear-gradient(145deg, #15363a, #102a2e);
+  border: 1px solid #29494c;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.mod-admin .settings-section-title {
+  margin-bottom: 25px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(143, 190, 180, 0.13);
+}
+
+.mod-admin .settings-section-title h2 {
+  margin: 0;
+  color: #eaf5f3;
+  font-family: "Syne", sans-serif;
+  font-size: 19px;
+}
+
+.mod-admin .settings-section-title p {
+  margin: 8px 0 0;
+  color: #91aaa9;
+  font-size: 12px;
+}
+
+/* FORM GRID */
+
+.mod-admin .settings-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.mod-admin .settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.mod-admin .settings-field label {
+  color: #a9c6bf;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mod-admin .settings-field input,
+.mod-admin .settings-field select {
+  width: 100%;
+  height: 44px;
+  padding: 0 13px;
+  box-sizing: border-box;
+  color: #eaf5f3;
+  background: #0b2226;
+  border: 1px solid #29494c;
+  border-radius: 10px;
+  outline: none;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.mod-admin .settings-field input:focus,
+.mod-admin .settings-field select:focus {
+  border-color: #65d6bd;
+}
+
+.mod-admin .settings-field input::placeholder {
+  color: #789592;
+}
+
+.mod-admin .settings-field select option {
+  color: #eaf5f3;
+  background: #102a2e;
+}
+
+/* PROFILE */
+
+.mod-admin .settings-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 25px;
+  padding: 18px;
+  background: rgba(5, 30, 32, 0.45);
+  border: 1px solid #29494c;
+  border-radius: 13px;
+}
+
+.mod-admin .settings-profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  flex: 0 0 55px;
+  overflow: hidden;
+  color: #082c2a;
+  background: linear-gradient(135deg, #6ee1c1, #83a6ff);
+  border-radius: 16px;
+  font-family: "Syne", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.mod-admin .settings-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mod-admin .settings-profile-subheading {
+  grid-column: 1 / -1;
+  padding-top: 5px;
+  border-bottom: 1px solid rgba(143, 190, 180, 0.13);
+}
+
+.mod-admin .settings-profile-subheading h3 {
+  margin: 0 0 12px;
+  color: #6ee2c6;
+  font-family: "Syne", sans-serif;
+  font-size: 14px;
+}
+
+.mod-admin .settings-field-full {
+  grid-column: 1 / -1;
+}
+
+.mod-admin .settings-profile-card h3 {
+  margin: 0;
+  color: #eaf5f3;
+  font-size: 15px;
+}
+
+.mod-admin .settings-profile-card p {
+  margin: 5px 0;
+  color: #a1c0b8;
+  font-size: 12px;
+}
+
+.mod-admin .settings-profile-card span {
+  color: #6ed6bd;
+  font-size: 10px;
+}
+
+/* NOTIFICATION SWITCHES */
+
+.mod-admin .settings-toggle-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mod-admin .settings-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 19px 0;
+  border-bottom: 1px solid rgba(143, 190, 180, 0.12);
+}
+
+.mod-admin .settings-toggle-row:last-child {
+  border-bottom: none;
+}
+
+.mod-admin .settings-toggle-row h3 {
+  margin: 0;
+  color: #e5f5ef;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mod-admin .settings-toggle-row p {
+  margin: 6px 0 0;
+  color: #8faeaa;
+  font-size: 11px;
+}
+
+/* TOGGLE */
+
+.mod-admin .settings-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.mod-admin .settings-switch input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.mod-admin .settings-switch-slider {
+  position: absolute;
+  inset: 0;
+  background: #294548;
+  border: 1px solid #3a5d5d;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.mod-admin .settings-switch-slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  top: 3px;
+  background: #a4bfba;
+  border-radius: 50%;
+  transition: 0.25s;
+}
+
+.mod-admin .settings-switch input:checked + .settings-switch-slider {
+  background: #287f70;
+  border-color: #51c6aa;
+}
+
+.mod-admin .settings-switch input:checked + .settings-switch-slider::before {
+  transform: translateX(20px);
+  background: #eafff9;
+}
+
+/* SECURITY NOTE */
+
+.mod-admin .settings-security-note {
+  margin-top: 20px;
+  color: #ffbd82;
+  font-size: 11px;
+}
+
+/* SAVE BUTTON */
+
+.mod-admin .settings-save-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(143, 190, 180, 0.13);
+}
+
+.mod-admin .settings-save-message {
+  color: #75e4bd;
+  font-size: 11px;
+}
+
+.mod-admin .settings-save-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 19px;
+  color: #062b27;
+  background: #70dfc0;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-admin .settings-save-btn:hover {
+  background: #91efd4;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .mod-admin .settings-page {
+    padding: 35px;
+  }
+
+  .mod-admin .settings-layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mod-admin .settings-page {
+    padding: 22px;
+  }
+
+  .mod-admin .settings-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .settings-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mod-admin .settings-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mod-admin .settings-page {
+    padding: 14px;
+  }
+
+  .mod-admin .settings-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .settings-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .settings-save-area {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .mod-admin .settings-save-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,1340 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap");
+
+.mod-admin .departments-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 26px;
+  color: #ecfbf8;
+  font-family: "Manrope", sans-serif;
+  background:
+    radial-gradient(ellipse at 15% 5%, rgba(110, 231, 208, 0.08), transparent 35%),
+    transparent;
+}
+
+.mod-admin .departments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.mod-admin .departments-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mod-admin .department-add-btn.secondary {
+  color: #d8f7f1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.mod-admin .department-add-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.mod-admin .departments-header h1 {
+  color: #ecfbf8;
+  font-family: "Syne", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 7px;
+}
+
+.mod-admin .departments-header p {
+  color: #9db9bb;
+  margin: 0;
+  font-size: 13px;
+}
+
+.mod-admin .department-add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  color: #032a24;
+  background: #6ee7d0;
+  border: none;
+  border-radius: 12px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-admin .department-add-btn:hover {
+  background: #9af2e2;
+  transform: translateY(-2px);
+}
+
+.mod-admin .department-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.mod-admin .department-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 21px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.65);
+}
+
+.mod-admin .department-stat-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.12);
+}
+
+.mod-admin .active-icon {
+  color: #5eead4;
+  background: rgba(94, 234, 212, 0.12);
+}
+
+.mod-admin .employee-icon {
+  color: #9b8cff;
+  background: rgba(155, 140, 255, 0.14);
+}
+
+.mod-admin .department-stat-card p {
+  color: #9db9bb;
+  font-size: 12px;
+  margin: 0 0 7px;
+}
+
+.mod-admin .department-stat-card h2 {
+  color: #ecfbf8;
+  font-family: "Syne", sans-serif;
+  font-size: 25px;
+  margin: 0;
+}
+
+.mod-admin .department-content {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.65);
+}
+
+.mod-admin .department-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.mod-admin .department-toolbar h3 {
+  color: #ecfbf8;
+  font-family: "Syne", sans-serif;
+  font-size: 18px;
+  margin: 0;
+}
+
+.mod-admin .department-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 270px;
+  padding: 10px 13px;
+  color: #9db9bb;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 11px;
+}
+
+.mod-admin .department-search:focus-within {
+  border-color: #6ee7d0;
+}
+
+.mod-admin .department-search input {
+  width: 100%;
+  color: #ecfbf8;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.mod-admin .department-search input::placeholder {
+  color: #9db9bb;
+}
+
+.mod-admin .department-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.mod-admin .department-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.mod-admin .department-table th {
+  padding: 15px 12px;
+  color: #9db9bb;
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mod-admin .department-table td {
+  padding: 16px 12px;
+  color: #ecfbf8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  font-size: 13px;
+}
+
+.mod-admin .department-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.mod-admin .department-table tbody tr:hover {
+  background: rgba(110, 231, 208, 0.045);
+}
+
+.mod-admin .department-name {
+  color: #6ee7d0 !important;
+  font-weight: 700;
+}
+
+.mod-admin .department-status {
+  display: inline-block;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mod-admin .status-active {
+  color: #5eead4;
+  background: rgba(94, 234, 212, 0.12);
+}
+
+.mod-admin .status-inactive {
+  color: #fcd34d;
+  background: rgba(252, 211, 77, 0.12);
+}
+
+.mod-admin .department-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.mod-admin .department-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.10);
+  border: 1px solid rgba(110, 231, 208, 0.16);
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.mod-admin .department-actions button:hover {
+  background: rgba(110, 231, 208, 0.20);
+}
+
+.mod-admin .department-actions .delete-action {
+  color: #fda4af;
+  background: rgba(253, 164, 175, 0.10);
+  border-color: rgba(253, 164, 175, 0.16);
+}
+
+.mod-admin .department-empty {
+  text-align: center;
+  padding: 30px !important;
+  color: #9db9bb !important;
+}
+
+.mod-admin .department-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background: rgba(0, 8, 13, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.mod-admin .department-modal {
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 25px;
+  color: #ecfbf8;
+  background: rgba(12, 35, 43, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 22px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+}
+
+.mod-admin .department-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.mod-admin .department-modal-header h2 {
+  color: #ecfbf8;
+  font-family: "Syne", sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+
+.mod-admin .department-modal-header button {
+  display: flex;
+  padding: 8px;
+  color: #ecfbf8;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.mod-admin .department-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mod-admin .department-modal form label {
+  margin-top: 8px;
+  color: #9db9bb;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mod-admin .department-modal form input,
+.mod-admin .department-modal form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  color: #ecfbf8;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  outline: none;
+  font-family: inherit;
+}
+
+.mod-admin .department-modal form input:focus,
+.mod-admin .department-modal form select:focus {
+  border-color: #6ee7d0;
+}
+
+.mod-admin .department-modal form select option {
+  color: #ecfbf8;
+  background: #0c232b;
+}
+
+.mod-admin .department-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.mod-admin .department-cancel-btn {
+  padding: 11px 16px;
+  color: #ecfbf8;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.mod-admin .department-save-btn {
+  padding: 11px 16px;
+  color: #032a24;
+  background: #6ee7d0;
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mod-admin .department-save-btn:hover {
+  background: #9af2e2;
+}
+
+@media (max-width: 768px) {
+  .mod-admin .departments-page {
+    padding: 15px;
+  }
+
+  .mod-admin .departments-header,
+.mod-admin .department-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mod-admin .department-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .department-search {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Clickable department summary cards */
+.mod-admin .department-stat-clickable {
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.mod-admin .department-stat-clickable:hover {
+  transform: translateY(-3px);
+  border-color: #62e6c1;
+}
+
+.mod-admin .department-stat-clickable > div:last-child > span {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* Department detail section */
+.mod-admin .department-detail-section {
+  margin: 25px 0;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-admin .department-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.mod-admin .department-detail-header h2 {
+  margin: 0 0 7px;
+}
+
+.mod-admin .department-detail-header p {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+.mod-admin .department-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Department cards */
+.mod-admin .department-drill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.mod-admin .department-drill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.045);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.mod-admin .department-drill-card:hover {
+  transform: translateY(-3px);
+  border-color: #62e6c1;
+}
+
+.mod-admin .department-drill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 11px;
+  background: rgba(98, 230, 193, 0.12);
+  color: #62e6c1;
+}
+
+.mod-admin .department-drill-info h3 {
+  margin: 0 0 5px;
+}
+
+.mod-admin .department-drill-info p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.mod-admin .department-drill-count {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mod-admin .department-drill-count strong {
+  font-size: 25px;
+}
+
+.mod-admin .department-drill-count span {
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+.mod-admin .department-drill-link {
+  color: #62e6c1;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Detail toolbar */
+.mod-admin .department-detail-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.mod-admin .department-detail-count {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+}
+
+/* Employee table */
+.mod-admin .department-detail-table {
+  min-width: 1050px;
+}
+
+.mod-admin .department-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 11px;
+  border: 1px solid rgba(98, 230, 193, 0.35);
+  border-radius: 7px;
+  background: rgba(98, 230, 193, 0.1);
+  color: #62e6c1;
+  cursor: pointer;
+}
+
+/* Employee profile popup */
+.mod-admin .department-employee-modal {
+  width: min(700px, 95%);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.mod-admin .department-profile-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.mod-admin .department-employee-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin: 22px 0;
+}
+
+.mod-admin .department-employee-profile-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 13px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.045);
+  overflow-wrap: anywhere;
+}
+
+.mod-admin .department-employee-profile-grid span {
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+.mod-admin .department-employee-profile-grid strong {
+  font-size: 13px;
+}
+
+.mod-admin .department-profile-full {
+  grid-column: 1 / -1;
+}
+
+.mod-admin .department-profile-close {
+  width: 100%;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .mod-admin .department-detail-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mod-admin .department-employee-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .department-profile-full {
+    grid-column: auto;
+  }
+}
+
+/* URL-backed organizational hierarchy views */
+.mod-admin .department-stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mod-admin .department-employee-count-link {
+  min-width: 36px;
+  padding: 5px 9px;
+  border: 1px solid rgba(110, 231, 208, 0.22);
+  border-radius: 8px;
+  background: rgba(110, 231, 208, 0.08);
+  color: #6ee7d0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mod-admin .department-employee-count-link:hover {
+  border-color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.16);
+}
+
+.mod-admin .org-breadcrumb {
+  display: block;
+  margin-bottom: 7px;
+  color: #6ee7d0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.mod-admin .org-hierarchy-page > .department-detail-section {
+  margin-top: 0;
+}
+
+.mod-admin .org-person-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 17px;
+}
+
+.mod-admin .org-person-card {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #ecfbf8;
+}
+
+.mod-admin .org-person-main {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mod-admin .org-person-main > svg {
+  flex: 0 0 auto;
+  color: #6ee7d0;
+}
+
+.mod-admin .org-person-main:hover .org-person-main-copy strong {
+  color: #6ee7d0;
+}
+
+.mod-admin .org-person-main-copy {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mod-admin .org-person-main-copy strong {
+  overflow: hidden;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mod-admin .org-person-main-copy small {
+  overflow-wrap: anywhere;
+  color: #9db9bb;
+  font-size: 10px;
+}
+
+.mod-admin .org-person-avatar {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(110, 231, 208, 0.3);
+  border-radius: 50%;
+  background: rgba(110, 231, 208, 0.12);
+  color: #6ee7d0;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mod-admin .org-person-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mod-admin .org-person-avatar.large {
+  width: 64px;
+  height: 64px;
+  flex-basis: 64px;
+  font-size: 16px;
+}
+
+.mod-admin .org-person-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 12px;
+  margin-top: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  color: #9db9bb;
+  font-size: 11px;
+}
+
+.mod-admin .org-person-card-footer button {
+  min-width: 34px;
+  min-height: 30px;
+  padding: 4px 9px;
+  border: 1px solid rgba(110, 231, 208, 0.25);
+  border-radius: 8px;
+  background: rgba(110, 231, 208, 0.1);
+  color: #6ee7d0;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mod-admin .org-department-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.mod-admin .org-department-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mod-admin .org-department-heading svg {
+  color: #6ee7d0;
+}
+
+.mod-admin .org-department-count {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(110, 231, 208, 0.2);
+  border-radius: 10px;
+  background: rgba(110, 231, 208, 0.07);
+  color: #6ee7d0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mod-admin .org-department-count strong {
+  font-size: 21px;
+}
+
+.mod-admin .org-department-count span {
+  font-size: 11px;
+}
+
+.mod-admin .org-person-summary {
+  display: grid;
+  grid-template-columns: auto minmax(160px, 1fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 16px;
+  padding: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-admin .org-person-summary-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mod-admin .org-person-summary-copy strong {
+  font-family: "Syne", sans-serif;
+  font-size: 16px;
+}
+
+.mod-admin .org-person-summary-copy span {
+  color: #9db9bb;
+  font-size: 11px;
+}
+
+.mod-admin .org-person-summary dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px 16px;
+  margin: 0;
+}
+
+.mod-admin .org-person-summary.org-employee-hierarchy-summary {
+  display: block;
+  margin-top: 14px;
+}
+
+.mod-admin .org-employee-hierarchy-summary dl {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.mod-admin .org-administration-managers-kpi {
+  margin-top: 16px;
+}
+
+.mod-admin .org-employee-list-toolbar {
+  justify-content: flex-start;
+}
+
+.mod-admin .org-employee-list-toolbar .department-search {
+  flex: 1 1 260px;
+}
+
+.mod-admin .org-employee-filter {
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 11px;
+  background: #0c232b;
+  color: #ecfbf8;
+  font: inherit;
+  font-size: 12px;
+}
+
+.mod-admin .org-employee-filter:focus-visible {
+  outline: 2px solid #6ee7d0;
+  outline-offset: 2px;
+}
+
+.mod-admin .org-person-summary dl > div {
+  min-width: 0;
+}
+
+.mod-admin .org-person-summary dt {
+  margin-bottom: 4px;
+  color: #9db9bb;
+  font-size: 10px;
+}
+
+.mod-admin .org-person-summary dd {
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-size: 11px;
+}
+
+.mod-admin .org-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.mod-admin .org-kpi-grid .department-stat-card {
+  min-width: 0;
+  padding: 15px;
+}
+
+.mod-admin .org-kpi-grid .department-stat-card h2 {
+  font-size: 22px;
+}
+
+.mod-admin .org-subheading {
+  margin: 23px 0 8px;
+  font-family: "Syne", sans-serif;
+  font-size: 16px;
+}
+
+.mod-admin .org-table {
+  min-width: 1050px;
+}
+
+.mod-admin .org-table-person {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.mod-admin .org-table-person .org-person-avatar {
+  width: 32px;
+  height: 32px;
+  flex-basis: 32px;
+  font-size: 10px;
+}
+
+@media (max-width: 1100px) {
+  .mod-admin .department-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .mod-admin .org-person-summary {
+    grid-template-columns: auto 1fr;
+  }
+
+  .mod-admin .org-person-summary dl {
+    grid-column: 1 / -1;
+  }
+
+  .mod-admin .org-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .mod-admin .department-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .org-person-summary dl {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mod-admin .department-filter-select {
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 11px;
+  background: #0c232b;
+  color: #ecfbf8;
+  font: inherit;
+  font-size: 12px;
+}
+
+.mod-admin .org-department-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px;
+}
+
+.mod-admin .org-department-list-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #ecfbf8;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.mod-admin .org-department-list-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(110, 231, 208, 0.45);
+}
+
+.mod-admin .org-department-list-card .org-department-heading {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.mod-admin .org-department-list-card .org-department-heading > span:nth-child(2) {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mod-admin .org-department-list-card .org-department-heading small,
+.mod-admin .org-department-card-footer span:last-child,
+.mod-admin .org-department-metrics small {
+  color: #9db9bb;
+  font-size: 10px;
+}
+
+.mod-admin .org-department-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.mod-admin .org-department-metrics span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 9px;
+  border-radius: 9px;
+  background: rgba(110, 231, 208, 0.07);
+}
+
+.mod-admin .org-department-metrics strong {
+  color: #6ee7d0;
+  font-size: 18px;
+}
+
+.mod-admin .org-department-card-footer,
+.mod-admin .department-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mod-admin .department-pagination {
+  justify-content: flex-end;
+  margin-top: 18px;
+  color: #9db9bb;
+  font-size: 12px;
+}
+
+.mod-admin .department-pagination button {
+  padding: 8px 11px;
+  border: 1px solid rgba(110, 231, 208, 0.25);
+  border-radius: 8px;
+  background: rgba(110, 231, 208, 0.08);
+  color: #6ee7d0;
+  cursor: pointer;
+}
+
+.mod-admin .department-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.mod-admin .org-department-heading-button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mod-admin .org-department-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.mod-admin .org-department-overview > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-admin .org-department-overview strong {
+  color: #6ee7d0;
+  font-size: 22px;
+}
+
+.mod-admin .org-department-overview span {
+  color: #9db9bb;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .mod-admin .org-department-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .department-toolbar {
+    align-items: stretch;
+  }
+}
+
+.mod-admin .department-form-page {
+  max-width: 1100px;
+}
+
+.mod-admin .department-choice-panel {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-admin .department-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mod-admin .department-choice-card {
+  display: flex;
+  min-height: 150px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 9px;
+  padding: 20px;
+  border: 1px solid rgba(110, 231, 208, 0.2);
+  border-radius: 14px;
+  background: rgba(110, 231, 208, 0.06);
+  color: #ecfbf8;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.mod-admin .department-choice-card:hover {
+  transform: translateY(-2px);
+  border-color: #6ee7d0;
+  background: rgba(110, 231, 208, 0.12);
+}
+
+.mod-admin .department-choice-card svg { color: #6ee7d0; }
+.mod-admin .department-choice-card strong { font-size: 14px; }
+.mod-admin .department-choice-card span { color: #9db9bb; font-size: 11px; }
+
+.mod-admin .department-existing-select { display: flex; flex-direction: column; gap: 7px; color: #b4ccca; font-size: 11px; font-weight: 700; }
+.mod-admin .department-existing-select select,
+.mod-admin .department-existing-section select { width: 100%; padding: 11px 12px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 9px; background: #0c232b; color: #ecfbf8; font: inherit; font-size: 12px; }
+.mod-admin .department-existing-overview { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 18px 0; }
+.mod-admin .department-existing-overview > div { display: flex; flex-direction: column; gap: 5px; padding: 13px; border-radius: 10px; background: rgba(110, 231, 208, 0.07); }
+.mod-admin .department-existing-overview span,
+.mod-admin .department-member-row small,
+.mod-admin .department-employee-option small { color: #9db9bb; font-size: 10px; }
+.mod-admin .department-existing-overview strong { color: #6ee7d0; font-size: 14px; }
+.mod-admin .department-existing-section { padding: 17px 0; border-top: 1px solid rgba(255, 255, 255, 0.09); }
+.mod-admin .department-existing-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.mod-admin .department-existing-section-heading h3 { margin: 0 0 4px; font-size: 14px; }
+.mod-admin .department-existing-section-heading p { margin: 0; color: #9db9bb; font-size: 11px; }
+.mod-admin .department-existing-section-heading > svg { color: #6ee7d0; }
+.mod-admin .department-member-list,
+.mod-admin .department-available-list { display: grid; gap: 7px; }
+.mod-admin .department-member-row,
+.mod-admin .department-employee-option { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.1); border-radius: 9px; background: rgba(255,255,255,.035); }
+.mod-admin .department-member-row span,
+.mod-admin .department-employee-option span { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 3px; color: #ecfbf8; font-size: 12px; }
+.mod-admin .department-member-row > svg { color: #6ee7d0; }
+.mod-admin .department-employee-option { cursor: pointer; }
+.mod-admin .department-employee-option:hover { border-color: rgba(110, 231, 208, .4); background: rgba(110, 231, 208, .07); }
+.mod-admin .department-employee-option input { accent-color: #6ee7d0; }
+.mod-admin .department-success-message { display: flex; align-items: center; gap: 8px; padding: 11px 12px; border: 1px solid rgba(110,231,208,.25); border-radius: 9px; background: rgba(110,231,208,.08); color: #6ee7d0; font-size: 11px; }
+.mod-admin .department-existing-empty { margin-top: 20px; }
+
+@media (max-width: 700px) {
+  .mod-admin .department-choice-grid,
+.mod-admin .department-existing-overview { grid-template-columns: 1fr; }
+}
+
+.mod-admin .department-form-panel {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mod-admin .department-form-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.mod-admin .department-form-panel-heading h2 {
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-size: 18px;
+}
+
+.mod-admin .department-form-panel-heading p {
+  margin: 4px 0 0;
+  color: #9db9bb;
+  font-size: 11px;
+}
+
+.mod-admin .department-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mod-admin .department-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #b4ccca;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mod-admin .department-form-grid input,
+.mod-admin .department-form-grid select,
+.mod-admin .department-form-grid textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9px;
+  outline: 0;
+  background: #0c232b;
+  color: #ecfbf8;
+  font: inherit;
+  font-size: 12px;
+  resize: vertical;
+}
+
+.mod-admin .department-form-grid input:focus,
+.mod-admin .department-form-grid select:focus,
+.mod-admin .department-form-grid textarea:focus {
+  border-color: #6ee7d0;
+  box-shadow: 0 0 0 2px rgba(110, 231, 208, 0.12);
+}
+
+.mod-admin .department-form-wide {
+  grid-column: 1 / -1;
+}
+
+.mod-admin .department-field-error {
+  color: #ff9f9f;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.mod-admin .department-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.mod-admin .department-form-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mod-admin .department-form-actions .department-cancel-btn {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  color: #b4ccca;
+}
+
+.mod-admin .department-form-actions .department-save-btn {
+  border: 1px solid rgba(110, 231, 208, 0.35);
+  background: rgba(110, 231, 208, 0.14);
+  color: #6ee7d0;
+}
+
+.mod-admin .department-form-actions button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+@media (max-width: 650px) {
+  .mod-admin .department-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-admin .department-form-wide {
+    grid-column: auto;
+  }
+
+  .mod-admin .department-form-panel {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,659 @@
+
+/* ============================================
+   SUPER ADMIN - SETTINGS
+   MONSOON GLASS THEME
+============================================ */
+
+.mod-superadmin .st-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 24px;
+  color: #e8f4f5;
+  box-sizing: border-box;
+}
+
+.mod-superadmin .st-page * {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.mod-superadmin .st-heading {
+  margin-bottom: 26px;
+}
+
+.mod-superadmin .st-heading h1 {
+  margin: 0 0 8px;
+  font-size: 27px;
+  font-weight: 750;
+  color: #f2fbfb;
+}
+
+.mod-superadmin .st-heading p {
+  margin: 0;
+  font-size: 13px;
+  color: #9eb8bf;
+  line-height: 1.6;
+}
+
+/* NAVIGATION TABS */
+
+.mod-superadmin .st-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 8px;
+  border: 1px solid #294b54;
+  border-radius: 16px;
+  background: #142c37;
+}
+
+.mod-superadmin .st-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 17px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: #a8c0c6;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-superadmin .st-tab:hover {
+}
+
+.mod-superadmin .st-tab.active {
+  color: #64e0cc;
+  background: #1d4148;
+  border-color: #3a7a77;
+  box-shadow: 0 0 0 1px rgba(100, 224, 204, 0.05);
+}
+
+/* CONTENT PANEL */
+
+.mod-superadmin .st-panel {
+  width: 100%;
+  padding: 25px;
+  border: 1px solid #2d4c56;
+  border-radius: 18px;
+  background: #142c37;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mod-superadmin .st-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.mod-superadmin .st-header-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mod-superadmin .st-panel-header h2,
+.mod-superadmin .st-panel-header h3 {
+  margin: 0 0 7px;
+  color: #edf9fa;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.mod-superadmin .st-panel-header h3 {
+  font-size: 17px;
+}
+
+.mod-superadmin .st-panel-header p {
+  margin: 0;
+  color: #a1b9c0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+
+.mod-superadmin .st-primary,
+.mod-superadmin .st-secondary,
+.mod-superadmin .st-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-superadmin .st-primary {
+  background: #5bdac6;
+  border: 1px solid #5bdac6;
+  color: #102d32;
+}
+
+.mod-superadmin .st-primary:hover {
+  background: #78e9d6;
+}
+
+.mod-superadmin .st-secondary {
+  background: #20434b;
+  border: 1px solid #38616a;
+  color: #d8f5f1;
+}
+
+.mod-superadmin .st-secondary:hover {
+  background: #2a535b;
+}
+
+.mod-superadmin .st-danger {
+  background: rgba(232, 91, 100, 0.1);
+  border: 1px solid rgba(232, 91, 100, 0.35);
+  color: #ff9da3;
+}
+
+.mod-superadmin .st-danger:hover {
+  background: rgba(232, 91, 100, 0.2);
+}
+
+/* ADD ROLE */
+
+.mod-superadmin .st-add-role {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.mod-superadmin .st-add-role input {
+  flex: 1;
+  min-width: 190px;
+  min-height: 42px;
+  padding: 11px 14px;
+  background: #102832;
+  border: 1px solid #355660;
+  border-radius: 10px;
+  outline: none;
+  color: #e9f7f7;
+  font-size: 13px;
+}
+
+.mod-superadmin .st-add-role input:focus {
+  border-color: #5bdac6;
+}
+
+.mod-superadmin .st-add-role input::placeholder {
+  color: #819da5;
+}
+
+/* ROLE LAYOUT */
+
+.mod-superadmin .st-role-layout {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.mod-superadmin .st-role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.mod-superadmin .st-role-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #34515b;
+  border-radius: 11px;
+  background: #193540;
+  color: #e5f1f2;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mod-superadmin .st-role-item:hover {
+  background: #244550;
+}
+
+.mod-superadmin .st-role-item.selected {
+  border-color: #5bdac6;
+  background: #1d4549;
+}
+
+.mod-superadmin .st-role-item strong {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mod-superadmin .st-role-item small {
+  font-size: 11px;
+  color: #a1bac0;
+}
+
+.mod-superadmin .st-role-content {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #34515b;
+  border-radius: 13px;
+  background: #102a34;
+}
+
+/* PERMISSION TABLE */
+
+.mod-superadmin .st-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #34515b;
+  border-radius: 12px;
+}
+
+.mod-superadmin .st-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 12px;
+  color: #dcebec;
+}
+
+.mod-superadmin .st-table th:first-child,
+.mod-superadmin .st-table td:first-child {
+  width: 28%;
+}
+
+.mod-superadmin .st-table th:not(:first-child),
+.mod-superadmin .st-table td:not(:first-child) {
+  width: 12%;
+}
+
+.mod-superadmin .st-table th,
+.mod-superadmin .st-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #294954;
+  text-align: center;
+}
+
+.mod-superadmin .st-table th:first-child,
+.mod-superadmin .st-table td:first-child {
+  text-align: left;
+  min-width: 160px;
+}
+
+.mod-superadmin .st-table td:first-child strong {
+  display: block;
+  color: #e5f1f2;
+}
+
+.mod-superadmin .st-module-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mod-superadmin .st-disabled-label {
+  display: block;
+  margin-top: 4px;
+  color: #c6a4ff;
+  font-size: 10px;
+}
+
+.mod-superadmin .st-module-actions {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+.mod-superadmin .st-icon-button,
+.mod-superadmin .st-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid #34515b;
+  border-radius: 8px;
+  background: transparent;
+  color: #a9c6ca;
+  cursor: pointer;
+}
+
+.mod-superadmin .st-icon-button:hover,
+.mod-superadmin .st-modal-close:hover {
+  border-color: #5bdac6;
+  color: #70e5cc;
+}
+
+.mod-superadmin .st-module-menu {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  width: 170px;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  border: 1px solid #34515b;
+  border-radius: 10px;
+  background: #102832;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+.mod-superadmin .st-module-menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 9px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #e5f1f2;
+  font-size: 11px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mod-superadmin .st-module-menu button:hover { background: #1d4549; }
+.mod-superadmin .st-module-menu .is-danger { color: #ff9da3; }
+
+.mod-superadmin .st-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(3, 13, 18, 0.75);
+  backdrop-filter: blur(5px);
+}
+
+.mod-superadmin .st-modal {
+  width: min(650px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 22px;
+  border: 1px solid #34515b;
+  border-radius: 18px;
+  background: #102832;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+}
+
+.mod-superadmin .st-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #294954;
+}
+
+.mod-superadmin .st-modal-header h3 { margin: 0 0 6px; color: #edf9fa; font-size: 19px; }
+.mod-superadmin .st-modal-header p { margin: 0; color: #9eb8bf; font-size: 12px; }
+
+.mod-superadmin .st-module-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.mod-superadmin .st-module-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #c5d9dc;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.mod-superadmin .st-module-form-grid input,
+.mod-superadmin .st-module-form-grid select {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #355660;
+  border-radius: 9px;
+  outline: none;
+  background: #102832;
+  color: #e8f4f5;
+  font-size: 12px;
+}
+
+.mod-superadmin .st-module-form-grid input:focus,
+.mod-superadmin .st-module-form-grid select:focus { border-color: #5bdac6; }
+.mod-superadmin .st-form-full { grid-column: 1 / -1; }
+
+.mod-superadmin .st-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid #294954;
+}
+
+.mod-superadmin .st-module-details dl { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 12px; margin: 0; }
+.mod-superadmin .st-module-details dt { color: #9eb8bf; font-size: 12px; }
+.mod-superadmin .st-module-details dd { margin: 0; color: #e8f4f5; font-size: 12px; overflow-wrap: anywhere; }
+
+.mod-superadmin .st-table th {
+  background: #1d3a45;
+  color: #b7d2d7;
+  font-weight: 700;
+}
+
+.mod-superadmin .st-table tbody tr:hover {
+  background: rgba(93, 218, 198, 0.04);
+}
+
+.mod-superadmin .st-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.mod-superadmin .st-table input[type="checkbox"],
+.mod-superadmin .st-toggle-row input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #5bdac6;
+  cursor: pointer;
+}
+
+.mod-superadmin .st-table input:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* SECURITY FORM */
+
+.mod-superadmin .st-field-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.mod-superadmin .st-field-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #c5d9dc;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.mod-superadmin .st-field-grid select {
+  width: 100%;
+  min-height: 43px;
+  padding: 10px 12px;
+  background: #102832;
+  border: 1px solid #355660;
+  border-radius: 10px;
+  outline: none;
+  color: #e8f4f5;
+  font-size: 13px;
+}
+
+.mod-superadmin .st-field-grid select:focus {
+  border-color: #5bdac6;
+}
+
+/* SECURITY TOGGLES */
+
+.mod-superadmin .st-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 17px 0;
+  border-bottom: 1px solid #2a4953;
+  cursor: pointer;
+}
+
+.mod-superadmin .st-toggle-row span {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mod-superadmin .st-toggle-row strong {
+  color: #e8f3f4;
+  font-size: 13px;
+}
+
+.mod-superadmin .st-toggle-row small {
+  color: #9db5bb;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+
+.mod-superadmin .st-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.mod-superadmin .st-feedback {
+  color: #70e5cc;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mod-superadmin .st-note {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #31525b;
+  border-radius: 10px;
+  background: rgba(91, 218, 198, 0.045);
+  color: #a9c4c8;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .mod-superadmin .st-role-layout {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+
+  .mod-superadmin .st-field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .mod-superadmin .st-page {
+    padding: 15px;
+  }
+
+  .mod-superadmin .st-heading h1 {
+    font-size: 23px;
+  }
+
+  .mod-superadmin .st-panel {
+    padding: 16px;
+  }
+
+  .mod-superadmin .st-role-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .st-role-list {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .mod-superadmin .st-role-item {
+    min-width: 150px;
+  }
+
+  .mod-superadmin .st-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .st-tabs {
+    gap: 6px;
+  }
+
+  .mod-superadmin .st-tab {
+    flex: 1 1 45%;
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  .mod-superadmin .st-panel-header {
+    align-items: flex-start;
+  }
+
+  .mod-superadmin .st-header-actions { width: 100%; }
+  .mod-superadmin .st-header-actions button { flex: 1; }
+  .mod-superadmin .st-module-form-grid { grid-template-columns: 1fr; }
+  .mod-superadmin .st-form-full { grid-column: auto; }
+}
+
+@media (max-width: 480px) {
+  .mod-superadmin .st-tab {
+    flex: 1 1 100%;
+  }
+
+  .mod-superadmin .st-primary,
+.mod-superadmin .st-secondary {
+    width: 100%;
+  }
+
+  .mod-superadmin .st-add-role {
+    flex-direction: column;
+  }
+
+  .mod-superadmin .st-table {
+    min-width: 520px;
+  }
+}

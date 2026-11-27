@@ -1,0 +1,662 @@
+/* ============================================================
+   TECHNOMOLD IT ADMINISTRATION — SCOPED MONSOON GLASS THEME (.mod-it)
+   Scoped so !important table rules, text overrides, and CSS variables
+   never leak into Employee, Manager, TL, or HR modules.
+   ============================================================ */
+
+.mod-it,
+.mod-it[data-tpl="glass"] {
+  /* MAIN BACKGROUND */
+  --bg: #081e28;
+
+  /* GLASS SURFACES */
+  --surface: rgba(20, 47, 59, 0.76);
+  --surface2: rgba(29, 59, 71, 0.84);
+
+  --glass-panel: rgba(10, 32, 42, 0.97);
+  --glass-sidebar: rgba(10, 31, 41, 0.88);
+
+  /* TYPOGRAPHY */
+  --ink: #e5eff0;
+  --muted: #9fb2ba;
+
+  /* BORDERS */
+  --line: rgba(126, 174, 185, 0.24);
+  --card-border: 1px solid var(--line);
+
+  /* MONSOON ACCENT COLORS */
+  --accent: #61d8c4;
+  --on-accent: #092a2c;
+  --accent2: #93b4e8;
+
+  /* STATUS COLORS */
+  --good: #4fdb91;
+  --warn: #e7c45d;
+  --bad: #f28c9c;
+  --info: #7dc8e9;
+
+  /* FONT FAMILIES */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-data: 'Manrope', sans-serif;
+
+  /* TYPOGRAPHY SIZES */
+  --base-font-size: 14px;
+  --base-line-height: 1.45;
+
+  /* LAYOUT CONFIGURATION */
+  --radius: 22px;
+  --pad: 20px;
+  --gap: 14px;
+  --rail: 280px;
+  --h-weight: 700;
+
+  /* GLASS SHADOWS */
+  --card-shadow:
+    0 12px 32px -18px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+  --panel-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  /* GLASS BLUR */
+  --blur: blur(18px) saturate(135%);
+
+  color-scheme: dark;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  overflow-x: clip;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(97, 216, 196, 0.28) transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mod-it[data-density="compact"] {
+  --pad: 12px;
+  --gap: 10px;
+}
+
+/* ============================================================
+   SCOPED TYPOGRAPHY
+   ============================================================ */
+
+.mod-it h1,
+.mod-it h2,
+.mod-it h3,
+.mod-it h4 {
+  text-wrap: balance;
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+.mod-it p {
+  line-height: 1.45;
+}
+
+.mod-it button,
+.mod-it input,
+.mod-it textarea,
+.mod-it select {
+  font-family: inherit;
+}
+
+.mod-it ::selection {
+  background-color: rgba(97, 216, 196, 0.30);
+  color: var(--ink);
+}
+
+/* ============================================================
+   MONSOON GLASS SIDEBAR
+   ============================================================ */
+
+.mod-it aside[aria-label="IT Administration Navigation Sidebar"] {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18, 46, 58, 0.88) 0%,
+      rgba(8, 28, 38, 0.95) 100%
+    ) !important;
+  border-right: 1px solid var(--line) !important;
+  backdrop-filter: blur(24px) saturate(135%);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+  box-shadow: 8px 0 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ACTIVE SIDEBAR MODULE */
+
+.mod-it aside[aria-label="IT Administration Navigation Sidebar"] nav a[aria-current="page"],
+.mod-it aside[aria-label="IT Administration Navigation Sidebar"] nav button[aria-current="page"] {
+  background:
+    linear-gradient(
+      100deg,
+      rgba(97, 216, 196, 0.16),
+      rgba(97, 216, 196, 0.055)
+    ) !important;
+  border: 1px solid rgba(97, 216, 196, 0.32) !important;
+  color: var(--accent) !important;
+  box-shadow:
+    inset 3px 0 0 var(--accent),
+    0 4px 14px rgba(0, 0, 0, 0.13) !important;
+}
+
+.mod-it aside[aria-label="IT Administration Navigation Sidebar"] nav a[aria-current="page"] svg,
+.mod-it aside[aria-label="IT Administration Navigation Sidebar"] nav button[aria-current="page"] svg {
+  color: var(--accent) !important;
+}
+
+/* SIDEBAR HOVER */
+
+.mod-it aside[aria-label="IT Administration Navigation Sidebar"] nav a:not([aria-current="page"]):hover,
+.mod-it aside[aria-label="IT Administration Navigation Sidebar"] nav button:not([aria-current="page"]):hover {
+  background: rgba(97, 216, 196, 0.065) !important;
+  border-color: rgba(97, 216, 196, 0.13) !important;
+}
+
+/* ============================================================
+   COMMON DASHBOARD HEADER
+   ============================================================ */
+
+.mod-it #main-content > header {
+  border-bottom-color: var(--line);
+  color: var(--ink);
+}
+
+.mod-it #main-content > header h1 {
+  color: var(--ink);
+}
+
+/* HEADER QUICK ACTIONS */
+
+.mod-it #header-quick-actions {
+  background:
+    linear-gradient(
+      135deg,
+      #78e2d0,
+      #51c9b8
+    ) !important;
+  color: var(--on-accent) !important;
+  box-shadow: 0 4px 14px rgba(45, 180, 161, 0.16);
+  border: 1px solid rgba(144, 239, 225, 0.28);
+}
+
+.mod-it #header-quick-actions:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #91ecdd,
+      #61d8c4
+    ) !important;
+}
+
+/* ============================================================
+   GLOBAL SEARCH
+   ============================================================ */
+
+.mod-it input[aria-label="Search IT administration records"] {
+  background: rgba(20, 47, 59, 0.80) !important;
+  border-color: var(--line) !important;
+  color: var(--ink) !important;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.10);
+}
+
+.mod-it input[aria-label="Search IT administration records"]:hover {
+  border-color: rgba(97, 216, 196, 0.30) !important;
+}
+
+.mod-it input[aria-label="Search IT administration records"]:focus {
+  background: rgba(29, 59, 71, 0.90) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(97, 216, 196, 0.08);
+}
+
+/* ============================================================
+   MONSOON GLASS DROPDOWNS
+   ============================================================ */
+
+.mod-it #global-search-dropdown-menu,
+.mod-it #profile-dropdown-menu,
+.mod-it [data-testid="global-search-dropdown"],
+.mod-it [data-testid="profile-dropdown-menu"],
+.mod-it [data-testid="notifications-dropdown"],
+.mod-it #notifications-dropdown-menu,
+.mod-it #notifications-button + div {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19, 47, 59, 0.98),
+      rgba(9, 30, 40, 0.98)
+    ) !important;
+  border: 1px solid rgba(126, 174, 185, 0.30) !important;
+  backdrop-filter: blur(24px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(145%) !important;
+  box-shadow: var(--panel-shadow) !important;
+}
+
+/* ============================================================
+   NOTIFICATION AND PROFILE BUTTONS
+   ============================================================ */
+
+.mod-it #notifications-button,
+.mod-it #profile-menu-button {
+  background: rgba(29, 59, 71, 0.50);
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.mod-it #notifications-button:hover,
+.mod-it #profile-menu-button:hover {
+  background: rgba(29, 59, 71, 0.90);
+  border-color: rgba(97, 216, 196, 0.38);
+  color: var(--accent);
+}
+
+.mod-it #notifications-button[aria-expanded="true"],
+.mod-it #profile-menu-button[aria-expanded="true"] {
+  background: rgba(97, 216, 196, 0.10);
+  border-color: rgba(97, 216, 196, 0.40);
+}
+
+/* ============================================================
+   COMPACT ATTENDANCE TOOLBAR
+   ============================================================ */
+
+.mod-it [data-attendance-toolbar] {
+  color: var(--ink);
+}
+
+.mod-it [data-attendance-toolbar] button {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  font-variant-numeric: tabular-nums;
+}
+
+.mod-it [data-attendance-toolbar] button:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+
+.mod-it [data-attendance-toolbar] button:disabled {
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   DASHBOARD METRIC CARDS
+   ============================================================ */
+
+.mod-it [class~="dashboard-metric-card"] {
+  box-sizing: border-box;
+  min-height: 116px;
+  padding: calc(var(--pad) - 4px) var(--pad);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(29, 59, 71, 0.72),
+      rgba(16, 41, 52, 0.72)
+    );
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+}
+
+.mod-it [class~="dashboard-metric-card"]:hover {
+  border-color: rgba(97, 216, 196, 0.32);
+}
+
+.mod-it [class~="dashboard-metric-card--compact"] {
+  min-height: 104px;
+}
+
+.mod-it [class~="dashboard-metric-label"] {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.mod-it [class~="dashboard-metric-value"] {
+  color: var(--ink);
+  font-size: clamp(26px, 2.6vw, 34px);
+}
+
+.mod-it [class~="dashboard-metric-detail"] {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.mod-it [class~="dashboard-metric-card--wrapped"] {
+  min-height: 128px;
+}
+
+.mod-it [class~="dashboard-metric-detail--wrapped"] {
+  width: 100%;
+  gap: 2px;
+  padding-top: 5px;
+  border-top: 1px solid var(--line);
+  line-height: 1.25;
+}
+
+.mod-it [class~="dashboard-metric-detail--wrapped"] > span {
+  overflow-wrap: anywhere;
+}
+
+.mod-it [class~="dashboard-metric-detail"] [class~="opacity-80"] {
+  opacity: 1 !important;
+}
+
+.mod-it [class~="dashboard-section-subtitle"] {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+/* ============================================================
+   DASHBOARD ANALYTICS CARDS
+   ============================================================ */
+
+.mod-it .dashboard-analytics-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  contain: layout paint;
+}
+
+.mod-it .dashboard-analytics-card > :not(header) {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* ============================================================
+   SECONDARY TEXT COLORS (SCOPED TO .mod-it)
+   ============================================================ */
+
+.mod-it .text-slate-400,
+.mod-it .text-gray-400 {
+  color: var(--muted) !important;
+}
+
+.mod-it .text-slate-500,
+.mod-it .text-gray-500 {
+  color: var(--muted) !important;
+}
+
+/* LEGIBLE ACCENT BADGES */
+
+.mod-it .bg-accent2.text-white {
+  color: #10242e !important;
+}
+
+/* ============================================================
+   FROSTED GLASSMORPHISM CONTAINER UTILITIES
+   ============================================================ */
+
+.mod-it .frosted-glass,
+.mod-it .glass-container {
+  background: var(--surface) !important;
+  backdrop-filter: var(--blur) !important;
+  -webkit-backdrop-filter: var(--blur) !important;
+  border: var(--card-border) !important;
+  box-shadow: var(--card-shadow);
+}
+
+.mod-it .glass-container-dark {
+  background: var(--glass-panel) !important;
+  backdrop-filter: blur(24px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(140%) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: var(--panel-shadow);
+}
+
+.mod-it .glass-pill-active {
+  background: rgba(97, 216, 196, 0.12) !important;
+  border: 1px solid rgba(97, 216, 196, 0.26) !important;
+}
+
+/* ============================================================
+   DRAWERS AND DETAIL POPUPS
+   ============================================================ */
+
+.mod-it #side-drawer-panel,
+.mod-it [aria-labelledby="drawer-title"] > div {
+  background:
+    linear-gradient(
+      150deg,
+      rgba(18, 45, 57, 0.98),
+      rgba(9, 30, 40, 0.98)
+    ) !important;
+  backdrop-filter: blur(24px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(145%) !important;
+  border-color: var(--line) !important;
+  box-shadow: var(--panel-shadow) !important;
+}
+
+/* PROFILE AND ATTENDANCE MODALS */
+
+.mod-it[data-profile-modal] section[role="dialog"],
+.mod-it[data-attendance-modal] section[role="dialog"],
+.mod-it [data-profile-modal] section[role="dialog"],
+.mod-it [data-attendance-modal] section[role="dialog"] {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 46, 58, 0.98),
+      rgba(10, 32, 42, 0.98)
+    ) !important;
+  border: 1px solid rgba(126, 174, 185, 0.28) !important;
+  backdrop-filter: blur(24px) saturate(145%);
+  -webkit-backdrop-filter: blur(24px) saturate(145%);
+  box-shadow: var(--panel-shadow);
+}
+
+/* ============================================================
+   FORM ELEMENTS
+   ============================================================ */
+
+.mod-it input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+.mod-it textarea,
+.mod-it select {
+  color: var(--ink);
+  caret-color: var(--accent);
+}
+
+.mod-it input::placeholder,
+.mod-it textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+.mod-it input:disabled,
+.mod-it textarea:disabled,
+.mod-it select:disabled {
+  cursor: not-allowed;
+}
+
+.mod-it input[type="checkbox"],
+.mod-it input[type="radio"],
+.mod-it input[type="range"] {
+  accent-color: var(--accent);
+}
+
+.mod-it select option,
+.mod-it select optgroup {
+  background-color: #142f3b;
+  color: var(--ink);
+}
+
+.mod-it input[type="date"],
+.mod-it input[type="datetime-local"],
+.mod-it input[type="time"] {
+  color-scheme: dark;
+}
+
+.mod-it input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   DATA TABLES (SCOPED TO .mod-it)
+   ============================================================ */
+
+.mod-it table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  line-height: 1.45;
+}
+
+.mod-it th,
+.mod-it thead th,
+.mod-it table th {
+  font-weight: 700 !important;
+  color: var(--muted) !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+.mod-it thead {
+  background-color: rgba(18, 44, 55, 0.48);
+}
+
+.mod-it tbody td,
+.mod-it table td {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.mod-it tbody tr {
+  transition: background-color 150ms ease;
+}
+
+.mod-it tbody tr:hover {
+  background-color: rgba(97, 216, 196, 0.055) !important;
+}
+
+/* ============================================================
+   USER ACCOUNTS TABLE
+   ============================================================ */
+
+.mod-it .user-accounts-table {
+  width: 1530px;
+  min-width: 1530px;
+  table-layout: fixed;
+  line-height: 1.3;
+  letter-spacing: normal;
+}
+
+.mod-it .user-accounts-table thead th {
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 8px 12px;
+  color: var(--muted) !important;
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.035em !important;
+  white-space: nowrap;
+}
+
+.mod-it .user-accounts-table tbody td {
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 8px 12px;
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+  letter-spacing: normal !important;
+}
+
+.mod-it .user-accounts-table tbody td :not(svg) {
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+  letter-spacing: normal !important;
+}
+
+/* ============================================================
+   USER MANAGEMENT TYPOGRAPHY
+   ============================================================ */
+
+.mod-it #user-management-dashboard > div:first-child h2 {
+  font-size: 24px !important;
+}
+
+.mod-it #user-management-dashboard > div:first-child button {
+  font-size: 13px !important;
+}
+
+.mod-it #widget-accounts > header h2 {
+  font-size: 17px !important;
+}
+
+.mod-it #widget-accounts [role="tab"] {
+  font-size: 12px !important;
+}
+
+.mod-it #widget-accounts input[aria-label="Search employee accounts"],
+.mod-it #widget-accounts select[aria-label^="Filter by"] {
+  font-size: 14px !important;
+}
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+
+.mod-it #main-content {
+  font-size: var(--base-font-size);
+}
+
+/* ============================================================
+   MONSOON GLASS SCROLLBAR
+   ============================================================ */
+
+.mod-it ::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.mod-it ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mod-it ::-webkit-scrollbar-thumb {
+  background: rgba(126, 174, 185, 0.25);
+  border-radius: 10px;
+}
+
+.mod-it ::-webkit-scrollbar-thumb:hover {
+  background: rgba(97, 216, 196, 0.40);
+}
+
+.mod-it ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.mod-it .scrollbar-none {
+  scrollbar-width: none;
+}
+
+.mod-it .scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+
+.mod-it :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mod-it [hidden] {
+  display: none !important;
+}

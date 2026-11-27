@@ -1,0 +1,334 @@
+
+.mod-superadmin .subscription-request-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 18px;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(15, 74, 82, .55), transparent 35%),
+    radial-gradient(circle at 85% 15%, rgba(58, 42, 122, .45), transparent 35%),
+    #06141c;
+  color: #ecfbf8;
+  font-family: "Manrope", sans-serif;
+}
+
+.mod-superadmin .subscription-request-card {
+  width: 100%;
+  max-width: 850px;
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+  background: rgba(255,255,255,.07);
+  box-shadow: 0 18px 40px -22px rgba(0,0,0,.7);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
+.mod-superadmin .request-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border: 0;
+  color: #9db9bb;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mod-superadmin .request-heading {
+  margin: 20px 0 25px;
+  text-align: center;
+}
+
+.mod-superadmin .request-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  border-radius: 15px;
+  color: #6ee7d0;
+  background: rgba(110,231,208,.12);
+}
+
+.mod-superadmin .request-heading > span {
+  color: #6ee7d0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.mod-superadmin .request-heading h1 {
+  margin: 9px 0;
+  font-family: "Syne", sans-serif;
+  font-size: 28px;
+}
+
+.mod-superadmin .request-heading p,
+.mod-superadmin .request-note {
+  color: #9db9bb;
+  font-size: 13px;
+}
+
+.mod-superadmin .request-selected-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 17px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(110,231,208,.2);
+  border-radius: 13px;
+  background: rgba(110,231,208,.07);
+}
+
+.mod-superadmin .request-selected-plan div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mod-superadmin .request-selected-plan span {
+  color: #9db9bb;
+  font-size: 11px;
+}
+
+.mod-superadmin .request-selected-plan strong {
+  color: #6ee7d0;
+}
+
+.mod-superadmin .request-selected-plan small {
+  color: #9db9bb;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.mod-superadmin .request-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.mod-superadmin .request-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #c4d8d7;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mod-superadmin .request-full-width {
+  grid-column: 1 / -1;
+}
+
+.mod-superadmin .request-form-grid input,
+.mod-superadmin .request-form-grid select,
+.mod-superadmin .request-form-grid textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  outline: none;
+  color: #ecfbf8;
+  background: rgba(3,18,25,.65);
+  font: inherit;
+  font-size: 12px;
+}
+
+.mod-superadmin .request-form-grid input:focus,
+.mod-superadmin .request-form-grid select:focus,
+.mod-superadmin .request-form-grid textarea:focus {
+  border-color: #6ee7d0;
+}
+
+.mod-superadmin .request-form-grid input::placeholder,
+.mod-superadmin .request-form-grid textarea::placeholder {
+  color: #789496;
+}
+
+.mod-superadmin .request-form-grid select option {
+  color: #ecfbf8;
+  background: #10262e;
+}
+
+.mod-superadmin .request-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 24px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255,255,255,.1);
+  color: #9db9bb;
+  font-size: 12px;
+}
+
+.mod-superadmin .request-total strong {
+  color: #6ee7d0;
+  font-size: 20px;
+}
+
+.mod-superadmin .request-submit-btn {
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-radius: 11px;
+  color: #06141c;
+  background: #6ee7d0;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.mod-superadmin .request-submit-btn:hover {
+  background: #8af3df;
+  transform: translateY(-1px);
+}
+
+.mod-superadmin .request-disclaimer {
+  margin: 13px 0 0;
+  color: #829fa1;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.mod-superadmin .success-card {
+  max-width: 520px;
+  text-align: center;
+}
+
+.mod-superadmin .success-card > svg {
+  color: #6ee7d0;
+}
+
+.mod-superadmin .success-card h1 {
+  font-family: "Syne", sans-serif;
+}
+
+.mod-superadmin .success-card > p {
+  color: #9db9bb;
+  font-size: 13px;
+}
+
+.mod-superadmin .request-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 25px 0;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  text-align: left;
+}
+
+.mod-superadmin .request-summary span {
+  color: #9db9bb;
+  font-size: 11px;
+}
+
+.mod-superadmin .request-summary strong {
+  font-size: 12px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .mod-superadmin .subscription-request-card {
+    padding: 20px;
+  }
+
+  .mod-superadmin .request-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-superadmin .request-full-width {
+    grid-column: auto;
+  }
+
+  .mod-superadmin .request-heading h1 {
+    font-size: 23px;
+  }
+}
+
+.mod-superadmin .request-selected-plan small {
+  display: block;
+  margin-top: 5px;
+  color: #9db9bb;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.mod-superadmin .request-total {
+  align-items: center;
+}
+
+.mod-superadmin .request-total > span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mod-superadmin .request-calculation {
+  color: #829fa1;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.mod-superadmin .request-submit-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.mod-superadmin .license-gate-card {
+  max-width: 560px;
+}
+
+.mod-superadmin .license-key-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #c4d8d7;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mod-superadmin .license-key-field input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  outline: none;
+  color: #ecfbf8;
+  background: rgba(3,18,25,.65);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: .06em;
+}
+
+.mod-superadmin .license-key-field input:focus {
+  border-color: #6ee7d0;
+}
+
+.mod-superadmin .license-key-error {
+  margin: 0 0 12px;
+  color: #fda4af;
+  font-size: 12px;
+}
+
+.mod-superadmin .license-validated-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: -5px 0 20px;
+  color: #6ee7d0;
+  font-size: 12px;
+}
+
+.mod-superadmin .license-validated-message strong {
+  color: #ecfbf8;
+}

@@ -1,0 +1,91 @@
+.mod-admin .kpi-records-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 20px;
+  padding: 18px 20px;
+  color: #f3f7f7;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+}
+
+.mod-admin .kpi-records-header span {
+  color: #72e6c1;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.mod-admin .kpi-records-header h1 {
+  margin: 6px 0;
+  font-size: 22px;
+}
+
+.mod-admin .kpi-records-header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+}
+
+.mod-admin .kpi-records-header button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  color: #72e6c1;
+  background: rgba(114, 230, 193, 0.12);
+  border: 1px solid rgba(114, 230, 193, 0.3);
+  border-radius: 9px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mod-admin .kpi-records-header button:hover {
+  background: rgba(114, 230, 193, 0.2);
+}
+
+.mod-admin .kpi-records-route[data-module="employees"] .employees-header,
+.mod-admin .kpi-records-route[data-module="employees"] .employee-workmode-summary,
+.mod-admin .kpi-records-route[data-module="employees"] .employee-overview-heading,
+.mod-admin .kpi-records-route[data-module="employees"] .employee-role-grid,
+.mod-admin .kpi-records-route[data-module="employees"] .employee-summary-card,
+.mod-admin .kpi-records-route[data-module="departments"] .departments-header,
+.mod-admin .kpi-records-route[data-module="departments"] .department-stats,
+.mod-admin .kpi-records-route[data-module="leaves"] .leaves-header,
+.mod-admin .kpi-records-route[data-module="leaves"] .leaves-stats,
+.mod-admin .kpi-records-route[data-module="leaves"] .leaves-calendar-panel,
+.mod-admin .kpi-records-route[data-module="payroll"] .payroll-header,
+.mod-admin .kpi-records-route[data-module="payroll"] .payroll-stats,
+.mod-admin .kpi-records-route[data-module="documents"] .documents-header,
+.mod-admin .kpi-records-route[data-module="documents"] .documents-permission-note,
+.mod-admin .kpi-records-route[data-module="documents"] .documents-stats,
+.mod-admin .kpi-records-route[data-module="support"] > .module-page > :is(.module-page-header, .module-metrics, .support-secondary-grid, .module-grid-2),
+.mod-admin .kpi-records-route[data-module="performance"] > .module-page > :is(.module-page-header, #employee-evaluation, #goals-objectives) {
+  display: none !important;
+}
+
+.mod-admin .kpi-records-route[data-module="performance"] .module-metrics {
+  display: none !important;
+}
+
+.mod-admin .kpi-records-route[data-module="performance"]:not([data-filter^="report:"]) #performance-reports,
+.mod-admin .kpi-records-route[data-module="performance"][data-filter^="report:"] #performance-overview {
+  display: none !important;
+}
+
+.mod-admin .kpi-records-route[data-module="performance"]:not([data-filter^="report:"]) #performance-overview > :not(.performance-card-detail) {
+  display: none !important;
+}
+
+@media (max-width: 650px) {
+  .mod-admin .kpi-records-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

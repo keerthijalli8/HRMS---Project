@@ -1,0 +1,89 @@
+.mod-admin[data-tpl="glass"] {
+  color-scheme: dark;
+  --bg: #06141c;
+  --surface: rgba(255, 255, 255, 0.07);
+  --surface2: rgba(255, 255, 255, 0.1);
+  --ink: #ecfbf8;
+  --muted: #9db9bb;
+  --line: rgba(255, 255, 255, 0.15);
+  --accent: #6ee7d0;
+  --on-accent: #032a24;
+  --accent2: #9b8cff;
+  --good: #5eead4;
+  --warn: #fcd34d;
+  --bad: #fda4af;
+  --info: #93c5fd;
+  --font-display: "Syne", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-data: "Manrope", sans-serif;
+  --radius: 22px;
+  --pad: 20px;
+  --gap: 14px;
+  --rail: 236px;
+  --h-weight: 700;
+  --card-border: 1px solid var(--line);
+  --card-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.7);
+  --blur: blur(18px) saturate(140%);
+  font-family: var(--font-body);
+  color: var(--ink);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+:where(.mod-admin) * {
+  box-sizing: border-box;
+}
+
+.mod-admin {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.mod-admin {
+  background:
+    radial-gradient(900px 600px at 8% -10%, #0f4a52 0, transparent 60%),
+    radial-gradient(800px 700px at 100% 10%, #3a2a7a 0, transparent 55%),
+    var(--dashboard-bg, #06141c);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.mod-admin a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mod-admin button,
+.mod-admin input,
+.mod-admin select,
+.mod-admin textarea {
+  font: inherit;
+}
+
+.mod-admin button {
+  cursor: pointer;
+}
+
+.mod-admin [hidden] {
+  display: none !important;
+}
+
+.mod-admin *:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.mod-admin) *,
+:where(.mod-admin) *::before,
+:where(.mod-admin) *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

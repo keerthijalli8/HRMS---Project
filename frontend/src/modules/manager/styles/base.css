@@ -1,0 +1,154 @@
+@import './tokens.css';
+
+/* Scoped Manager Dashboard styles (.mod-manager) so !important rules & grids never leak into other modules */
+.mod-manager {
+  color: var(--ink);
+  font-family: var(--font-body);
+  color-scheme: dark;
+  min-height: 100vh;
+}
+
+.mod-manager * {
+  border-color: var(--line);
+}
+
+.mod-manager h1,
+.mod-manager h2,
+.mod-manager h3,
+.mod-manager h4,
+.mod-manager h5,
+.mod-manager h6 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.mod-manager :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mod-manager [hidden] {
+  display: none !important;
+}
+
+/* Glass Card Container */
+.mod-manager .glass-card {
+  background: var(--surface);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  padding: var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  min-width: 0;
+  transition: padding 0.2s ease, gap 0.2s ease, border-color 0.2s ease;
+}
+
+/* Scoped custom scrollbar */
+.mod-manager ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.mod-manager ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.mod-manager ::-webkit-scrollbar-thumb {
+  background: var(--surface2);
+  border-radius: 9999px;
+  border: 1px solid var(--line);
+}
+.mod-manager ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Page Overview Grid Specification */
+@media (min-width: 1100px) {
+  .mod-manager .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap);
+    grid-template-areas:
+      "hello hello hello"
+      "kpis kpis kpis"
+      "roles roles roles"
+      "inbox inbox trend"
+      "inbox inbox comp";
+  }
+
+  .mod-manager [data-w="hello"] { grid-area: hello; }
+  .mod-manager [data-w="kpis"] { grid-area: kpis; }
+  .mod-manager [data-w="roles"] { grid-area: roles; }
+  .mod-manager [data-w="inbox"] { grid-area: inbox; }
+  .mod-manager [data-w="trend"] { grid-area: trend; }
+  .mod-manager [data-w="comp"] { grid-area: comp; }
+}
+
+@media (max-width: 1099px) {
+  .mod-manager .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: var(--gap);
+  }
+
+  .mod-manager .overview-grid > [data-w="hello"],
+  .mod-manager .overview-grid > [data-w="kpis"],
+  .mod-manager .overview-grid > [data-w="roles"],
+  .mod-manager .overview-grid > [data-w="trend"] {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Standard 2-column Grid for other pages */
+@media (min-width: 1100px) {
+  .mod-manager .standard-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap);
+  }
+
+  .mod-manager .grid-col-span-2 {
+    grid-column: 1 / -1;
+  }
+
+  .mod-manager .grid-col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+}
+
+@media (max-width: 1099px) {
+  .mod-manager .standard-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+}
+
+/* Dashed row divider */
+.mod-manager .dashed-row-divider {
+  border-bottom: 1px dashed var(--line);
+}
+
+/* Scoped Dark Dropdown / Select styling */
+.mod-manager select {
+  color-scheme: dark !important;
+}
+
+.mod-manager select option,
+.mod-manager select optgroup {
+  background-color: #0a222b !important;
+  color: #ecfbf8 !important;
+}
+
+.mod-manager select option:checked {
+  background-color: #123744 !important;
+  color: #5eead4 !important;
+}
+
+.mod-manager select option:hover,
+.mod-manager select option:focus {
+  background-color: #164e63 !important;
+  color: #ffffff !important;
+}
