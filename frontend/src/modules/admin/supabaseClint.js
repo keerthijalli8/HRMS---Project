@@ -1,4 +1,5 @@
-import{ createClient } from '@supabase/supabase-js'; 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY; 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Supabase integration has been removed.
+// Update any remaining files that import `supabase` to use local storage
+// or their existing frontend data source instead.
+
+export const supabase = null;

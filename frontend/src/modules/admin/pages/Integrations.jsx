@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Activity, AlertTriangle, Check, ChevronRight, Clock3, Link2, LockKeyhole, Plus, RefreshCw, Search, ShieldCheck, Trash2, Webhook, X } from "lucide-react";
-import { supabase } from "../supabaseClint";
 import "../style/Modules.css";
 import "../style/OrganizationAdmin.css";
 import "../style/Integrations.css";
@@ -49,15 +48,11 @@ export default function Integrations() {
   const counts = useMemo(() => ({ total: integrations.length, connected: integrations.filter((item) => item.connectionStatus === "Connected").length, disconnected: integrations.filter((item) => item.connectionStatus === "Disconnected").length, pending: integrations.filter((item) => item.connectionStatus === "Pending Authorization").length, failed: integrations.filter((item) => ["Connection Failed", "Expired Credentials"].includes(item.connectionStatus)).length }), [integrations]);
 
   const showNotice = (message) => { setNotice(message); window.setTimeout(() => setNotice(""), 4500); };
-  const persistMetadata = async (next, message = "Integration metadata saved.", savedItem = next[next.length - 1]) => {
-    setIntegrations(next);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-    const item = savedItem;
-    if (item) {
-      const { error } = await supabase.from("organization_integrations").upsert({ id: item.id, name: item.name, category: item.category, provider: item.provider, description: item.description, connection_status: item.connectionStatus, sync_status: item.syncStatus, last_sync: item.lastSync, approval_status: item.approvalStatus, active: item.active, endpoint: item.endpoint, auth_method: item.authMethod, frequency: item.frequency, direction: item.direction }, { onConflict: "id" });
-      showNotice(error ? `${message} Local metadata is being used until the organization_integrations table is available.` : message);
-    } else showNotice(message);
-  };
+const persistMetadata = async (next, message = "Integration metadata saved.") => {
+  setIntegrations(next);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  showNotice(message);
+};
   const openEdit = (item) => { setEditing(item); setModal("integration"); };
   const saveIntegration = async (draft, secretPresent) => {
     const nextItem = { ...draft, credentialsConfigured: secretPresent || draft.credentialsConfigured, lastSync: draft.lastSync || null, updatedAt: new Date().toISOString() };
@@ -69,7 +64,20 @@ export default function Integrations() {
     const log = { id: `log-${Date.now()}`, integration: item.name, operation: "Connection test", date: new Date().toLocaleString(), status: "Not verified", duration: "—", error: "No secure backend connector is configured for this provider. The integration remains disconnected." };
     const nextLogs = [log, ...logs]; setLogs(nextLogs); localStorage.setItem("hrms-integration-logs", JSON.stringify(nextLogs)); showNotice("Connection was not marked as connected. Configure a secure backend connector to run a real provider test.");
   };
-  const removeIntegration = async (item) => { if (!window.confirm(`Delete ${item.name}? This removes metadata only and cannot revoke provider credentials.`)) return; const next = integrations.filter((row) => row.id !== item.id); setIntegrations(next); localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); await supabase.from("organization_integrations").delete().eq("id", item.id); showNotice("Integration metadata deleted."); };
+  const removeIntegration = async (item) => {
+  if (
+    !window.confirm(
+      `Delete ${item.name}? This removes metadata only and cannot revoke provider credentials.`
+    )
+  ) {
+    return;
+  }
+
+  const next = integrations.filter((row) => row.id !== item.id);
+  setIntegrations(next);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  showNotice("Integration metadata deleted.");
+};
   const saveWebhook = (draft) => { const next = webhooks.some((item) => item.id === draft.id) ? webhooks.map((item) => item.id === draft.id ? draft : item) : [...webhooks, draft]; setWebhooks(next); localStorage.setItem("hrms-integration-webhooks", JSON.stringify(next)); setModal(""); showNotice("Webhook metadata saved. Delivery remains inactive until a secure backend endpoint is configured."); };
 
   return <div className="module-page integrations-page"><header className="module-page-header"><div><span className="module-eyebrow">Administration</span><h1>Integrations</h1><p>Manage approved providers, secure connection metadata, synchronization and delivery monitoring.</p></div><div className="module-stat-icon"><Link2 size={22} /></div></header>{notice && <div className="module-notice"><Check size={16} />{notice}</div>}<section className="integration-metrics">{[["Total integrations", counts.total, Link2, "total"], ["Connected integrations", counts.connected, Check, "connected"], ["Disconnected integrations", counts.disconnected, X, "disconnected"], ["Pending integrations", counts.pending, Clock3, "pending"], ["Failed integrations", counts.failed, AlertTriangle, "failed"]].map(([label, value, Icon, key]) => <button type="button" className="module-metric-card integration-metric" key={key} onClick={() => setStatus(key === "total" ? "All statuses" : key === "connected" ? "Connected" : key === "disconnected" ? "Disconnected" : key === "pending" ? "Pending Authorization" : "Connection Failed")}><div className="module-metric-heading"><span>{label}</span><span className="module-metric-icon"><Icon size={17} /></span></div><strong>{value}</strong><small><ChevronRight size={12} />Filter integrations</small></button>)}</section><nav className="integration-tabs"><button className={tab === "integrations" ? "active" : ""} onClick={() => setTab("integrations")}><Link2 size={15} />Integrations</button><button className={tab === "webhooks" ? "active" : ""} onClick={() => setTab("webhooks")}><Webhook size={15} />Webhooks</button><button className={tab === "logs" ? "active" : ""} onClick={() => setTab("logs")}><Activity size={15} />Integration logs</button></nav>{tab === "integrations" && <><section className="module-card integration-toolbar"><label className="integration-search"><Search size={16} /><input placeholder="Search integrations..." value={query} onChange={(event) => setQuery(event.target.value)} /></label><select value={category} onChange={(event) => setCategory(event.target.value)}><option>All categories</option>{categories.map((item) => <option key={item}>{item}</option>)}</select><select value={status} onChange={(event) => setStatus(event.target.value)}><option>All statuses</option>{statuses.map((item) => <option key={item}>{item}</option>)}</select><button className="module-button" onClick={() => { setEditing(newDraft()); setModal("integration"); }}><Plus size={15} />Add integration</button></section><section className="module-card module-table-wrap"><table className="module-table integrations-table"><thead><tr><th>Integration</th><th>Category / Provider</th><th>Connection</th><th>Last sync / Sync status</th><th>Approval</th><th>Actions</th></tr></thead><tbody>{filtered.map((item) => <tr key={item.id}><td><strong>{item.name}</strong><small>{item.description}</small></td><td>{item.category}<small>{item.provider}</small></td><td><span className={`module-status ${item.connectionStatus === "Connected" ? "success" : item.connectionStatus === "Connection Failed" ? "danger" : "warning"}`}>{item.connectionStatus}</span></td><td>{item.lastSync || "Not synced"}<small>{item.syncStatus}</small></td><td><span className="module-status">{item.approvalStatus}</span></td><td><div className="integration-actions"><button className="module-button secondary" onClick={() => openEdit(item)}>Edit</button><button className="module-button secondary" onClick={() => testConnection(item)}><RefreshCw size={13} />Test</button><button className="module-icon-button danger" title="Delete metadata" onClick={() => removeIntegration(item)}><Trash2 size={15} /></button></div></td></tr>)}</tbody></table>{!filtered.length && <div className="module-empty"><AlertTriangle size={18} />No integrations match these filters.</div>}</section></>}{tab === "webhooks" && <WebhookPanel webhooks={webhooks} onAdd={() => { setEditing(newWebhook()); setModal("webhook"); }} onEdit={(item) => { setEditing(item); setModal("webhook"); }} />}{tab === "logs" && <LogsPanel logs={logs} />}{modal === "integration" && <IntegrationModal draft={editing} onClose={() => { setModal(""); setEditing(null); }} onSave={saveIntegration} />}{modal === "webhook" && <WebhookModal draft={editing} onClose={() => { setModal(""); setEditing(null); }} onSave={saveWebhook} />}</div>;

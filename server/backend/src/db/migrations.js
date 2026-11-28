@@ -148,3 +148,4 @@ export function runMigrations() {
 
   console.log('✅ Database migrations executed successfully.');
 }
+

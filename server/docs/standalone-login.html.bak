@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technomold Face Attendance · HRMS Login</title>
+  <script>
+    // Remove duplicate standalone login page and direct immediately to the single official HRMS login portal
+    (function() {
+      var target = (window.location.protocol === 'file:') ? 'http://localhost:5174/login' : '/login';
+      window.location.replace(target);
+    })();
+  </script>
+  <meta http-equiv="refresh" content="0; url=/login">
+  <style>
+    body {
+      background: #06141c;
+      color: #6ee7d0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    a { color: #6ee7d0; }
+  </style>
+</head>
+<body>
+  <p>Redirecting to <a href="http://localhost:5174/login">Technomold Face Attendance Portal</a>...</p>
+</body>
+</html>

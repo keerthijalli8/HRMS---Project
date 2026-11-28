@@ -128,8 +128,10 @@ export function AuthProvider({ children }) {
 
   const applyAuthenticatedSession = (res) => {
     const normalized = normalizeUser(res.user);
-    setStoredToken(res.token);
-    setToken(res.token);
+    if (res.token) {
+      setStoredToken(res.token);
+      setToken(res.token);
+    }
     setUser(normalized);
     setPending2FA(null);
     return normalized;

@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Download, FileText, Pencil, Play, Printer, RefreshCw, Search } from "lucide-react";
 import { jsPDF } from "jspdf";
-import { supabase } from "../supabaseClint";
 import { readEmployeeRecords } from "../services/employeeRecords";
 import { calculateSalary, SALARY_COMPONENT_KEYS, serializeSalaryStructure, validateSalaryStructure } from "../services/payrollCalculations";
 import { downloadCsv } from "../utils/downloadCsv";
@@ -202,8 +201,12 @@ export default function Payroll() {
     const updated = { ...previous, experience_years: Number(draft.experience_years) || 0, experience_months: Math.min(11, Number(draft.experience_months) || 0), salary_structure_name: draft.salary_structure_name || previous.salary_structure_name || "", effective_date: draft.effective_date || new Date().toISOString().slice(0, 10), status: draft.status || "Active" };
     const saved = readPayroll();
     savePayroll(recordRevision({ ...saved, structures: { ...saved.structures, [employeeId]: updated } }, previous, updated, "Experience updated"));
-    try { await supabase.from("salary_structures").update({ experience_years: updated.experience_years, experience_months: updated.experience_months, salary_structure_name: updated.salary_structure_name, effective_date: updated.effective_date, status: updated.status }).eq("employee_id", employeeId); } catch { /* local payroll state remains available when the optional migration is not applied */ }
+   
     setStructures((current) => ({ ...current, [employeeId]: updated })); setNotice("Experience updated and revision history recorded."); setEditing(null); setExperienceOnly(false); await refresh();
+    setNotice("Experience updated and revision history recorded.");
+    setEditing(null);
+    setExperienceOnly(false);
+await refresh();
   };
 
   const saveStructure = async (event) => {
@@ -217,8 +220,10 @@ export default function Payroll() {
     const payload = { employee_id, ...serialized };
     const saved = readPayroll();
     savePayroll(recordRevision({ ...saved, structures: { ...saved.structures, [String(employee_id)]: payload } }, previous, payload));
-    try { await supabase.from("salary_structures").upsert({ employee_id, ...serialized.numericValues, ...Object.fromEntries(Object.entries(payload).filter(([key]) => ![...salaryComponentKeys, "numericValues", "component_config"].includes(key))), component_config: serialized.component_config }); } catch { /* local payroll state remains available when Supabase is unavailable */ }
     setNotice(experienceOnly ? "Experience updated and revision history recorded." : "Salary structure saved."); setEditing(null); setExperienceOnly(false); await refresh();
+    setEditing(null);
+    setExperienceOnly(false);
+    await refresh();
     setBusy(false);
   };
 
