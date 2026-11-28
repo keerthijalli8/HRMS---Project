@@ -125,7 +125,7 @@ export default function GlobalSearchDropdown({
     <div
       role="listbox"
       aria-label="Global search results"
-      className="absolute left-0 right-0 sm:right-auto top-full mt-2 w-full sm:w-[480px] max-h-[520px] overflow-y-auto rounded-2xl bg-[#091f28]/95 backdrop-blur-2xl border border-line p-2.5 shadow-2xl z-50 flex flex-col gap-3 animate-in fade-in zoom-in-95 text-left"
+      className="absolute left-0 right-0 sm:right-auto top-full mt-2 w-full sm:w-[480px] max-h-[520px] overflow-y-auto rounded-2xl bg-card-bg backdrop-blur-2xl border border-line p-2.5 shadow-2xl z-50 flex flex-col gap-3 animate-in fade-in zoom-in-95 text-left"
       style={{
         boxShadow: '0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--line)',
       }}

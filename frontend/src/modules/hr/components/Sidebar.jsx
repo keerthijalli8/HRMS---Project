@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Icon } from './Icon.jsx';
+import { BrandLogo } from '../../../components/BrandLogo.jsx';
 import { navItems } from '../data/mockData.js';
 import { resolveHrPath } from '../routes.js';
 import { getMyTasks, subscribeTasks } from '../services/taskStore.js';
@@ -157,33 +158,21 @@ export const Sidebar = ({ currentRoute, setCurrentRoute, currentUser, onNavigate
   };
 
   return (
-    <aside className="w-full md:w-[260px] shrink-0 md:sticky md:top-0 h-auto md:h-screen flex flex-col bg-[#10242e] border-r border-[#203a45] z-20 overflow-hidden select-none font-sans">
-      {/* 1. Technomold Logo Header (Matching the exact logo style) */}
-      <div className="flex items-center justify-between p-4 border-b border-[#203a45] shrink-0">
+    <aside className="w-full md:w-[260px] shrink-0 md:sticky md:top-0 h-auto md:h-screen flex flex-col bg-card-bg backdrop-blur-xl border-r border-line z-20 overflow-hidden select-none font-sans">
+      {/* 1. Technomold Logo Header */}
+      <div className="flex items-center justify-between p-4 border-b border-line shrink-0">
         <div
           onClick={() => handleSelectRoute("dashboard")}
-          className="flex items-center gap-2.5 cursor-pointer group"
+          className="flex items-center gap-2.5 cursor-pointer group min-w-0"
         >
-          {/* Logo Circular Badge with Custom Icon */}
-          <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-red-600 font-extrabold text-base shadow-md group-hover:scale-105 transition-transform shrink-0 border border-red-600/30">
-            TM
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bold text-[14px] tracking-tight leading-none">
-              <span className="text-white">Techno</span>
-              <span className="text-red-600">mold</span>
-            </span>
-            <span className="text-slate-400 font-extrabold text-[8px] tracking-widest uppercase mt-1">
-              IT SOLUTIONS PVT LTD
-            </span>
-          </div>
+          <BrandLogo className="block w-full max-w-[190px] h-auto object-contain" />
         </div>
 
         {/* Mobile Hamburger Button */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen(prev => !prev)}
-          className="md:hidden p-2 rounded-lg bg-[#193440] border border-[#34515b] text-white hover:border-accent/60 transition cursor-pointer"
+          className="md:hidden p-2 rounded-lg bg-surface2 border border-line text-ink hover:border-accent/60 transition cursor-pointer"
           aria-label="Toggle Navigation Menu"
           aria-expanded={mobileMenuOpen}
         >
@@ -200,7 +189,7 @@ export const Sidebar = ({ currentRoute, setCurrentRoute, currentUser, onNavigate
       >
         {groupedSections.map(section => (
           <div key={section.title} className="flex flex-col gap-1">
-            <div className="px-3 pb-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 select-none">
+            <div className="px-3 pb-1.5 text-[10px] font-bold uppercase tracking-wider text-muted select-none">
               {section.title}
             </div>
 
@@ -219,8 +208,8 @@ export const Sidebar = ({ currentRoute, setCurrentRoute, currentUser, onNavigate
                     const active = isActive || routeActive;
                     return `relative flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-all text-left cursor-pointer group ${
                       active
-                        ? "bg-[#193440] text-emerald-400 border border-[#34515b] shadow-sm font-semibold"
-                        : "text-slate-300 hover:bg-[#152e39] hover:text-white border border-transparent"
+                        ? "bg-surface2 text-accent border border-line shadow-sm font-semibold"
+                        : "text-muted hover:bg-surface2/60 hover:text-ink border border-transparent"
                     }`;
                   }}
                 >
@@ -230,14 +219,14 @@ export const Sidebar = ({ currentRoute, setCurrentRoute, currentUser, onNavigate
                       <>
                         {/* Active Left Pill Indicator */}
                         {active && (
-                          <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 rounded-r-full bg-emerald-400" />
+                          <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 rounded-r-full bg-accent" />
                         )}
 
                         <div className="flex items-center gap-3 min-w-0">
                           <Icon
                             name={item.icon}
                             className={`w-4 h-4 shrink-0 transition-colors ${
-                              active ? "text-emerald-400" : "text-slate-400 group-hover:text-white"
+                              active ? "text-accent" : "text-muted group-hover:text-ink"
                             }`}
                           />
                           <span className="truncate">{item.label}</span>
@@ -247,8 +236,8 @@ export const Sidebar = ({ currentRoute, setCurrentRoute, currentUser, onNavigate
                           <span
                             className={`text-[10.5px] font-bold px-2 py-0.5 rounded-full tabular-nums font-num shrink-0 ${
                               active
-                                ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
-                                : "bg-[#152e39] text-slate-300 border border-[#34515b]"
+                                ? "bg-accent/15 text-accent border border-accent/30"
+                                : "bg-surface2 text-muted border border-line"
                             }`}
                           >
                             {badgeValue}

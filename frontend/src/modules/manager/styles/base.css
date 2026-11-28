@@ -8,6 +8,11 @@
   min-height: 100vh;
 }
 
+:root[data-theme="light"] .mod-manager,
+html.light .mod-manager {
+  color-scheme: light;
+}
+
 .mod-manager * {
   border-color: var(--line);
 }
@@ -136,10 +141,23 @@
   color-scheme: dark !important;
 }
 
+:root[data-theme="light"] .mod-manager select,
+html.light .mod-manager select {
+  color-scheme: light !important;
+}
+
 .mod-manager select option,
 .mod-manager select optgroup {
   background-color: #0a222b !important;
   color: #ecfbf8 !important;
+}
+
+:root[data-theme="light"] .mod-manager select option,
+:root[data-theme="light"] .mod-manager select optgroup,
+html.light .mod-manager select option,
+html.light .mod-manager select optgroup {
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .mod-manager select option:checked {
@@ -147,8 +165,22 @@
   color: #5eead4 !important;
 }
 
+:root[data-theme="light"] .mod-manager select option:checked,
+html.light .mod-manager select option:checked {
+  background-color: #ccfbf1 !important;
+  color: #0f766e !important;
+}
+
 .mod-manager select option:hover,
 .mod-manager select option:focus {
   background-color: #164e63 !important;
   color: #ffffff !important;
+}
+
+:root[data-theme="light"] .mod-manager select option:hover,
+:root[data-theme="light"] .mod-manager select option:focus,
+html.light .mod-manager select option:hover,
+html.light .mod-manager select option:focus {
+  background-color: #e2e8f0 !important;
+  color: #000000 !important;
 }

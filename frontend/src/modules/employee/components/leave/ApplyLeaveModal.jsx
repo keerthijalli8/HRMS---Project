@@ -151,7 +151,7 @@ export function ApplyLeaveModal({
       />
 
       {/* Modal Card: full screen on mobile, centered card on sm+ */}
-      <div className="relative z-10 w-full h-full sm:h-auto sm:max-h-[92vh] sm:max-w-lg bg-[#0a222b] border-0 sm:border border-line rounded-none sm:rounded-tpl shadow-2xl flex flex-col overflow-hidden">
+      <div className="relative z-10 w-full h-full sm:h-auto sm:max-h-[92vh] sm:max-w-lg bg-[var(--drawer-bg,#0a222b)] border-0 sm:border border-line rounded-none sm:rounded-tpl shadow-2xl flex flex-col overflow-hidden text-ink">
         {/* Header */}
         <div className="px-5 py-4 border-b border-line flex items-center justify-between shrink-0">
           <div>

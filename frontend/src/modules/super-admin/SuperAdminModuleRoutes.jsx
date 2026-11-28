@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { useTheme } from '../../context/ThemeContext';
 
 import { NavigationProvider } from './context/NavigationContext';
 import MainLayout from './components/layout/MainLayout';
@@ -25,16 +26,18 @@ import CompanyThemeBuilder from './pages/CompanyPortal/CompanyThemeBuilder';
 import './styles/global.css';
 
 function ScopedPortal({ children }) {
-  const initialTheme = (() => {
+  const { theme } = useTheme();
+  const resolvedTheme = theme === 'light' ? 'light' : (() => {
     try {
-      return localStorage.getItem('superAdminTheme') || 'monsoon';
+      const saved = localStorage.getItem('superAdminTheme');
+      return saved === 'dark' || saved === 'monsoon' ? saved : 'monsoon';
     } catch {
       return 'monsoon';
     }
   })();
 
   return (
-    <div className="mod-superadmin" data-theme={initialTheme}>
+    <div className="mod-superadmin" data-theme={resolvedTheme}>
       {children}
     </div>
   );

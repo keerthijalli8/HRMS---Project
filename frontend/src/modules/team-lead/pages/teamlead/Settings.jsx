@@ -13,6 +13,8 @@ import React, {
 
 import { useTeamLead } from '../../context/TeamLeadContext.jsx';
 import { Avatar } from '../../components/common/Avatar.jsx';
+import { ThemeToggleButton } from '../../../../components/ThemeToggleButton.jsx';
+import { useTheme } from '../../../../context/ThemeContext.jsx';
 
 import {
   getUserRole,
@@ -479,6 +481,7 @@ const AccountSettings = ({
 
   const [activeSection, setActiveSection] =
     useState('profile');
+  const { theme } = useTheme();
 
   const [profileForm, setProfileForm] =
     useState(() =>
@@ -2145,19 +2148,25 @@ const AccountSettings = ({
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
-                    <div>
+                    <div className="flex items-center justify-between gap-3 flex-wrap">
 
-                      <span className="block text-muted">
+                      <div>
 
-                        Theme
+                        <span className="block text-muted">
 
-                      </span>
+                          Theme
 
-                      <span className="text-ink font-semibold">
+                        </span>
 
-                        Monsoon Glass Dark
+                        <span className="text-ink font-semibold">
 
-                      </span>
+                          {theme === 'light' ? 'Light Mode' : 'Monsoon Glass Dark'}
+
+                        </span>
+
+                      </div>
+
+                      <ThemeToggleButton />
 
                     </div>
 

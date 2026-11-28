@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import technomoldLogo from '../assets/technomold-logo.png';
+import { BrandLogo } from '../../../components/BrandLogo.jsx';
 import {
   Home,
   Bell,
@@ -89,9 +89,7 @@ export default function Rail({
       <div className="flex flex-col gap-3 min-h-0 flex-1 overflow-hidden">
         {/* Brand Header: Technomold Corporate Logo (Top Left Corner) */}
         <div className="flex items-center px-3 py-2 shrink-0 select-none">
-          <img
-            src={technomoldLogo}
-            alt="Technomold IT Solutions Pvt Ltd"
+          <BrandLogo
             className="h-8 md:h-9 w-auto max-w-[200px] object-contain block drop-shadow-sm"
           />
         </div>

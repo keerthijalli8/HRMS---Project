@@ -5,6 +5,7 @@ import {
   Link2, SlidersHorizontal,
 } from "lucide-react";
 import { useCompanyTheme } from "../context/CompanyThemeContext";
+import { BrandLogo } from "../../../components/BrandLogo.jsx";
 
 import "../style/Sidebar.css";
 
@@ -49,7 +50,7 @@ function Sidebar() {
   return (
     <aside className="admin-sidebar d-flex flex-column">
       <div className="sidebar-brand">
-        <img className="sidebar-logo" src={logoUrl} alt={branding?.companyName || "Company logo"} />
+        <BrandLogo className="sidebar-logo" customSrc={logoUrl} alt={branding?.companyName || "Technomold IT Solutions Pvt Ltd"} />
       </div>
       <nav className="sidebar-navigation" aria-label="Admin navigation">
         <div className="sidebar-menu">

@@ -46,7 +46,7 @@ export function DashboardSwitcher({ className = '' }) {
       {open && (
         <div
           role="menu"
-          className="absolute right-0 mt-2 w-64 rounded-tpl bg-[#0a222b] border border-line shadow-2xl p-1.5 z-50"
+          className="absolute right-0 mt-2 w-64 rounded-tpl bg-card-bg backdrop-blur-xl border border-line shadow-2xl p-1.5 z-50"
         >
           <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-muted border-b border-line/40 mb-1">
             Switch Role Dashboard ({roles.length})

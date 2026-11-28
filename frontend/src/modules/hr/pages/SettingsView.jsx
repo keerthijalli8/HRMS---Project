@@ -4,8 +4,11 @@ import { Icon } from '../components/Icon.jsx';
 import { WorkModeSettingsModal } from '../components/wfo/WorkModeSettingsModal.jsx';
 import { loadWorkModeSettings, subscribeWorkMode } from '../services/wfoWfhStore.js';
 import { loadAuditSettings, saveAuditSettings } from '../services/auditService.js';
+import { ThemeToggleButton } from '../../../components/ThemeToggleButton.jsx';
+import { useTheme } from '../../../context/ThemeContext.jsx';
 
 export const SettingsView = ({ currentUser, onTriggerToast }) => {
+  const { theme } = useTheme();
   const [isWfoModalOpen, setIsWfoModalOpen] = useState(false);
   const [workSettings, setWorkSettings] = useState(() => loadWorkModeSettings());
   const [auditSettings, setAuditSettings] = useState(() => loadAuditSettings());
@@ -55,6 +58,19 @@ export const SettingsView = ({ currentUser, onTriggerToast }) => {
 
   return (
     <div className="flex flex-col gap-4">
+      {/* 0. Appearance & Theme Card */}
+      <div className="glass-card flex flex-row items-center justify-between gap-4 flex-wrap">
+        <div>
+          <div className="font-display font-bold text-ink text-[16px]">
+            Appearance & Theme ({theme === 'light' ? 'Light' : 'Dark'})
+          </div>
+          <div className="text-[12px] text-muted mt-0.5">
+            Switch between Dark and Light modes across all HRMS dashboards
+          </div>
+        </div>
+        <ThemeToggleButton />
+      </div>
+
       {/* 1. Main Enterprise Configuration Card */}
       <div className="glass-card">
         <div className="font-display font-bold text-ink text-[16px]">HR Enterprise Configuration & Policies</div>

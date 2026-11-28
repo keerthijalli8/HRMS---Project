@@ -8,6 +8,7 @@ import PreferenceMatrix from '../components/PreferenceMatrix';
 import Drawer from '../components/Drawer';
 import Tag from '../components/Tag';
 import StatusPill from '../components/StatusPill';
+import { ThemeToggleButton } from '../../../components/ThemeToggleButton';
 import { useManagerProfile } from '../context/ManagerProfileContext';
 import { profileService } from '../services/profileService';
 import { defaultSettings } from '../data/settings';
@@ -1045,17 +1046,17 @@ export default function Settings({ onTriggerToast, onSendTestNotification }) {
                   </div>
                 </div>
 
-                {/* Read-only Theme Row */}
-                <div className="p-4 rounded-xl bg-surface/40 border border-line flex items-center justify-between">
+                {/* Theme Switcher Row */}
+                <div className="p-4 rounded-xl bg-surface/40 border border-line flex items-center justify-between gap-3">
                   <div className="flex flex-col gap-0.5">
                     <span className="font-display font-bold text-[13.5px] text-ink">
                       Theme
                     </span>
                     <span className="text-[12px] text-muted">
-                      MONSOON GLASS Design System (Dark Only)
+                      Switch between Dark and Light modes across all HRMS dashboards
                     </span>
                   </div>
-                  <Tag tone="accent">Light mode is not available</Tag>
+                  <ThemeToggleButton />
                 </div>
               </div>
             )}

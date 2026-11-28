@@ -39,7 +39,7 @@ export default function Drawer({
           className="w-screen flex flex-col shadow-2xl overflow-y-auto animate-in slide-in-from-right duration-200"
           style={{
             maxWidth: widthStyle,
-            backgroundColor: '#0a222b',
+            backgroundColor: 'var(--drawer-bg, var(--card-bg))',
             borderLeft: '1px solid var(--line)',
             color: 'var(--ink)',
           }}

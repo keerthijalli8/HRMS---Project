@@ -45,7 +45,10 @@ export function authenticate(req, res, next) {
       return res.status(403).json({ error: 'Account is locked due to security policy. Please contact HR.' });
     }
 
-    req.user = user;
+    req.user = {
+      ...user,
+      face_login_policy: config.faceAuthEnabled ? user.face_login_policy : 'OFF'
+    };
     req.deviceHash = decoded.deviceHash || null;
     next();
   } catch (err) {

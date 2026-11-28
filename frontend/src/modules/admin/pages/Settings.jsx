@@ -20,8 +20,11 @@ import {
   ShieldCheck,
   Save
 } from "lucide-react";
+import { ThemeToggleButton } from "../../../components/ThemeToggleButton.jsx";
+import { useTheme } from "../../../context/ThemeContext.jsx";
 
 function Settings() {
+  const { theme } = useTheme();
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeTab, setActiveTab] = useState(
     ["Profile", "Security"].includes(searchParams.get("tab")) ? searchParams.get("tab") : "Company"
@@ -560,11 +563,18 @@ function Settings() {
 
   return (
     <div className="settings-page">
-      <header className="settings-header">
+      <header className="settings-header" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", flexWrap: "wrap" }}>
         <div>
           <span className="settings-eyebrow">HRMS / ADMIN / SETTINGS</span>
           <h1>System Settings</h1>
           <p>Manage organization preferences and administrator settings.</p>
+        </div>
+
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)" }}>
+            Theme ({theme === "light" ? "Light" : "Dark"}):
+          </span>
+          <ThemeToggleButton />
         </div>
       </header>
 

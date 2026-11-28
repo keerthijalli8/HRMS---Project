@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import companyLogo from "../../assets/images/company-logo-transparent.png";
+import { BrandLogo } from "../../../../components/BrandLogo.jsx";
 
 import {
   LayoutDashboard,
@@ -47,11 +47,9 @@ export default function Sidebar() {
   return (
     <aside className={`sidebar ${collapsed ? "sidebar-collapsed" : ""}`}>
       <div className="sidebar-brand">
-        <img
+        <BrandLogo
           className="brand-logo"
-          src={companyLogo}
           alt="TechnoMold IT Solutions Pvt Ltd"
-          title="TechnoMold IT Solutions Pvt Ltd"
         />
       </div>
 

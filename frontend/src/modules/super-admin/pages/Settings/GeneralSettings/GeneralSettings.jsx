@@ -2,6 +2,8 @@
 import React, { useMemo, useState } from "react";
 import "./GeneralSettings.css";
 import { notifySaveSuccess } from "../../../utils/saveNavigation";
+import { ThemeToggleButton } from "../../../../../components/ThemeToggleButton.jsx";
+import { useTheme } from "../../../../../context/ThemeContext.jsx";
 
 const DEFAULT_SETTINGS = {
   platformName: "HRMS Super Admin",
@@ -46,6 +48,7 @@ const timezoneOffset = (zone) => {
 const timezoneLabel = (zone) => `${timezoneName(zone)} (${timezoneOffset(zone)})`;
 
 export default function GeneralSettings() {
+  const { theme } = useTheme();
   const [settings, setSettings] = useState(() => {
     try {
       const saved = localStorage.getItem("superAdminSettings");
@@ -166,6 +169,15 @@ export default function GeneralSettings() {
               <option value="YYYY-MM-DD">YYYY-MM-DD</option>
             </select>
           </label>
+        </div>
+
+        <div className="gs-toggle">
+          <div>
+            <strong>Appearance Theme ({theme === "light" ? "Light" : "Dark"})</strong>
+            <p>Switch between Dark and Light modes across all HRMS dashboards.</p>
+          </div>
+
+          <ThemeToggleButton />
         </div>
 
         <div className="gs-toggle">

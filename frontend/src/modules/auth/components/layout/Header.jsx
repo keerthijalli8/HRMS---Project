@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LogOut, UserCheck, LayoutDashboard, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../../../../auth/AuthContext.jsx';
+import { useTheme } from '../../../../context/ThemeContext.jsx';
 import { getHomeRouteForRoles } from '../../../../auth/roles.js';
 import { DashboardSwitcher } from '../../../../components/DashboardSwitcher.jsx';
 import { Avatar } from '../common/Avatar.jsx';
@@ -12,28 +13,10 @@ import { StatusPill } from '../common/StatusPill.jsx';
 
 export function Header({ title = 'Security Overview', className = '' }) {
   const { user, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const [timeStr, setTimeStr] = useState('');
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('hrms_theme') || 'dark';
-  });
   const navigate = useNavigate();
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-    } else {
-      document.documentElement.classList.remove('light');
-      document.documentElement.classList.add('dark');
-    }
-    localStorage.setItem('hrms_theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
-  };
 
   useEffect(() => {
     const updateTime = () => {
@@ -127,7 +110,7 @@ export function Header({ title = 'Security Overview', className = '' }) {
 
             {menuOpen && (
               <div
-                className="absolute right-0 mt-2 w-56 rounded-tpl bg-[#0a222b] border border-line shadow-2xl p-2 z-50"
+                className="absolute right-0 mt-2 w-56 rounded-tpl bg-card-bg backdrop-blur-xl border border-line shadow-2xl p-2 z-50"
                 onClick={() => setMenuOpen(false)}
               >
                 <div className="px-3 py-2 border-b border-line/50">

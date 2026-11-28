@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useStore } from '../../context/StoreContext';
 import { resolveItAdminPath } from '../../routes';
+import { BrandLogo } from '../../../../components/BrandLogo.jsx';
 
 import {
   IconDashboard,
@@ -172,7 +173,7 @@ export function LeftRail({
     <aside
       aria-label="IT Administration Navigation Sidebar"
       style={{
-        backgroundColor: 'rgba(6, 20, 28, 0.78)',
+        backgroundColor: 'var(--glass-sidebar, var(--surface))',
         backdropFilter: 'blur(20px) saturate(140%)',
         WebkitBackdropFilter:
           'blur(20px) saturate(140%)',
@@ -250,13 +251,10 @@ export function LeftRail({
             }
           >
             <div className="flex items-center min-w-0 w-full flex-1 justify-center">
-              <img
-                src={
-                  appLogo ||
-                  '/technomold-logo-transparent.png'
-                }
+              <BrandLogo
+                customSrc={appLogo}
                 alt="Technomold IT Solutions Pvt Ltd"
-                className={`select-none object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.28)] brightness-125 transition-all ${
+                className={`select-none object-contain dark:drop-shadow-[0_0_10px_rgba(255,255,255,0.28)] dark:brightness-125 transition-all ${
                   collapsed
                     ? 'w-full h-[76px] md:w-12 md:h-10 md:max-w-[48px]'
                     : 'w-full max-w-full h-[76px]'
@@ -272,7 +270,7 @@ export function LeftRail({
                   fileInputRef.current?.click();
                 }}
                 aria-label="Upload brand logo"
-                className="absolute right-0 bottom-0 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 focus-visible:opacity-100 transition-all text-[9.5px] font-bold text-accent bg-slate-900/90 border border-accent/40 rounded-md px-1.5 py-0.5 uppercase select-none cursor-pointer shadow"
+                className="absolute right-0 bottom-0 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 focus-visible:opacity-100 transition-all text-[9.5px] font-bold text-accent bg-card-bg border border-accent/40 rounded-md px-1.5 py-0.5 uppercase select-none cursor-pointer shadow"
               >
                 UPLOAD
               </button>

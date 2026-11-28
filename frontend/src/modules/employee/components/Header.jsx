@@ -218,7 +218,7 @@ function ModuleSearchBar() {
       </div>
 
       {showDropdown && (
-        <div className="absolute left-0 sm:left-auto sm:right-0 mt-2 w-full sm:w-80 rounded-tpl bg-[#0a222b] border border-line shadow-2xl z-50 overflow-hidden">
+        <div className="absolute left-0 sm:left-auto sm:right-0 mt-2 w-full sm:w-80 rounded-tpl bg-card-bg backdrop-blur-xl border border-line shadow-2xl z-50 overflow-hidden">
           <div className="px-3 py-2 border-b border-line/50 flex items-center justify-between text-[10.5px] font-mono text-muted">
             <span>Matching "{trimmedQuery}"</span>
             <span>{results.length} found</span>
@@ -374,7 +374,7 @@ export function Header({ title = 'Overview', className = '' }) {
 
             {menuOpen && (
               <div
-                className="absolute right-0 mt-2 w-52 rounded-tpl bg-[#0a222b] border border-line shadow-2xl p-2 z-50 animate-in fade-in zoom-in-95 duration-150"
+                className="absolute right-0 mt-2 w-52 rounded-tpl bg-card-bg backdrop-blur-xl border border-line shadow-2xl p-2 z-50 animate-in fade-in zoom-in-95 duration-150"
                 onClick={() => setMenuOpen(false)}
               >
                 <div className="px-3 py-2 border-b border-line/50">

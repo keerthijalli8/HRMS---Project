@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Icon } from '../components/Icon.jsx';
 import { PrimaryButton, SecondaryButton } from '../components/Buttons.jsx';
 import { Select } from '../components/Select.jsx';
+import { ThemeToggleButton } from '../../../components/ThemeToggleButton.jsx';
+import { useTheme } from '../../../context/ThemeContext.jsx';
 
 export const AccountSettingsView = ({ currentUser, onLogout, onTriggerToast }) => {
   const [activeTab, setActiveTab] = useState('security'); // 'security', 'password', 'contact', 'notifications', 'preferences', 'account'
@@ -34,6 +36,7 @@ export const AccountSettingsView = ({ currentUser, onLogout, onTriggerToast }) =
   });
 
   // Appearance & Preferences
+  const { theme: activeTheme } = useTheme();
   const [theme, setTheme] = useState('Monsoon Glass Dark');
   const [language, setLanguage] = useState('English (India)');
   const [dateFormat, setDateFormat] = useState('DD/MM/YYYY');
@@ -484,6 +487,18 @@ export const AccountSettingsView = ({ currentUser, onLogout, onTriggerToast }) =
             </div>
 
             <div className="flex flex-col gap-3.5 text-xs">
+              <div className="p-3 rounded-xl bg-surface2/40 border border-line flex items-center justify-between gap-3">
+                <div>
+                  <div className="font-semibold text-ink">
+                    Dashboard Theme ({activeTheme === 'light' ? 'Light' : 'Dark'})
+                  </div>
+                  <div className="text-muted text-[11px]">
+                    Syncs across Login and all HRMS dashboards
+                  </div>
+                </div>
+                <ThemeToggleButton />
+              </div>
+
               <div>
                 <label className="text-muted block mb-1">Theme Palette</label>
                 <Select

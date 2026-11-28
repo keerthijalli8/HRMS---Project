@@ -10,6 +10,7 @@ import { ArrowLeft } from "lucide-react";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import { useNavigation } from "../../context/NavigationContext";
+import { useTheme } from "../../../../context/ThemeContext";
 import { SAVE_SUCCESS_EVENT } from "../../utils/saveNavigation";
 import { SUPERADMIN_PAGE_NAMES } from "../../routes";
 
@@ -125,9 +126,11 @@ export default function MainLayout() {
     setActivePage(pageNames[path] || "Dashboard");
   };
 
-  const initialTheme = (() => {
+  const { theme } = useTheme();
+  const initialTheme = theme === "light" ? "light" : (() => {
     try {
-      return localStorage.getItem("superAdminTheme") || "monsoon";
+      const saved = localStorage.getItem("superAdminTheme");
+      return saved === "dark" || saved === "monsoon" ? saved : "monsoon";
     } catch {
       return "monsoon";
     }

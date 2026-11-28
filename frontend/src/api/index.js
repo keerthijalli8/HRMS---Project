@@ -51,7 +51,7 @@ function localTestUser(email) {
     face_enrolled: enrolled,
     faceEnrolled: enrolled,
     enrollment_status: enrolled ? 'APPROVED' : 'NOT_ENROLLED',
-    face_login_policy: 'REQUIRED',
+    face_login_policy: 'OFF',
     testOnly: true,
     testOnlyNotice: 'TEST ONLY: local frontend state; no backend biometric authentication.'
   };
@@ -76,7 +76,7 @@ function localTestAuthResponse(email, status = 'AUTHENTICATED') {
         name: user.name,
         email,
         role: user.role,
-        facePolicy: 'REQUIRED',
+        facePolicy: 'OFF',
         failedAttemptsRemaining: null
       }
     };
@@ -84,7 +84,7 @@ function localTestAuthResponse(email, status = 'AUTHENTICATED') {
   return {
     status,
     token: localTestSession(email),
-    needsFaceEnrollment: !user.face_enrolled,
+    needsFaceEnrollment: user.face_login_policy !== 'OFF' && !user.face_enrolled,
     user,
     testOnly: true,
     message: 'TEST ONLY: password login completed locally; no backend authentication occurred.'
@@ -110,9 +110,12 @@ export const authApi = {
       if (account.password !== password) {
         throw localTestError('Invalid test account credentials.', 401);
       }
+      const testUser = localTestUser(email);
       return localTestAuthResponse(
         email,
-        localTestUser(email).face_enrolled ? 'FACE_VERIFICATION_REQUIRED' : 'AUTHENTICATED'
+        testUser.face_enrolled && testUser.face_login_policy !== 'OFF'
+          ? 'FACE_VERIFICATION_REQUIRED'
+          : 'AUTHENTICATED'
       );
     }
     return apiClient.post(

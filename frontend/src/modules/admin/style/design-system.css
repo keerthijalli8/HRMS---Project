@@ -90,3 +90,75 @@
   .mod-admin .admin-main-content :is(.module-page-header, .ann-page-header, .ann-list-heading) { align-items: flex-start; flex-direction: column; }
   .mod-admin .admin-main-content :is(.module-header-actions, .ann-header-actions, .ann-form-actions) { width: 100%; flex-wrap: wrap; }
 }
+
+/* Light theme overrides across Admin dashboard & sub-pages */
+:root[data-theme="light"] .mod-admin .admin-sidebar,
+html.light .mod-admin .admin-sidebar {
+  background: rgba(255, 255, 255, 0.92);
+  color: #000000;
+  border-right-color: rgba(15, 23, 42, 0.16);
+}
+
+:root[data-theme="light"] .mod-admin .sidebar-menu a.active,
+:root[data-theme="light"] .mod-admin .sidebar-footer a.active,
+html.light .mod-admin .sidebar-menu a.active,
+html.light .mod-admin .sidebar-footer a.active {
+  background: rgba(15, 118, 110, 0.12);
+  border-color: rgba(15, 118, 110, 0.28);
+  color: #000000;
+}
+
+:root[data-theme="light"] .mod-admin .admin-main-content [class*="card"],
+:root[data-theme="light"] .mod-admin .admin-main-content [class*="panel"],
+:root[data-theme="light"] .mod-admin .admin-main-content [class*="summary-box"],
+:root[data-theme="light"] .mod-admin .admin-main-content [class*="punch-details"],
+:root[data-theme="light"] .mod-admin .admin-main-content [class*="punch-counts"] > div,
+:root[data-theme="light"] .mod-admin .admin-main-content [class*="history-item"],
+:root[data-theme="light"] .mod-admin .admin-main-content [class*="role-card"],
+html.light .mod-admin .admin-main-content [class*="card"],
+html.light .mod-admin .admin-main-content [class*="panel"],
+html.light .mod-admin .admin-main-content [class*="summary-box"],
+html.light .mod-admin .admin-main-content [class*="punch-details"],
+html.light .mod-admin .admin-main-content [class*="punch-counts"] > div,
+html.light .mod-admin .admin-main-content [class*="history-item"],
+html.light .mod-admin .admin-main-content [class*="role-card"] {
+  background: rgba(255, 255, 255, 0.94);
+  background-color: rgba(255, 255, 255, 0.94);
+  border-color: rgba(15, 23, 42, 0.14);
+  box-shadow: 0 14px 32px -18px rgba(15, 23, 42, 0.14);
+  color: #000000;
+}
+
+:root[data-theme="light"] .mod-admin .admin-main-content :is(input, select, textarea),
+html.light .mod-admin .admin-main-content :is(input, select, textarea) {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: rgba(15, 23, 42, 0.2);
+}
+
+:root[data-theme="light"] .mod-admin .admin-main-content :is(input, select, textarea)::placeholder,
+html.light .mod-admin .admin-main-content :is(input, select, textarea)::placeholder {
+  color: #475569;
+}
+
+:root[data-theme="light"] .mod-admin .admin-main-content select option,
+html.light .mod-admin .admin-main-content select option {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+:root[data-theme="light"] .mod-admin .admin-main-content :is(.dashboard-page, .attendance-page, .employees-page, .departments-page, .documents-page, .leaves-page, .payroll-page, .settings-page, .module-page) :is(h1, h2, h3, h4, strong, td, label, span),
+html.light .mod-admin .admin-main-content :is(.dashboard-page, .attendance-page, .employees-page, .departments-page, .documents-page, .leaves-page, .payroll-page, .settings-page, .module-page) :is(h1, h2, h3, h4, strong, td, label, span) {
+  color: #000000;
+}
+
+:root[data-theme="light"] .mod-admin .admin-main-content :is(.dashboard-page, .attendance-page, .employees-page, .departments-page, .documents-page, .leaves-page, .payroll-page, .settings-page, .module-page) :is(p, th, small),
+html.light .mod-admin .admin-main-content :is(.dashboard-page, .attendance-page, .employees-page, .departments-page, .documents-page, .leaves-page, .payroll-page, .settings-page, .module-page) :is(p, th, small) {
+  color: #1e293b;
+}
+
+:root[data-theme="light"] .mod-admin .admin-main-content :is(.checkin-btn, .checkout-btn, .settings-save-btn),
+html.light .mod-admin .admin-main-content :is(.checkin-btn, .checkout-btn, .settings-save-btn) {
+  background: var(--accent);
+  color: #ffffff;
+}

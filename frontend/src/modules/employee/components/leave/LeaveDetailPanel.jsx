@@ -133,7 +133,7 @@ export function LeaveDetailPanel({
       />
 
       {/* Panel Container: fullscreen on mobile (<768px), 460px right drawer on md+ */}
-      <aside className="relative z-10 w-full md:w-[460px] md:max-w-full h-full bg-[#0a222b] border-l border-line shadow-2xl flex flex-col">
+      <aside className="relative z-10 w-full md:w-[460px] md:max-w-full h-full bg-[var(--drawer-bg,#0a222b)] border-l border-line shadow-2xl flex flex-col text-ink">
         {/* Drawer Header */}
         <div className="px-5 py-4 border-b border-line flex items-start justify-between gap-3 shrink-0">
           <div className="space-y-1">
@@ -266,7 +266,7 @@ export function LeaveDetailPanel({
                   <div key={stepMeta.role} className="relative">
                     {/* Timeline Node Icon */}
                     <div
-                      className={`absolute -left-6 top-1 w-6 h-6 rounded-full border flex items-center justify-center bg-[#0a222b] ${visuals.ringBg}`}
+                      className={`absolute -left-6 top-1 w-6 h-6 rounded-full border flex items-center justify-center bg-[var(--drawer-bg,#0a222b)] ${visuals.ringBg}`}
                     >
                       <StepIcon className={`w-3.5 h-3.5 ${visuals.iconColor}`} strokeWidth={2} />
                     </div>
@@ -352,7 +352,7 @@ export function LeaveDetailPanel({
         </div>
 
         {/* Drawer Footer: Cancel Button ONLY for Pending Requests (Requirement 7) */}
-        <div className="px-5 py-4 border-t border-line bg-[#081b22] flex items-center justify-between gap-3 shrink-0">
+        <div className="px-5 py-4 border-t border-line bg-surface2/80 flex items-center justify-between gap-3 shrink-0">
           {isPending ? (
             <button
               type="button"
@@ -380,7 +380,7 @@ export function LeaveDetailPanel({
             aria-modal="true"
             aria-labelledby="confirm-cancel-title"
           >
-            <div className="w-full max-w-sm rounded-tpl bg-[#0a222b] border border-line shadow-2xl p-5 space-y-4">
+            <div className="w-full max-w-sm rounded-tpl bg-[var(--drawer-bg,#0a222b)] border border-line shadow-2xl p-5 space-y-4 text-ink">
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-rose-500/15 border border-rose-400/40 flex items-center justify-center text-rose-300 shrink-0">
                   <AlertTriangle className="w-5 h-5" />

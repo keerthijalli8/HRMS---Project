@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ToastProvider } from './context/ToastContext.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 import { AuthProvider, useAuth } from './auth/AuthContext.jsx';
 import { RoleGuard } from './auth/RoleGuard.jsx';
 import { getHomeRouteForRoles } from './auth/roles.js';
@@ -42,8 +43,9 @@ function RootRedirect() {
 export function App() {
   return (
     <BrowserRouter>
-      <ToastProvider>
-        <AuthProvider>
+      <ThemeProvider>
+        <ToastProvider>
+          <AuthProvider>
           <Routes>
             {/* Sole Public Entry Route: Face Login */}
             <Route path="/login" element={<Login />} />
@@ -136,6 +138,7 @@ export function App() {
           </Routes>
         </AuthProvider>
       </ToastProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

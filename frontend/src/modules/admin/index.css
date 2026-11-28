@@ -30,6 +30,37 @@
   text-rendering: optimizeLegibility;
 }
 
+:root[data-theme="light"] .mod-admin,
+:root[data-theme="light"] .mod-admin[data-tpl="glass"],
+html.light .mod-admin,
+html.light .mod-admin[data-tpl="glass"] {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface2: rgba(241, 245, 249, 0.96);
+  --card-bg: rgba(255, 255, 255, 0.96);
+  --ink: #000000;
+  --muted: #1e293b;
+  --line: rgba(15, 23, 42, 0.18);
+  --accent: #0f766e;
+  --on-accent: #ffffff;
+  --accent2: #4f46e5;
+  --good: #047857;
+  --warn: #b45309;
+  --bad: #be123c;
+  --info: #0369a1;
+  --sidebar-bg: rgba(255, 255, 255, 0.92);
+  --sidebar-text: #000000;
+  --dashboard-bg: #f8fafc;
+  --card-border: 1px solid rgba(15, 23, 42, 0.14);
+  --card-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.10);
+  background:
+    radial-gradient(900px 600px at 8% -10%, #ccfbf1 0, transparent 65%),
+    radial-gradient(800px 700px at 100% 10%, #e0e7ff 0, transparent 60%),
+    #f8fafc;
+  color: var(--ink);
+}
+
 :where(.mod-admin) * {
   box-sizing: border-box;
 }

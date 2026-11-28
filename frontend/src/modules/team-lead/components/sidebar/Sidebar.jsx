@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { BrandLogo } from '../../../../components/BrandLogo.jsx';
 
 import {
   Clock,
@@ -209,7 +210,7 @@ const AttendanceNavGroup = ({ item }) => {
           ${
             isActive
               ? 'backdrop-blur-md'
-              : 'hover:bg-white/[0.05]'
+              : 'hover:bg-surface2/60'
           }
         `}
         style={{
@@ -225,12 +226,12 @@ const AttendanceNavGroup = ({ item }) => {
 
           backgroundColor:
             isActive
-              ? 'rgba(110,231,208,0.10)'
+              ? 'color-mix(in srgb, var(--accent) 12%, transparent)'
               : 'transparent',
 
           borderColor:
             isActive
-              ? 'rgba(110,231,208,0.17)'
+              ? 'color-mix(in srgb, var(--accent) 24%, transparent)'
               : 'transparent'
         }}
       >
@@ -280,7 +281,7 @@ const AttendanceNavGroup = ({ item }) => {
           id={`submenu-${item.path.replace(/\W/g, "-")}`}
           className="
             ml-6 space-y-1 border-l
-            border-white/10 pl-3
+            border-line/50 pl-3
           "
         >
 
@@ -298,7 +299,7 @@ const AttendanceNavGroup = ({ item }) => {
                 ${
                   isActive
                     ? 'border-accent/20 bg-accent/10 text-accent'
-                    : 'border-transparent text-muted hover:bg-white/[0.05] hover:text-ink'
+                    : 'border-transparent text-muted hover:bg-surface2/60 hover:text-ink'
                 }
               `}
               style={{
@@ -379,9 +380,9 @@ export const Sidebar = ({
       style={{
         fontFamily: BODY_FONT,
         backgroundColor:
-          'rgba(6, 20, 28, 0.42)',
+          'var(--surface)',
         borderColor:
-          'rgba(255, 255, 255, 0.08)'
+          'var(--line)'
       }}
     >
 
@@ -389,12 +390,11 @@ export const Sidebar = ({
 
       <div className="shrink-0 px-4 pt-4 pb-3">
 
-        <img
-          src="/technomold-sidebar-transparent.png"
-          alt="Technomold IT Solutions Pvt Ltd"
+        <BrandLogo
           className="
             h-auto
             w-full
+            max-w-[210px]
             object-contain
             rounded-lg
           "
@@ -434,7 +434,7 @@ export const Sidebar = ({
         className="mx-4 shrink-0"
         style={{
           borderTop:
-            '1px solid rgba(255,255,255,0.08)'
+            '1px solid var(--line)'
         }}
       />
 
@@ -490,7 +490,7 @@ export const Sidebar = ({
                   ${
                     isActive
                       ? 'backdrop-blur-md'
-                      : 'hover:bg-white/[0.05]'}
+                      : 'hover:bg-surface2/60'}
                 `}
                 style={({ isActive }) => ({
                   ...menuTextStyle,
@@ -505,12 +505,12 @@ export const Sidebar = ({
 
                   backgroundColor:
                     isActive
-                      ? 'rgba(110,231,208,0.10)'
+                      ? 'color-mix(in srgb, var(--accent) 12%, transparent)'
                       : undefined,
 
                   borderColor:
                     isActive
-                      ? 'rgba(110,231,208,0.17)'
+                      ? 'color-mix(in srgb, var(--accent) 24%, transparent)'
                       : 'transparent'
                 })}
               >
@@ -572,7 +572,7 @@ export const Sidebar = ({
               className="mx-2 mb-3"
               style={{
                 borderTop:
-                  '1px solid rgba(255,255,255,0.08)'
+                  '1px solid var(--line)'
               }}
             />
 
@@ -601,7 +601,7 @@ export const Sidebar = ({
               onClick={onOpenHelpModal}
               className={`
                 ${menuItemClass}
-                hover:bg-white/[0.05]
+                hover:bg-surface2/60
               `}
               style={{
                 ...menuTextStyle,

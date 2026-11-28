@@ -7,6 +7,8 @@ import { EmptyState } from '../shared/EmptyState';
 import { ConfirmDialog } from '../shared/ConfirmDialog';
 import { RecordDetailsModal } from '../shared/RecordDetailsModal';
 import { CategoryCardsBar } from '../shared/CategoryCardsBar';
+import { ThemeToggleButton } from '../../../../components/ThemeToggleButton.jsx';
+import { useTheme } from '../../../../context/ThemeContext.jsx';
 
 import {
   IconSettings,
@@ -196,6 +198,7 @@ function RecordMetric({ label, value }) {
 // ============================================================
 
 export function SystemSettingsPage() {
+  const { theme } = useTheme();
   const {
     businessUnits = [],
     locations = [],
@@ -628,6 +631,14 @@ export function SystemSettingsPage() {
         )}
 
       </div>
+
+      {/* APPEARANCE & THEME */}
+
+      <Card
+        title={`Appearance & Theme (${theme === 'light' ? 'Light' : 'Dark'})`}
+        subText="Switch between Dark and Light modes across all HRMS dashboards."
+        action={<ThemeToggleButton />}
+      />
 
       {/* CATEGORY CARDS */}
 

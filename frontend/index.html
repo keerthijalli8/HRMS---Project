@@ -2,12 +2,15 @@
 <html lang="en" data-tpl="glass" class="dark">
   <head>
     <meta charset="UTF-8" />
+    <meta name="color-scheme" content="light dark" />
     <script>
       (function() {
         try {
           var saved = localStorage.getItem('hrms_theme');
           var theme = saved === 'light' ? 'light' : 'dark';
           document.documentElement.setAttribute('data-theme', theme);
+          var meta = document.querySelector('meta[name="color-scheme"]');
+          if (meta) meta.setAttribute('content', theme);
           if (theme === 'light') {
             document.documentElement.classList.remove('dark');
             document.documentElement.classList.add('light');

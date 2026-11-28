@@ -130,7 +130,7 @@ export default function AccountMenu({
       ref={menuRef}
       role="menu"
       aria-label="Manager account menu"
-      className="absolute right-0 top-12 z-50 w-[240px] p-2 bg-[#0a222b] border border-line shadow-2xl flex flex-col gap-1 text-ink animate-in fade-in zoom-in-95 duration-150"
+      className="absolute right-0 top-12 z-50 w-[240px] p-2 bg-card-bg border border-line shadow-2xl flex flex-col gap-1 text-ink animate-in fade-in zoom-in-95 duration-150"
       style={{
         borderRadius: 'var(--radius)',
         boxShadow: 'var(--card-shadow)',

@@ -286,3 +286,58 @@
     align-items: stretch;
   }
 }
+
+.mod-superadmin[data-theme="light"] .gs-page,
+.mod-superadmin[data-theme="light"] .gs-heading h2,
+.mod-superadmin[data-theme="light"] .gs-toggle strong {
+  color: #000000;
+}
+
+.mod-superadmin[data-theme="light"] .gs-heading p,
+.mod-superadmin[data-theme="light"] .gs-field span,
+.mod-superadmin[data-theme="light"] .gs-toggle p,
+.mod-superadmin[data-theme="light"] .gs-field-hint,
+.mod-superadmin[data-theme="light"] .gs-timezone-empty {
+  color: #1e293b;
+}
+
+.mod-superadmin[data-theme="light"] .gs-panel {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(15, 23, 42, 0.16);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.mod-superadmin[data-theme="light"] .gs-field input,
+.mod-superadmin[data-theme="light"] .gs-field select,
+.mod-superadmin[data-theme="light"] .gs-field select option,
+.mod-superadmin[data-theme="light"] .gs-timezone-picker > input,
+.mod-superadmin[data-theme="light"] .gs-timezone-options {
+  background: #ffffff;
+  color: #000000;
+  border-color: rgba(15, 23, 42, 0.2);
+}
+
+.mod-superadmin[data-theme="light"] .gs-timezone-options button {
+  color: #000000;
+}
+
+.mod-superadmin[data-theme="light"] .gs-timezone-options button:hover,
+.mod-superadmin[data-theme="light"] .gs-timezone-options button[aria-selected="true"] {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.mod-superadmin[data-theme="light"] .gs-toggle,
+.mod-superadmin[data-theme="light"] .gs-footer {
+  border-top-color: rgba(15, 23, 42, 0.14);
+}
+
+.mod-superadmin[data-theme="light"] .gs-footer span {
+  color: #047857;
+}
+
+.mod-superadmin[data-theme="light"] .gs-save {
+  background: #0f766e;
+  border-color: #0f766e;
+  color: #ffffff;
+}

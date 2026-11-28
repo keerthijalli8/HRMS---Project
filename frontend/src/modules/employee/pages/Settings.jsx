@@ -35,12 +35,15 @@ import { PrimaryButton, SecondaryButton } from '../components/Buttons.jsx';
 import { StatusPill } from '../components/StatusPill.jsx';
 import { Tag } from '../components/Tag.jsx';
 import { Drawer } from '../components/Drawer.jsx';
+import { ThemeToggleButton } from '../../../components/ThemeToggleButton.jsx';
+import { useTheme } from '../../../context/ThemeContext.jsx';
 import { settingsService, DEFAULT_SETTINGS } from '../services/settingsService.js';
 import { INITIAL_EMPLOYEE } from '../data/employee.js';
 
 export function Settings() {
   const { user } = useAuth();
   const { showToast } = useToast();
+  const { theme } = useTheme();
 
   const [activeTab, setActiveTab] = useState('preferences');
   const [settings, setSettings] = useState(() => settingsService.getSettings());
@@ -258,20 +261,22 @@ export function Settings() {
                 </div>
               </div>
 
-              {/* Theme Policy Banner */}
-              <div className="p-3.5 rounded-tpl bg-surface2/50 border border-line/60 flex items-start gap-3">
-                <Sparkles className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <div className="text-[12px]">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-semibold text-ink">Theme: Monsoon Glass Dark</span>
-                    <Tag text="Dark Only" color="muted" />
+              {/* Theme Switcher */}
+              <div className="p-3.5 rounded-tpl bg-surface2/50 border border-line/60 flex items-center justify-between gap-3">
+                <div className="flex items-start gap-3">
+                  <Sparkles className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <div className="text-[12px]">
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <span className="font-semibold text-ink">
+                        Appearance Theme: {theme === 'light' ? 'Light' : 'Monsoon Glass Dark'}
+                      </span>
+                    </div>
+                    <p className="text-muted leading-relaxed">
+                      Switch between Dark and Light modes across all HRMS dashboards.
+                    </p>
                   </div>
-                  <p className="text-muted leading-relaxed">
-                    Color tokens (<code className="text-accent text-[11px]">#06141c</code>,{' '}
-                    <code className="text-accent text-[11px]">#6ee7d0</code>) and glass surfaces are strictly
-                    standardized across all HRMS desks. Light mode is intentionally excluded by design governance.
-                  </p>
                 </div>
+                <ThemeToggleButton />
               </div>
 
               {/* Default Landing Page */}

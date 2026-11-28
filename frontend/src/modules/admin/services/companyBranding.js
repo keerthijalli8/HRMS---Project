@@ -281,14 +281,46 @@ export async function uploadCompanyBrandingAsset(file, tenantId, kind) {
   });
 }
 
-export function applyCompanyBranding(branding) {
+export function applyCompanyBranding(branding, themeMode) {
   const root = document.querySelector(".mod-admin");
   if (!root) return;
 
+  const activeTheme =
+    themeMode ||
+    document.documentElement.getAttribute("data-theme") ||
+    "dark";
   const c = branding.colors;
 
   root.dataset.tpl = "glass";
-  root.dataset.themeMode = branding.mode;
+  root.dataset.themeMode = activeTheme === "light" ? "light" : branding.mode;
+
+  const colorProps = [
+    "--accent",
+    "--accent2",
+    "--good",
+    "--warn",
+    "--bad",
+    "--ink",
+    "--line",
+    "--brand-primary",
+    "--sidebar-bg",
+    "--sidebar-text",
+    "--topbar-bg",
+    "--dashboard-bg",
+    "--card-bg",
+    "--button-bg",
+    "--button-text",
+    "--link",
+  ];
+
+  if (activeTheme === "light") {
+    // Let light-mode CSS tokens control backgrounds and crisp black text
+    colorProps.forEach((prop) => root.style.removeProperty(prop));
+    root.style.setProperty("--radius", branding.borderRadius);
+    root.style.setProperty("--font-body", branding.fontFamily);
+    root.style.fontSize = branding.fontSize;
+    return;
+  }
 
   Object.entries({
     "--accent": c.accent,

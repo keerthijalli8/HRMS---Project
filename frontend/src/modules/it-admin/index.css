@@ -660,3 +660,113 @@
 .mod-it [hidden] {
   display: none !important;
 }
+
+/* ============================================================
+   IT ADMIN LIGHT THEME SUPPORT
+   ============================================================ */
+
+:root[data-theme="light"] .mod-it,
+:root[data-theme="light"] .mod-it[data-tpl="glass"],
+html.light .mod-it,
+html.light .mod-it[data-tpl="glass"] {
+  --bg: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface2: rgba(241, 245, 249, 0.96);
+  --glass-panel: rgba(255, 255, 255, 0.98);
+  --glass-sidebar: rgba(255, 255, 255, 0.92);
+  --ink: #000000;
+  --muted: #1e293b;
+  --line: rgba(15, 23, 42, 0.18);
+  --card-border: 1px solid rgba(15, 23, 42, 0.14);
+  --accent: #0f766e;
+  --on-accent: #ffffff;
+  --accent2: #4f46e5;
+  --good: #047857;
+  --warn: #b45309;
+  --bad: #be123c;
+  --info: #0369a1;
+  --card-shadow: 0 18px 40px -22px rgba(15, 23, 42, 0.14);
+  --panel-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+  color-scheme: light;
+}
+
+:root[data-theme="light"] .mod-it aside[aria-label="IT Administration Navigation Sidebar"],
+html.light .mod-it aside[aria-label="IT Administration Navigation Sidebar"] {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-right: 1px solid var(--line) !important;
+  box-shadow: 8px 0 28px rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme="light"] .mod-it input[aria-label="Search IT administration records"],
+html.light .mod-it input[aria-label="Search IT administration records"] {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: var(--line) !important;
+}
+
+:root[data-theme="light"] .mod-it :is(
+  #global-search-dropdown-menu,
+  #profile-dropdown-menu,
+  [data-testid="global-search-dropdown"],
+  [data-testid="profile-dropdown-menu"],
+  [data-testid="notifications-dropdown"],
+  #notifications-dropdown-menu,
+  #notifications-button + div,
+  #side-drawer-panel,
+  [aria-labelledby="drawer-title"] > div,
+  [data-profile-modal] section[role="dialog"],
+  [data-attendance-modal] section[role="dialog"]
+),
+html.light .mod-it :is(
+  #global-search-dropdown-menu,
+  #profile-dropdown-menu,
+  [data-testid="global-search-dropdown"],
+  [data-testid="profile-dropdown-menu"],
+  [data-testid="notifications-dropdown"],
+  #notifications-dropdown-menu,
+  #notifications-button + div,
+  #side-drawer-panel,
+  [aria-labelledby="drawer-title"] > div,
+  [data-profile-modal] section[role="dialog"],
+  [data-attendance-modal] section[role="dialog"]
+) {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: var(--line) !important;
+}
+
+:root[data-theme="light"] .mod-it #notifications-button,
+:root[data-theme="light"] .mod-it #profile-menu-button,
+html.light .mod-it #notifications-button,
+html.light .mod-it #profile-menu-button {
+  background: rgba(241, 245, 249, 0.95);
+  color: var(--ink);
+}
+
+:root[data-theme="light"] .mod-it [class~="dashboard-metric-card"],
+html.light .mod-it [class~="dashboard-metric-card"] {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+:root[data-theme="light"] .mod-it thead,
+html.light .mod-it thead {
+  background-color: rgba(241, 245, 249, 0.95);
+}
+
+:root[data-theme="light"] .mod-it .bg-accent2.text-white,
+html.light .mod-it .bg-accent2.text-white {
+  color: #ffffff !important;
+}
+
+:root[data-theme="light"] .mod-it select option,
+:root[data-theme="light"] .mod-it select optgroup,
+html.light .mod-it select option,
+html.light .mod-it select optgroup {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+:root[data-theme="light"] .mod-it :is(input[type="date"], input[type="datetime-local"], input[type="time"]),
+html.light .mod-it :is(input[type="date"], input[type="datetime-local"], input[type="time"]) {
+  color-scheme: light;
+}

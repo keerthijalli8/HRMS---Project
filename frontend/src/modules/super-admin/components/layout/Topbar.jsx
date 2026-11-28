@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../auth/AuthContext.jsx";
+import { useTheme } from "../../../../context/ThemeContext.jsx";
 import { DashboardSwitcher } from "../../../../components/DashboardSwitcher.jsx";
 import { SUPERADMIN_PAGE_NAMES } from "../../routes";
 import { getNotificationDestination } from "../../utils/notificationNavigation";
@@ -241,7 +242,9 @@ export default function Topbar({ onMenuClick }) {
   const [search, setSearch] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
   const [popover, setPopover] = useState("");
+  const { theme: globalTheme, setTheme: setGlobalTheme } = useTheme();
   const [theme, setTheme] = useState(() => {
+    if (globalTheme === "light") return "light";
     try {
       return localStorage.getItem("superAdminTheme") || "monsoon";
     } catch {
@@ -264,6 +267,14 @@ export default function Topbar({ onMenuClick }) {
       return demoCompanies;
     }
   }, []);
+
+  useEffect(() => {
+    if (globalTheme === "light" && theme !== "light") {
+      setTheme("light");
+    } else if (globalTheme === "dark" && theme === "light") {
+      setTheme("monsoon");
+    }
+  }, [globalTheme]);
 
   useEffect(() => {
     const rootEl = topbarRef.current?.closest('.mod-superadmin');
@@ -520,6 +531,7 @@ export default function Topbar({ onMenuClick }) {
                   key={value}
                   onClick={() => {
                     setTheme(value);
+                    setGlobalTheme(value === "light" ? "light" : "dark");
                     setPopover("");
                   }}
                 >

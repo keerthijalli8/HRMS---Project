@@ -22,6 +22,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { useAuth } from '../../../auth/AuthContext.jsx';
+import { useTheme } from '../../../context/ThemeContext.jsx';
 import { getHomeRouteForRoles } from '../../../auth/roles.js';
 import { useToast } from '../../../context/ToastContext.jsx';
 import { PrimaryButton, SecondaryButton } from '../components/common/Buttons.jsx';
@@ -138,28 +139,8 @@ export function Login() {
 
   // Localization & Theme state
   const [lang, setLang] = useState('en');
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('hrms_theme') || 'dark';
-  });
+  const { theme, toggleTheme } = useTheme();
   const t = i18n[lang] || i18n.en;
-
-  // Apply theme to document root whenever theme changes
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-    } else {
-      document.documentElement.classList.remove('light');
-      document.documentElement.classList.add('dark');
-    }
-    localStorage.setItem('hrms_theme', theme);
-  }, [theme]);
-
-  // Toggle Theme
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
-  };
 
   // If already authenticated, redirect to enrollment (if required) or highest-priority role dashboard
   useEffect(() => {

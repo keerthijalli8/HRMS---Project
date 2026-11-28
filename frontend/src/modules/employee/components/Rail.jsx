@@ -8,6 +8,7 @@ import { useAuth } from '../../../auth/AuthContext.jsx';
 import { useNotifications } from '../context/NotificationContext.jsx';
 import { useToast } from '../context/ToastContext.jsx';
 import { Avatar } from './Avatar.jsx';
+import { BrandLogo } from '../../../components/BrandLogo.jsx';
 import { INITIAL_EMPLOYEE } from '../data/employee.js';
 import { NAV_GROUPS } from '../config/navigation.js';
 
@@ -37,11 +38,7 @@ export function Rail({ className = '' }) {
     >
       {/* Top Brand Section */}
       <div className="px-3 pb-4">
-        <img
-          src="/technomold-logo.png"
-          alt="Technomold IT Solutions Pvt Ltd"
-          className="block w-full max-w-[210px] h-auto"
-        />
+        <BrandLogo className="block w-full max-w-[210px] h-auto object-contain" />
       </div>
 
       {/* Nav List Grouped */}

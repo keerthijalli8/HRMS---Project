@@ -417,3 +417,58 @@
     width: 100%;
   }
 }
+
+:root[data-theme="light"] .mod-admin .settings-page,
+html.light .mod-admin .settings-page {
+  color: #000000;
+}
+
+:root[data-theme="light"] .mod-admin .settings-eyebrow,
+html.light .mod-admin .settings-eyebrow {
+  color: #0f766e;
+}
+
+:root[data-theme="light"] .mod-admin .settings-tabs,
+:root[data-theme="light"] .mod-admin .settings-content,
+:root[data-theme="light"] .mod-admin .settings-profile-card,
+html.light .mod-admin .settings-tabs,
+html.light .mod-admin .settings-content,
+html.light .mod-admin .settings-profile-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(15, 23, 42, 0.16);
+  color: #000000;
+}
+
+:root[data-theme="light"] .mod-admin .settings-tab,
+html.light .mod-admin .settings-tab {
+  color: #1e293b;
+}
+
+:root[data-theme="light"] .mod-admin .settings-tab:hover,
+html.light .mod-admin .settings-tab:hover {
+  color: #000000;
+  background: rgba(15, 118, 110, 0.08);
+}
+
+:root[data-theme="light"] .mod-admin .settings-tab.active,
+html.light .mod-admin .settings-tab.active {
+  color: #0f766e;
+  background: rgba(15, 118, 110, 0.12);
+  border-color: rgba(15, 118, 110, 0.28);
+}
+
+:root[data-theme="light"] .mod-admin .settings-profile-subheading h3,
+html.light .mod-admin .settings-profile-subheading h3 {
+  color: #0f766e;
+}
+
+:root[data-theme="light"] .mod-admin .settings-switch-slider,
+html.light .mod-admin .settings-switch-slider {
+  background: #cbd5e1;
+  border-color: #94a3b8;
+}
+
+:root[data-theme="light"] .mod-admin .settings-save-message,
+html.light .mod-admin .settings-save-message {
+  color: #047857;
+}

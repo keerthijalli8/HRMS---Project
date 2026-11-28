@@ -43,6 +43,7 @@ export function normalizeUser(rawUser) {
   const faceEnrolled = Boolean(
     rawUser.face_enrolled !== undefined ? rawUser.face_enrolled : rawUser.faceEnrolled
   );
+  const faceLoginPolicy = rawUser.face_login_policy || rawUser.faceLoginPolicy || 'OPTIONAL';
   const roles = normalizeRoles(rawUser);
   const primaryRole = getHighestPriorityRole(roles);
 
@@ -57,6 +58,8 @@ export function normalizeUser(rawUser) {
     employeeId,
     face_enrolled: faceEnrolled,
     faceEnrolled,
+    face_login_policy: faceLoginPolicy,
+    faceLoginPolicy,
     enrollment_status:
       rawUser.enrollment_status ||
       rawUser.enrollmentStatus ||

@@ -4,10 +4,23 @@
   color-scheme: dark;
 }
 
+:root[data-theme="light"] .mod-employee select,
+html.light .mod-employee select {
+  color-scheme: light;
+}
+
 .mod-employee select option,
 .mod-employee select optgroup {
   background-color: #0b1f2b;
   color: #ecfbf8;
+}
+
+:root[data-theme="light"] .mod-employee select option,
+:root[data-theme="light"] .mod-employee select optgroup,
+html.light .mod-employee select option,
+html.light .mod-employee select optgroup {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .mod-employee select option:checked {
@@ -16,10 +29,24 @@
   font-weight: 600;
 }
 
+:root[data-theme="light"] .mod-employee select option:checked,
+html.light .mod-employee select option:checked {
+  background-color: #ccfbf1;
+  color: #0f766e;
+}
+
 .mod-employee select option:hover,
 .mod-employee select option:focus {
   background-color: #174256;
   color: #ffffff;
+}
+
+:root[data-theme="light"] .mod-employee select option:hover,
+:root[data-theme="light"] .mod-employee select option:focus,
+html.light .mod-employee select option:hover,
+html.light .mod-employee select option:focus {
+  background-color: #e2e8f0;
+  color: #000000;
 }
 
 /* Overview Widget Grid */
@@ -88,7 +115,7 @@
   gap: 8px;
   padding: 6px;
   border-radius: 9999px;
-  background-color: rgba(20, 44, 55, 0.7);
+  background-color: var(--surface);
   border: 1px solid var(--line);
   overflow-x: auto;
   scrollbar-width: none;
@@ -124,11 +151,11 @@
 .mod-employee .tab[aria-pressed="true"],
 .mod-employee .tab.active,
 .mod-employee .tab[aria-selected="true"] {
-  color: #06141c !important;
+  color: var(--on-accent) !important;
   background-color: var(--accent) !important;
   font-weight: 700 !important;
   border-color: var(--accent) !important;
-  box-shadow: 0 2px 8px rgba(97, 216, 196, 0.35);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 /* ===== My Attendance: Today tab ===== */
@@ -201,7 +228,23 @@
 }
 
 .mod-employee .text-muted {
-  color: #a4c2c5 !important;
+  color: var(--muted) !important;
+}
+
+:root[data-theme="light"] .mod-employee .att-seg,
+html.light .mod-employee .att-seg {
+  background: rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme="light"] .mod-employee .att-bar,
+html.light .mod-employee .att-bar {
+  background: rgba(15, 23, 42, 0.12);
+  box-shadow: none;
+}
+
+:root[data-theme="light"] .mod-employee .att-panel,
+html.light .mod-employee .att-panel {
+  box-shadow: var(--card-shadow);
 }
 
 .mod-employee button > .w-2.h-2.rounded-full:empty,

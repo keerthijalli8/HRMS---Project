@@ -3,16 +3,19 @@ import { createPortal } from "react-dom";
 import { LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../auth/AuthContext.jsx";
+import { useTheme } from "../../../context/ThemeContext.jsx";
 
 export default function LogoutButton({ className = "sidebar-logout" }) {
   const [confirming, setConfirming] = useState(false);
   const [error, setError] = useState("");
   const { logout } = useAuth();
+  const { theme } = useTheme();
   const navigate = useNavigate();
 
   const confirmLogout = () => {
     try {
       logout();
+      setConfirming(false);
       navigate("/login", { replace: true });
     } catch {
       setError("Unable to clear the browser session. Please try again.");
@@ -26,7 +29,7 @@ export default function LogoutButton({ className = "sidebar-logout" }) {
         <span>Logout</span>
       </button>
       {confirming && createPortal(
-        <div className="mod-admin" data-tpl="glass" data-bs-theme="dark">
+        <div className="mod-admin" data-tpl="glass" data-bs-theme={theme} onPointerDown={(event) => event.stopPropagation()}>
           <div className="logout-dialog-backdrop" onMouseDown={(event) => {
             if (event.target === event.currentTarget) setConfirming(false);
           }}>

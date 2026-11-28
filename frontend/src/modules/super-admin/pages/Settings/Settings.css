@@ -657,3 +657,59 @@
     min-width: 520px;
   }
 }
+
+.mod-superadmin[data-theme="light"] .st-page,
+.mod-superadmin[data-theme="light"] .st-heading h1,
+.mod-superadmin[data-theme="light"] .st-panel-header h2,
+.mod-superadmin[data-theme="light"] .st-role-content h3,
+.mod-superadmin[data-theme="light"] .st-toggle-row strong,
+.mod-superadmin[data-theme="light"] .st-module-details dd {
+  color: #000000;
+}
+
+.mod-superadmin[data-theme="light"] .st-heading p,
+.mod-superadmin[data-theme="light"] .st-panel-header p,
+.mod-superadmin[data-theme="light"] .st-toggle-row small,
+.mod-superadmin[data-theme="light"] .st-field-grid label,
+.mod-superadmin[data-theme="light"] .st-note {
+  color: #1e293b;
+}
+
+.mod-superadmin[data-theme="light"] .st-panel,
+.mod-superadmin[data-theme="light"] .st-tab,
+.mod-superadmin[data-theme="light"] .st-role-list,
+.mod-superadmin[data-theme="light"] .st-role-item,
+.mod-superadmin[data-theme="light"] .st-modal {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(15, 23, 42, 0.16);
+  color: #000000;
+}
+
+.mod-superadmin[data-theme="light"] .st-tab.active,
+.mod-superadmin[data-theme="light"] .st-role-item.selected {
+  background: rgba(15, 118, 110, 0.12);
+  border-color: rgba(15, 118, 110, 0.35);
+  color: #0f766e;
+}
+
+.mod-superadmin[data-theme="light"] .st-field-grid select,
+.mod-superadmin[data-theme="light"] .st-add-role input,
+.mod-superadmin[data-theme="light"] .st-modal input,
+.mod-superadmin[data-theme="light"] .st-modal select,
+.mod-superadmin[data-theme="light"] .st-module-menu {
+  background: #ffffff;
+  color: #000000;
+  border-color: rgba(15, 23, 42, 0.2);
+}
+
+.mod-superadmin[data-theme="light"] .st-primary {
+  background: #0f766e;
+  border-color: #0f766e;
+  color: #ffffff;
+}
+
+.mod-superadmin[data-theme="light"] .st-secondary {
+  background: #f1f5f9;
+  border-color: rgba(15, 23, 42, 0.2);
+  color: #000000;
+}

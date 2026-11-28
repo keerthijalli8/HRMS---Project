@@ -30,7 +30,7 @@ function formatUserResponse(user) {
     designation: user.designation,
     faceEnrolled: Boolean(user.face_enrolled),
     enrollmentStatus: user.enrollment_status || (user.face_enrolled ? 'APPROVED' : 'NOT_ENROLLED'),
-    faceLoginPolicy: user.face_login_policy
+    faceLoginPolicy: config.faceAuthEnabled ? user.face_login_policy : 'OFF'
   };
 }
 
@@ -180,7 +180,7 @@ router.post('/login', async (req, res) => {
   }
 
   const enrollmentStatus = user.enrollment_status || (user.face_enrolled ? 'APPROVED' : 'NOT_ENROLLED');
-  const requiresFace = Boolean(user.face_enrolled) && enrollmentStatus === 'APPROVED' && user.face_login_policy !== 'OFF';
+  const requiresFace = config.faceAuthEnabled && Boolean(user.face_enrolled) && enrollmentStatus === 'APPROVED' && user.face_login_policy !== 'OFF';
 
   if (requiresFace) {
     const tempToken = jwt.sign(
@@ -219,7 +219,7 @@ router.post('/login', async (req, res) => {
   }
 
   // First-time login / pending HR approval / policy OFF: issue device-bound session
-  const needsFaceEnrollment = !Boolean(user.face_enrolled) && enrollmentStatus !== 'PENDING_HR' && user.face_login_policy !== 'OFF';
+  const needsFaceEnrollment = config.faceAuthEnabled && !Boolean(user.face_enrolled) && enrollmentStatus !== 'PENDING_HR' && user.face_login_policy !== 'OFF';
   const token = generateToken(user, deviceHash);
 
   db.prepare(`

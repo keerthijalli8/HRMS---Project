@@ -1,5 +1,5 @@
 // src/components/Drawer.jsx
-// Fixed right drawer (400px, background #0a222b, 1px line border, focus trap, Esc closes).
+// Fixed right drawer (400px, background var(--drawer-bg), 1px line border, focus trap, Esc closes).
 
 import React, { useEffect, useRef } from 'react';
 
@@ -73,7 +73,7 @@ export function Drawer({ isOpen, onClose, title, children, footer, maxWidth = 'm
         aria-modal="true"
         aria-label={title || 'Panel'}
         onClick={(e) => e.stopPropagation()}
-        style={{ backgroundColor: '#0a222b' }}
+        style={{ backgroundColor: 'var(--drawer-bg, var(--card-bg))' }}
         className={`w-full ${maxWidth} h-full flex flex-col border-l border-line shadow-2xl animate-in slide-in-from-right duration-200 text-ink ${className}`}
       >
         {/* Header */}

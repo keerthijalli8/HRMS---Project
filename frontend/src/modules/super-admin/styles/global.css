@@ -831,15 +831,19 @@
 
 .mod-superadmin[data-theme="light"] {
   color-scheme: light;
-  --bg: #edf4f3;
-  --surface: rgba(15, 50, 55, 0.07);
-  --surface2: rgba(15, 50, 55, 0.11);
-  --ink: #102c32;
-  --muted: #557276;
-  --line: rgba(15, 50, 55, 0.18);
-  --accent: #138b79;
+  --bg: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface2: rgba(241, 245, 249, 0.96);
+  --ink: #000000;
+  --muted: #1e293b;
+  --line: rgba(15, 23, 42, 0.18);
+  --accent: #0f766e;
   --on-accent: #ffffff;
-  --accent2: #6b5bc4;
+  --accent2: #4f46e5;
+  --good: #047857;
+  --warn: #b45309;
+  --bad: #be123c;
+  --info: #0369a1;
 }
 
 .mod-superadmin[data-theme="dark"] {
@@ -885,6 +889,26 @@
 .mod-superadmin[data-theme="light"] .topbar-popover {
   background: #ffffff;
   box-shadow: 0 16px 38px rgba(16, 44, 50, 0.16);
+}
+
+.mod-superadmin[data-theme="light"] :is(h1, h2, h3, h4, strong, td, label, span),
+.mod-superadmin[data-theme="light"] .sidebar-link,
+.mod-superadmin[data-theme="light"] .topbar-icon-button,
+.mod-superadmin[data-theme="light"] .profile-text strong {
+  color: var(--ink);
+}
+
+.mod-superadmin[data-theme="light"] :is(p, small, th, .sidebar-section-label, .profile-text span) {
+  color: var(--muted);
+}
+
+.mod-superadmin[data-theme="light"] .sidebar-link.active {
+  color: var(--accent);
+}
+
+.mod-superadmin[data-theme="light"] :is(.sa-main-kpi-card, .dash-kpi-card, .tenant-stat-card, .org-kpi, .subscription-stat-card, .plan-v3-kpi, .bill-stat-card, .mm-overview-stat, .mm-stat-card, .pu-stat-card, .ua-stat-card, .mon-metric, .sal-stat, .sup-stat-card) {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(15, 23, 42, 0.14);
 }
 
 /* =========================================

@@ -19,6 +19,7 @@ import GeneralSettings from "./GeneralSettings/GeneralSettings";
 import Profile from "./Profile/Profile";
 import "./Settings.css";
 import { notifySaveSuccess } from "../../utils/saveNavigation";
+import { ThemeToggleButton } from "../../../../components/ThemeToggleButton.jsx";
 
 const ACTIONS = ["View", "Create", "Edit", "Delete", "Export", "Approve"];
 
@@ -366,12 +367,15 @@ export default function Settings() {
 
   return (
     <div className="st-page">
-      <div className="st-heading">
-        <h1>Settings</h1>
-        <p>
-          Manage platform configuration, profile settings,
-          roles, permissions and security.
-        </p>
+      <div className="st-heading" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", flexWrap: "wrap" }}>
+        <div>
+          <h1>Settings</h1>
+          <p>
+            Manage platform configuration, profile settings,
+            roles, permissions and security.
+          </p>
+        </div>
+        <ThemeToggleButton />
       </div>
 
       <div className="st-tabs">

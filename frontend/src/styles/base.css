@@ -28,6 +28,43 @@
     color: var(--ink);
   }
 
+  [data-theme="light"] .text-muted\/70,
+  [data-theme="light"] .text-muted\/80,
+  [data-theme="light"] .text-muted\/60,
+  html.light .text-muted\/70,
+  html.light .text-muted\/80,
+  html.light .text-muted\/60 {
+    color: var(--muted);
+  }
+
+  [data-theme="light"] :is(
+    [class*="bg-[#06141c]"],
+    [class*="bg-[#061720]"],
+    [class*="bg-[#071922]"],
+    [class*="bg-[#071b26]"],
+    [class*="bg-[#081b22]"],
+    [class*="bg-[#091f28]"],
+    [class*="bg-[#0a222b]"],
+    [class*="bg-[#0b1f2b]"],
+    [class*="bg-[#0d1f28]"],
+    [class*="bg-[#0e1626]"]
+  ),
+  html.light :is(
+    [class*="bg-[#06141c]"],
+    [class*="bg-[#061720]"],
+    [class*="bg-[#071922]"],
+    [class*="bg-[#071b26]"],
+    [class*="bg-[#081b22]"],
+    [class*="bg-[#091f28]"],
+    [class*="bg-[#0a222b]"],
+    [class*="bg-[#0b1f2b]"],
+    [class*="bg-[#0d1f28]"],
+    [class*="bg-[#0e1626]"]
+  ) {
+    background-color: var(--drawer-bg, #ffffff) !important;
+    color: var(--ink, #000000) !important;
+  }
+
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
     text-wrap: balance;

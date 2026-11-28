@@ -100,7 +100,11 @@ export default function TopNavigation() {
 
   useEffect(() => {
     const handleOutsidePointer = (event) => {
-      if (rootRef.current && !rootRef.current.contains(event.target)) {
+      if (
+        rootRef.current &&
+        !rootRef.current.contains(event.target) &&
+        !(event.target instanceof Element && event.target.closest(".logout-dialog-backdrop"))
+      ) {
         setIsSearchOpen(false);
         setIsProfileOpen(false);
         setIsNotificationOpen(false);

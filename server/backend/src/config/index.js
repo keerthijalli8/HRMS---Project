@@ -35,6 +35,7 @@ export const config = {
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '15m',
 
   // Face recognition & anti-spoofing thresholds
+  faceAuthEnabled: process.env.ENABLE_FACE_AUTH === 'true',
   faceMatchThreshold: parseFloat(process.env.FACE_MATCH_THRESHOLD || '0.48'),
   antiSpoofThreshold: parseFloat(process.env.ANTISPOOF_THRESHOLD || '0.72'),
   faceMinBrightness: parseInt(process.env.FACE_MIN_BRIGHTNESS || '35', 10),
